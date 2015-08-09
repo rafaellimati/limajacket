@@ -26,6 +26,14 @@ class administrador extends CI_Controller {
 	
 		$this->load->view('Principal', $dados);
 	}
+
+	public function usuario()
+	{
+		$dados = array(
+			'pasta' => 'usuario',
+			'view' => 'cadastrar' );
+		$this->load->view('administrador', $dados);
+	}
 }
 
 /* End of file welcome.php */
