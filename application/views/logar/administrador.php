@@ -21,19 +21,39 @@
 		    </div>
 		</nav>
 		<div class="container" style="width:260px;margin-top:150px;">
-			<form class="form-signin" role="form" method="post" action="validarLogin.php">
+
+			<form class="form-signin" role="form" method="post" action="<?php echo base_url("administrador/login") ?>">
 				<h2 class="form-signin-heading">Login</h2>
-				<label for="email" class="sr-only">E-Mail</label>
-				<input type="email" id="email" name="email" class="form-control" placeholder="Digite seu Email" required autofocus><br>
+				<label for="login" class="sr-only">E-Mail</label>
+				<input type="login" id="login" name="login" class="form-control" placeholder="Digite seu Email" required autofocus><br>
 				<label for="Senha" >Senha:</label>
 				<input type="Password" id="senha" name="senha" class="form-control" placeholder="Senha" required><br>
-				<label for="Senha" >Repita Senha:</label>
-				<input type="Password" id="senha" name="senha" class="form-control" placeholder="Senha" required>
 				<div class="checkbox" ><br>
 				</div>
 				 <button type="submit" class="btn btn-lg btn-primary btn-block">ENTRAR</button>
 			</form>
 			<h1></h1>
+
+		<?php if($this->session->flashdata('loginInvalido')): ?>
+			<script>
+				setTimeout(function(){
+					$('#loginInvalido').fadeOut(3000);
+				}, 4000);
+			</script>
+			<div id="loginInvalido">
+				<font color="#FC5555"><?php echo $this->session->flashdata('loginInvalido'); ?></font>
+			</div>
+		<?php endif; ?>
+		<?php if($this->session->flashdata('loginVazio')): ?>
+			<script>
+				setTimeout(function(){
+					$('#loginVazio').fadeOut(3000);
+				}, 4000);
+			</script>
+			<div id="loginVazio">
+				<font color="#FC5555"><?php echo $this->session->flashdata('loginVazio'); ?></font>
+			</div>
+		<?php endif; ?>
 
 			<div class= "alert aler-danger" role="alert">
 				<div class="alert aler-danger" role="alert"></div>

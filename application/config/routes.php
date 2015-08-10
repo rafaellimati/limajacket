@@ -40,7 +40,9 @@
 
 $route['default_controller'] = "Principal";
 
-$route['administrador'] = "administrador";
+//$route['administrador'] = "administrador";
+
+$route['administracao/dashboard'] = 'administracao';
 
 $route['404_override'] = '';
 
