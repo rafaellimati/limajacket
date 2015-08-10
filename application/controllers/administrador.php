@@ -41,6 +41,27 @@ class administrador extends CI_Controller {
 			'view' => 'cadastrar' );
 		$this->load->view('administrador', $dados);
 	}
+		public function Estoque()
+	{
+		$dados = array(
+		'pasta' => 'Estoque',
+		'view'  => 'Estoque');
+		$this->load->view('administrador', $dados);
+	}
+	public function Marca()
+	{
+		$dados = array(
+		'pasta' => 'Marca',
+		'view' =>  'Marca');
+		$this->load->view('administrador', $dados);
+	}
+	public function Jaqueta()
+	{
+		$dados = array(
+		'pasta' => 'cadastrarJaqueta',
+		'view'  =>  'Jaqueta');
+		$this->load->view('administrador', $dados);
+	}
 
 
 	public function login(){
