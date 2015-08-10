@@ -12,9 +12,11 @@
 	       	</div>
 	       	<div id="navbar" class="navbar-collapse collapse">
 	       		<ul class="nav navbar-nav">
-	       		<li><a href="#">Clientes</a></li>
+	       		<li><a href="#">Marca</a></li>
 	       		<li><a href="<?php echo base_url("administrador/usuario") ?>">Usuários</a></li>
-	       		<li><a href= "#">Encomendas</a></li>
+	       		<li><a href= "#">Jaqueta</a></li>
+	       		<li><a href="#">Estoque</a></li>
+	       		<li><a href="#">Pedidos</a></li>
 	       		<li><a href="#">Recibos</a></li>
 	       		<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Relatorios<span class="caret"> </span></a>
 	       			<ul class="dropdown-menu" role="menu">
