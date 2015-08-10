@@ -56,6 +56,9 @@ class marca extends CI_Controller {
 			//Pega os campos e recebe os valores do post
 			$dados = elements(array('marca'), $this->input->post());
 
+			//setando flagAtivo para True
+			$dados['flagAtivo'] = 1;
+
 			$this->MarcaModel->insertMarca($dados);
 		}else{
 			$this->session->set_flashdata('erro', 'Marca já existe!');
@@ -78,7 +81,7 @@ class marca extends CI_Controller {
 
 		if($this->form_validation->run()){
 			//Pega os valores do formulário
-			$dados = elements(array('marca'), $this->input->post());
+			$dados = elements(array('marca','flagAtivo'), $this->input->post());
 			//Envia um update pro banco passando o idMarca do formulário
 			$this->MarcaModel->updateMarca($dados, array('idMarca' => $this->input->post('idMarca')));
 		

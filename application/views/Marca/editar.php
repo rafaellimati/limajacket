@@ -71,6 +71,20 @@ if($this->session->flashdata('edicaook')):
 								<input type="text" id="marca" name="marca" value= "<?php echo $marca->marca; ?>" class="form-control" placeholder="Nome Marca" required autofocus >
 									<span class="glyphicon glyphicon-search input-group-addon btn" onclick="fBusca()"></span>
 							</div>
+                            <label for="nome">Marca:</label>
+                            <div class="input-group textos">
+                                <select name="flagAtivo">
+                                    <?php if( $marca->flagAtivo == "1"): ?>
+                                        <option value="<?php echo $marca->flagAtivo; ?>">Ativo<option>
+                                        <option value="0">Inativo<option>
+                                    <?php endif; ?>
+                                    <?php if ($marca->flagAtivo == "0"): ?>
+
+                                        <option value="<?php echo $marca->flagAtivo; ?>">Inativo<option>
+                                        <option value="1">Ativo<option>
+                                    <?php endif; ?>
+                                </select>
+                            </div>
                             <br>
         				   <button  type="submit" class="btn btn-lg btn-primary" >Alterar</button>
         				   <!-- <button  type="submit" class="btn btn-lg btn-primary" >Alterar</button> -->
