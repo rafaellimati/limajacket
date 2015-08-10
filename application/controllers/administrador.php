@@ -17,6 +17,13 @@ class administrador extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	public function __construct(){
+		parent::__construct();
+		$this->load->model('UsuarioModel', 'LoginModel');
+	}
+
+
 	public function index()
 	{
 		
@@ -33,6 +40,50 @@ class administrador extends CI_Controller {
 			'pasta' => 'usuario',
 			'view' => 'cadastrar' );
 		$this->load->view('administrador', $dados);
+	}
+
+
+	public function login(){
+		$this->form_validation->set_rules('login','Login', 'trim|required|max_length[20]');
+		$this->form_validation->set_rules('senha', 'Senha', 'trim|required|strtolower');
+
+				//Verifica se os campo foi preenchido corretamente e retorna true para a validação
+		if($this->form_validation->run()){
+
+			//Pega os valores que esta no post e transforma em array
+			$dados = elements(array('login', 'senha'), $this->input->post());
+
+			//Verifica se os dados estão validos enviando os valores para a model
+			if($this->LoginModel->doValidate($dados)){
+
+				//Retorna todas as informações do usuario
+				$dados = $this->LoginModel->getUsuario($dados);
+				
+                //Dados de sessão do usuario
+                $session = array(
+                        'id' 		   => $dados[0]['id'],
+                        'nivelAcesso'    => $dados[0]['nivelAcesso'],
+                        'login' 	   => $dados[0]['login'],
+                        'is_logged_in' => true
+                );
+
+                //Enviar os dados para a view
+                $this->session->set_userdata($session);
+
+                //Redireciona para a pagina principal
+                redirect('administrador/usuario');
+                                
+                                
+            }else{
+                    //Redireciona para a tela de login				
+                    $this->session->set_flashdata('loginInvalido', 'Usuário ou Senha invalidos.');
+                    redirect('administrador');
+            }
+		}else{
+			//Redireciona para a tela de login			
+			$this->session->set_flashdata('loginVazio', 'Campo(s) obrigatório(s) não preenchido(s).');
+			redirect('administrador');
+		}
 	}
 }
 

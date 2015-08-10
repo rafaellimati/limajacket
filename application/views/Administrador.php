@@ -5,7 +5,7 @@
 	Se existir mostra a indexx com seu conteudo e as outras view
 	Se não redireciona para a tela de login
 */
-//if($this->session->userdata('is_logged_in')){
+if($this->session->userdata('is_logged_in') && $this->session->userdata('nivelAcesso') == 2){
 
 	//Inclue o arquivo de cabeçalho
 	$this->load->view('adm/header');
@@ -19,9 +19,9 @@
 	//Inclue o arquivo de rodapé
 	$this->load->view('adm/footer');
 
-/*}else{
-	redirect('login');
-}*/
+}else{
+	redirect('administrador');
+}
 ?>
 
 
