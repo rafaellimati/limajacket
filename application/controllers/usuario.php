@@ -28,10 +28,11 @@ class usuario extends CI_Controller {
 	{
 		
 		$dados = array(
-		'pasta' =>'UsuarioAdministrador',
-		'view'  =>'Cadastrar');
+		'pasta' =>'usuario',
+		'view'  =>'cadastrar');
 	
-		$this->load->view('Principal', $dados);
+		//$this->load->view('administrador', $dados);
+		redirect('administrador/usuario/cadastrar');
 	}
 
 
@@ -63,22 +64,13 @@ class usuario extends CI_Controller {
 			$this->session->set_flashdata('erro', 'Campo(s) obrigatório(s) não preenchido(s)');
 		}
 
-		/*$dados = array(
-			'titulo'  => 'Cadastro de Usuário',
-			'titulo1' => 'Usuario',
-			'titulo2' => 'Cadastrar',
-			'pasta'   => 'usuario',
-			'view'    => 'cadastrar',
-			'voltar'   => 'usuario/listagem',
-			'perfil'  => $this->UsuarioModel->getPerfil()
-		);
-
-		$this->load->view('indexx', $dados);*/
-
-		$dados = array(
+/*		$dados = array(
 			'pasta' => 'usuario',
 			'view' => 'cadastrar' );
-		$this->load->view('administrador', $dados);
+		$this->load->view('Administrador', $dados);
+*/
+
+		redirect('administrador/usuario/cadastrar');
 
 	}
 }

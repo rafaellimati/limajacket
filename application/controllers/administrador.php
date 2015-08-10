@@ -21,6 +21,10 @@ class administrador extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('UsuarioModel', 'LoginModel');
+
+
+		//Carrega as funções da model marca
+		$this->load->model('MarcaModel');
 	}
 
 
@@ -50,9 +54,15 @@ class administrador extends CI_Controller {
 	}
 	public function Marca()
 	{
+		$View = $this->uri->segment(3);
+		if($View != "editar"){
+			$View = "Marca";
+		}
 		$dados = array(
 		'pasta' => 'Marca',
-		'view' =>  'Marca');
+		'view' =>  $View, //'Marca',
+		'marcas' => $this->MarcaModel->getAllMarca()->result()
+		);
 		$this->load->view('administrador', $dados);
 	}
 	public function Jaqueta()

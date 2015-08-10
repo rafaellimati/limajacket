@@ -9,5 +9,5 @@
 		<!-- Date: 2014-11-20 -->
 		<link type="text/css" href="<?php echo base_url("static/css/bootstrap.css") ?>" rel="stylesheet" media="screen">
 		<link type="text/css" href="<?php echo base_url("static/css/estilos.css")?> rel="stylesheet" media="screen">
-
+		<script type="text/javascript" src="<?php echo base_url("static/js/jquery-1.10.1.mini.js")?>" ></script>
 	</head>
