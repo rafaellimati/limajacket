@@ -60,11 +60,11 @@
         		
         				   	<label for="nome">Marca:</label>
         				   	<div class="input-group textos">
-								<input type="text" id="nome" name="nome" value= "" class="form-control" placeholder="Nome Cliente" required autofocus >
+								<input type="text" id="marca" name="marca" value= "" class="form-control" placeholder="Nome Marca" required autofocus >
 									<span class="glyphicon glyphicon-search input-group-addon btn" onclick="fBusca()"></span>
 							</div>
-        				   <button onclick="document.getElementById('op').value='insert';" type="submit" class="btn btn-lg btn-primary" >Cadastrar</button>
-        				   <button onclick="document.getElementById('op').value='update';" type="submit" class="btn btn-lg btn-primary" >Alterar</button>
+        				   <button  type="submit" class="btn btn-lg btn-primary" >Cadastrar</button>
+        				   <button  type="submit" class="btn btn-lg btn-primary" >Alterar</button>
         				   <button id="btnlimpar" type="submit" class="btn btn-lg btn-warning">Limpar</button>
         				</form>
         				<p> </p>
