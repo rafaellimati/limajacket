@@ -106,6 +106,27 @@ class administrador extends CI_Controller {
 			redirect('administrador');
 		}
 	}
+
+
+	//Método responsavel por fazer o logout do sistema
+	public function logout(){
+
+		//Verifica se a sessão existi 
+		if($this->session->userdata('is_logged_in')){
+            //Destroy a session do usuario
+            $session = array(
+                'id' 		   => '',
+                'nivelAcesso'    => '',
+                'login' 	   => '',
+                'is_logged_in' => false
+            );
+
+            $this->session->unset_userdata($session);
+            $this->session->sess_destroy();
+            //Redireciona para a url padrão "raiz"
+            redirect(base_url('administrador'));
+		}
+	}
 }
 
 /* End of file welcome.php */

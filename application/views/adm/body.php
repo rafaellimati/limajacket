@@ -31,8 +31,8 @@
 	       		</li>
 	       		</ul>
 	       		<ul class="nav navbar-nav navbar-right">
-	       			<li> <a href="#" ><?//=$_COOKIE["login"]?> </a> </li>
-	       			<li> <a href="#">Sair </a> </li>
+	       			<li> <a href="#" ><?php echo $this->session->userdata('login'); ?> </a> </li>
+	       			<li> <a href="<?php echo base_url('administrador/logout') ?>">Sair </a> </li>
 	       			<li> <a href="#"><span class="glyphicon glyphicon-search" area-hidden="true"> </span></a></li>
 	       		</ul>
 	       		

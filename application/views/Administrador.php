@@ -20,6 +20,7 @@ if($this->session->userdata('is_logged_in') && $this->session->userdata('nivelAc
 	$this->load->view('adm/footer');
 
 }else{
+	$this->session->set_flashdata('loginInvalido', 'Usuário ou Senha invalidos.');
 	redirect('administrador');
 }
 ?>
