@@ -125,14 +125,20 @@
         						</tr>
         					</thead>
         					 <tbody>
+        					 	<?php 
+                                foreach($jaqueta as $row):
+                            ?>
 								<tr>
-									<td><a href="gerenciarcliente.php?id="></a></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
+									<td><?php echo $row->idJaqueta;?></a></td>
+									<td><?php echo $row->jaqueta;?></td>
+									<td><?php echo $row->tecido;?></td>
+									<td><?php echo $row->valor;?></td>
+									<td><?php echo $row->descricao;?></td>
+									<td><?php echo $row->idMarca;?></td>
 								</tr>
+						     <?php 
+                                endforeach;
+                             ?>	
         				</table>
         				</div>
         		    </div>

@@ -14,4 +14,15 @@ class JaquetaModel extends CI_Model{
 			redirect('administrador/jaqueta');
 		}
 	}
+	
+	public function getAllJaqueta(){
+
+		$this->db->from('TbJaqueta');
+
+		$this->db->order_by('idJaqueta');
+
+		//$this->db->where('ativo', 1);
+
+		return $this->db->get();
+	}
 }
