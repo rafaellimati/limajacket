@@ -69,9 +69,12 @@ class administrador extends CI_Controller {
 	{
 		$dados = array(
 		'pasta' => 'cadastrarJaqueta',
-		'view'  =>  'Jaqueta');
-		$this->load->view('administrador', $dados);
+		'view'  => 'Jaqueta',
+		'marca' => $this->MarcaModel->getAllActive()->result()
+		);
+		$this->load->view('administrador',$dados);
 	}
+
 
 
 	public function login(){
@@ -92,7 +95,7 @@ class administrador extends CI_Controller {
 				
                 //Dados de sessão do usuario
                 $session = array(
-                        'id' 		   => $dados[0]['id'],
+                        'id' 		   => $dados[0]['idLogin'],
                         'nivelAcesso'    => $dados[0]['nivelAcesso'],
                         'login' 	   => $dados[0]['login'],
                         'is_logged_in' => true
@@ -136,8 +139,9 @@ class administrador extends CI_Controller {
             //Redireciona para a url padrão "raiz"
             redirect(base_url('administrador'));
 		}
-	}
+	}		
 }
+
 
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */
