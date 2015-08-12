@@ -50,7 +50,10 @@ class administrador extends CI_Controller {
 	{
 		$dados = array(
 		'pasta' => 'Estoque',
-		'view'  => 'Estoque');
+		'view'  => 'Estoque',
+		'jaqueta' => $this->JaquetaModel->getAllJaqueta()->result(),
+		);
+		
 		$this->load->view('administrador', $dados);
 	}
 	public function Marca()
