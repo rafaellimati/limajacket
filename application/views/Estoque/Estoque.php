@@ -19,25 +19,32 @@
 						<form class="form" role="form" method="post" action="<?php echo base_url("estoque/cadastrar")?>">
 							<div class="form-group codigo">
 					      <label class="sr-only" for="codigo">Codigo</label>
-					      <input type="text"  class="form-control" id="idEstoque" name="idEstoque" placeholder="0504" readonly="readonly">
+					      <input type="text"  class="form-control" id="idEstoque" name="idEstoque" placeholder="*" readonly="readonly">
 					  </div>
 					  <p></p>
+					 
 					  <div class="form-group textos">
 					      <label for="dataEntrega">Quantidade:</label><br>
 					      <input type="text" class="form-control"  id="quantidade" name="quantidade" placeholder="Ex: 1,5">
 					  </div>
 					  <p></p>
+					 </form>
+					 <form class="form" role="form" method="post" action="<?php echo base_url("estoque/cadastrar")?>">
 					  <div class="form-group textos">
-					      <label for="dataCadastro">tamanho:</label><br>
-					      <input type="text" class="form-control" id="tamanho" name="tamanho" placeholder="Ex: 2,0">
+					      <label for="dataCadastro">Tamanho:</label><br>
+					      <input type="text" class="form-control" id="idTamanho" name="idTamanho" placeholder="Ex: 2,0">
 					  </div>
 					  <p></p>
-					  <label for="dataCadastro">Cor:</label><br>
+					 </form>
+					 <form class="form" role="form" method="post" action="<?php echo base_url("estoque/cadastrar")?>">
+					  <label for="form-group textos">Cor:</label><br>
 					  <div class="input-group money">
-					      <input type="text" class="form-control" id="cor" name="cor" placeholder="Custo Material">
+					      <input type="text" class="form-control" id="idCor" name="idCor" placeholder="Cor">
 					  </div>
 					  <p></p>
-					  <label for="dataCadastro">Jaqueta (comobox):</label><br>
+					 </form>
+					 <form class="form" role="form" method="post" action="<?php echo base_url("estoque/cadastrar")?>">
+					  <label for="form-group textos">Jaqueta (comobox):</label><br>
 					  <div class="input-group money">
 					      <!--<input type="text" class="form-control" id="jaqueta" name="jaqueta" placeholder="valorPlaca">-->
 					  	<input type="hidden" id="bt" name="bt" value="">
@@ -57,6 +64,32 @@
 					  <button type="reset" class="btn btn-primary">Limpar</button>
 				</form>
 						<?php echo validation_errors(); ?> 
+						
+						<div class="table-responsive tabelas">
+        				<table class="table table-bordered table-hover">
+        					<thead>
+        						<tr>
+        							<th># </th>
+        							<th>Quantidade</th>
+        							<th>Cor</th>
+        							<th>Tamanho</th>
+        							<th>Jaqueta</th>
+        						</tr>
+        					</thead>
+        					 <tbody>
+        					 	<!--<?php 
+                                foreach($estoque as $row):
+                            ?>-->
+								<tr>
+									<td><<?php echo $row->quantidade;?></a></td>
+									<td><?php echo $row->idCor;?></td>
+									<td><?php echo $row->idTamanho;?></td>
+									<td><?php echo $row->idJaqueta;?></td>
+								</tr>
+						    <!--<?php 
+                                endforeach;
+                             ?>-->
+        				</table>
 				<p></p>
 				<p></p>
 				

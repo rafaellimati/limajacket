@@ -26,6 +26,12 @@ class administrador extends CI_Controller {
 		//Carrega as funções da model marca
 		$this->load->model('MarcaModel');
 		$this->load->model('JaquetaModel');
+		$this->load->model('EstoqueModel');
+		$this->load->model('UsuarioModel');
+		$this->load->model('CorModel');
+		$this->load->model('TamanhoModel');
+		$this->load->model('StatusModel');
+		
 	}
 
 
@@ -43,7 +49,9 @@ class administrador extends CI_Controller {
 	{
 		$dados = array(
 			'pasta' => 'usuario',
-			'view' => 'cadastrar' );
+			'view' => 'cadastrar',
+			'login' => $this->UsuarioModel->getAllUsuario()->result(),
+			);
 		$this->load->view('administrador', $dados);
 	}
 		public function Estoque()
@@ -52,6 +60,7 @@ class administrador extends CI_Controller {
 		'pasta' => 'Estoque',
 		'view'  => 'Estoque',
 		'jaqueta' => $this->JaquetaModel->getAllJaqueta()->result(),
+		//'estoque' => $this->estoqueModel->getAllEstoque()->result(),
 		);
 		
 		$this->load->view('administrador', $dados);
@@ -69,6 +78,7 @@ class administrador extends CI_Controller {
 		);
 		$this->load->view('administrador', $dados);
 	}
+
 	public function Jaqueta()
 	{
 		$dados = array(
@@ -76,12 +86,41 @@ class administrador extends CI_Controller {
 		'view'  => 'Jaqueta',
 		'marca' => $this->MarcaModel->getAllActive()->result(),
 		'jaqueta' => $this->JaquetaModel->getAllJaqueta()->result(),
+		'Cor'     => $this->CorModel->getAllCor()->result(),
+		'Tamanho' => $this->TamanhoModel->getAllTamanho()->result(),
+		'Descricao'  => $this->StatusModel->getAllStatus()->result(),
 		);
 		$this->load->view('administrador',$dados);
 	}
 
-
-
+	public function Cor()
+	{
+		$dados = array(
+		'pasta' => 'Cor',
+		'view'  => 'cor',
+		
+		);
+		$this->load->view('administrador',$dados);
+	}
+	
+	public function Tamanho()
+	{
+		$dados = array(
+		'pasta' => 'Tamanho',
+		'view'   => 'tamanho',
+	 	);
+	 	$this->load->view('administrador',$dados);
+	}
+		
+		public function Status()
+	{
+		$dados = array(
+		'pasta' => 'Status',
+		'view'   => 'status',
+	 	);
+	 	$this->load->view('administrador', $dados);
+	}
+	
 	public function login(){
 		$this->form_validation->set_rules('login','Login', 'trim|required|max_length[20]');
 		$this->form_validation->set_rules('senha', 'Senha', 'trim|required|strtolower');

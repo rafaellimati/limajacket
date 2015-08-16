@@ -59,7 +59,7 @@
 <div class="container posicaopainel">
 	 	<div class="panel panel-default">
         		<div class="panel-heading">
-        			<h3><span class="glyphicon glyphicon-thumbs-up"></span> Gerenciar Usuário</h3>
+        			<h3><span class="glyphicon glyphicon-thumbs-up"></span> Gerenciar Admin</h3>
         		</div>
         		<div class="panel-body">
         			<div class="container">
@@ -67,16 +67,15 @@
         				  	<label for="codigoCliente" class="sr-only">Código</label>
         				  	<!--<input type="text" id="idCliente" name="idCliente" value="" class="form-control codigo" readonly="readonly"> -->
         		
-        				   	<label for="login">Email:</label>
+        				   	<label for="login">Login:</label>
         				   	<div class="input-group textos">
-								<input type="text" id="login" name="login"  value="" class="form-control" placeholder="Email" required autofocus  style="width: 400px;">
+								<input type="text" id="login" name="login"  value="" class="form-control" placeholder="Senha" required autofocus  style="width: 400px;">
 								<span class="glyphicon glyphicon-search input-group-addon btn" onclick="fBusca()"></span>
-							</div>
-        				   <label for="senha">Senha:</label>
-        				   <div class="input-group senha">	
-                            <input type="password" id="senha" name="senha" value= "" class="form-control" placeholder="Senha" required  >
-        				   	<input type="confirm_password" id="senha" name="senha" value= "" class="form-control" placeholder="Confirmar senha" required  >
-        				   <input type= "hidden" id="nivelAcesso" name="nivelAcesso" value="2">
+							</div><br>
+        				   <label  for="Senha" >Senha:</label>
+							<input type="Password" id="senha" name="senha" class="form-control" style="width: 400px; placeholder="Senha" required >
+							<label for="Senha" >Repita Senha:</label>
+							<input type="Password" id="senha" name="senha" class="form-control" style="width: 400px; placeholder="Senha">
         				   </div>
         				   <br>
         				   <button type="submit" class="btn btn-lg btn-primary" >Cadastrar</button>
@@ -91,16 +90,21 @@
         					<thead>
         						<tr>
         							<th># </th>
-        							<th>Nome</th>
-        							<th>Telefone</th>
+        							<th>Login</th>
         						</tr>
         					</thead>
         					 <tbody>
+							<?php 
+                                foreach($login as $row):
+                            ?>
 								<tr>
-									<td><a href="gerenciarcliente.php?id="></a></td>
-									<td></td>
-									<td></td>
+									<td><?php echo $row->idLogin;?></td>
+									<td><?php echo $row->login;?></td>
 								</tr>
+								<?php 
+                                endforeach;
+                             ?>
+                            </tbody>
         				</table>
         				</div>
         		    </div>

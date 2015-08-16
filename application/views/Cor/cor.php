@@ -61,17 +61,17 @@
 	 <div class="container posicaopainel">
 	 	<div class="panel panel-default">
         		<div class="panel-heading">
-        			<h3><span class="glyphicon glyphicon-thumbs-up"></span> Gerenciar Marcas</h3>
+        			<h3><span class="glyphicon glyphicon-thumbs-up"></span> Gerenciar Cores</h3>
         		</div>
         		<div class="panel-body">
         			<div class="container">
-        				<form class="form" role="form" method="post" action="<?php echo base_url("marca/cadastrar")?>">
+        				<form class="form" role="form" method="post" action="<?php echo base_url("cor/cadastrar")?>">
         				  	<label for="codigoCliente" class="sr-only">Código</label>
-        				  	<input type="text" id="idCliente" name="idCliente" value="" class="form-control codigo" readonly="readonly"> 
+        				  	<input type="text" id="idCor" name="idCor" value="" class="form-control codigo" readonly="readonly"> 
         		
-        				   	<label for="nome">Marca:</label>
+        				   	<label for="nome">Cor:</label>
         				   	<div class="input-group textos">
-								<input type="text" id="marca" name="marca" value= "" class="form-control" placeholder="Nome Marca" required autofocus >
+								<input type="text" id="cor" name="cor" value= "" class="form-control" placeholder="Nome Cor" required autofocus >
 									<span class="glyphicon glyphicon-search input-group-addon btn" onclick="fBusca()"></span>
 							</div>
                             <br>
@@ -109,24 +109,24 @@
         					<thead>
         						<tr>
         							<th># </th>
-                                    <th>Marca</th>
+                                    <th>Cor</th>
         							<th></th>
         						</tr>
         					</thead>
         					 <tbody>
-                            <?php 
-                                foreach($marcas as $row):
-                            ?>
+                            <!--<?php 
+                                //foreach($cor as $row):
+                            ?>-->
 								<tr>
-									<td><?php echo $row->idMarca;?></td>
-									<td><?php echo $row->marca;?></td>
-									 <td><a class="glyphicon glyphicon-pencil btn" href="<?php echo base_url('administrador/marca/editar/'); echo "/". $row->idMarca;?>"></a> &nbsp;&nbsp;
-                                         <a class="glyphicon glyphicon-remove btn red" href="#"></a> 
+									<td><!--<?php echo $row->idCor;?>--></td>
+									<td><!--<?php echo $row->Cor;?>--></td>
+									 <!--h<td><a class="glyphicon glyphicon-pencil btn" ref="<?php echo base_url('administrador/cor/editar/'); echo "/". $row->idCor;?>"</a> &nbsp;&nbsp;
+                                         <a class="glyphicon glyphicon-remove btn red" href="#"></a> -->
                                     </td>
 								</tr>
-                            <?php 
-                                endforeach;
-                             ?>
+                            <!--<?php 
+                                //endforeach;
+                             ?>-->
                              </tbody>    
         				</table>
         				</div>

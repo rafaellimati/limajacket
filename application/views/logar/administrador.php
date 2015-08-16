@@ -22,10 +22,10 @@
 		</nav>
 		<div class="container" style="width:260px;margin-top:150px;">
 
-			<form class="form-signin" role="form" method="post" action="<?php echo base_url("administrador/login") ?>">
+			<form class="form" role="form" method="post" action="<?php echo base_url("administrador/login") ?>">
 				<h2 class="form-signin-heading">Login</h2>
-				<label for="login" class="sr-only">E-Mail</label>
-				<input type="login" id="login" name="login" class="form-control" placeholder="Digite seu Email" required autofocus><br>
+				<label for="login" class="input-group textos">Login</label>
+				<input type="text" id="login" name="login"  value="" class="form-control" placeholder="Login" required autofocus><br>
 				<label for="Senha" >Senha:</label>
 				<input type="Password" id="senha" name="senha" class="form-control" placeholder="Senha" required><br>
 				<div class="checkbox" ><br>

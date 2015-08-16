@@ -1,5 +1,5 @@
 -- MySQL Workbench Synchronization
--- Generated: 2015-08-06 12:10
+-- Generated: 2015-08-08 10:46
 -- Model: New Model
 -- Version: 1.0
 -- Project: Name of the project
@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS `JaquetasTcc`.`TbJaqueta` (
   `idJaqueta` INT(11) NOT NULL AUTO_INCREMENT,
   `tecido` VARCHAR(100) NULL DEFAULT NULL,
   `valor` DOUBLE NOT NULL,
+  `descricao` VARCHAR(150) NOT NULL,
   `idMarca` INT(11) NOT NULL,
   `idLogin` INT(11) NOT NULL,
   PRIMARY KEY (`idJaqueta`),
@@ -94,19 +95,18 @@ COLLATE = utf8_general_ci;
 CREATE TABLE IF NOT EXISTS `JaquetasTcc`.`TbCliente` (
   `idCliente` INT(11) NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
-  `email` VARCHAR(100) NULL DEFAULT NULL,
+  `email` VARCHAR(100) NOT NULL,
   `cpf` VARCHAR(20) NOT NULL,
-  `rg` VARCHAR(20) NOT NULL,
-  `orgaoEmissor` VARCHAR(50) NOT NULL,
   `idEndereco` INT(11) NOT NULL,
   `idTelefone` INT(11) NOT NULL,
   `idLogin` INT(11) NOT NULL,
+  `idSexo` INT(11) NOT NULL,
   PRIMARY KEY (`idCliente`),
   UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC),
-  UNIQUE INDEX `rg_UNIQUE` (`rg` ASC),
   INDEX `fk_TbCliente_TbEndereco1_idx` (`idEndereco` ASC),
   INDEX `fk_TbCliente_TbTelefone1_idx` (`idTelefone` ASC),
   INDEX `fk_TbCliente_TbLogin1_idx` (`idLogin` ASC),
+  INDEX `fk_TbCliente_TbSexo1_idx` (`idSexo` ASC),
   CONSTRAINT `fk_TbCliente_TbEndereco1`
     FOREIGN KEY (`idEndereco`)
     REFERENCES `JaquetasTcc`.`TbEndereco` (`idEndereco`)
@@ -120,6 +120,11 @@ CREATE TABLE IF NOT EXISTS `JaquetasTcc`.`TbCliente` (
   CONSTRAINT `fk_TbCliente_TbLogin1`
     FOREIGN KEY (`idLogin`)
     REFERENCES `JaquetasTcc`.`TbLogin` (`idLogin`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_TbCliente_TbSexo1`
+    FOREIGN KEY (`idSexo`)
+    REFERENCES `JaquetasTcc`.`TbSexo` (`idSexo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -222,7 +227,7 @@ COLLATE = utf8_general_ci;
 
 CREATE TABLE IF NOT EXISTS `JaquetasTcc`.`TbTamanho` (
   `idTamanho` INT(11) NOT NULL AUTO_INCREMENT,
-  `tamanho` VARCHAR(50) NOT NULL,
+  `tamanho` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`idTamanho`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
@@ -232,6 +237,14 @@ CREATE TABLE IF NOT EXISTS `JaquetasTcc`.`TbMarca` (
   `idMarca` INT(11) NOT NULL AUTO_INCREMENT,
   `marca` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`idMarca`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS `JaquetasTcc`.`TbSexo` (
+  `idSexo` INT(11) NOT NULL AUTO_INCREMENT,
+  `sexo` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`idSexo`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;

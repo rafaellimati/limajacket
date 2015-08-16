@@ -30,11 +30,11 @@ class UsuarioModel extends CI_Model{
 
 	public function getAllUsuario(){
 
-		$this->db->from('tb_usuario');
+		$this->db->from('tbLogin');
 
-		$this->db->order_by('id');
+		$this->db->order_by('login');
 
-		$this->db->where('ativo', 1);
+		//$this->db->where('ativo', 1);
 
 		return $this->db->get();
 	}

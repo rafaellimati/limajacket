@@ -102,6 +102,33 @@
         				   	
         				   	?>
         				   </select>
+        				   <br>
+        				   <select name="idCor">
+        				   	<?php 
+        				   	foreach ($Cor as $key) {
+								   echo "<option value=\"$key->idCor\">$key->cor</option>";
+							   }
+        				   	
+        				   	?>
+        				   </select>
+        				   <select name="idTamanho">
+        				   	<?php 
+        				   	foreach ($Tamanho as $key) {
+								   echo "<option value=\"$key->idTamanho\">$key->tamanho</option>";
+							   }
+        				   	
+        				   	?>
+        				   </select>
+        				   <br>
+        				   <select name="idStatus">
+        				   	<?php 
+        				   	foreach ($Descricao as $key) {
+								   echo "<option value=\"$key->idStatus\">$key->descricao</option>";
+							   }
+        				   	
+        				   	?>
+        				   </select>
+        				   <br>
         				   </div>
         				   <br>
         				   

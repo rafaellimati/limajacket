@@ -21,7 +21,7 @@
 	       				<li><a href="relatorioCliente.php">Cliente</a></li>
 	       				<li><a href="relatorioPlacas.php">Placas</a></li>
 	       				<li><a href="relatorioFrase.php">Frase</a></li>
-	       				<li class="divider"> </li>
+	       				<li class="divider"></li>
 	       				<li class="dropdown-header">Período</li>
 	       				<li><a href="relatorioPorMes.html">Por Mes</a></li>
 	       				<li><a href="relatorioPorAno.html">Por Ano</a></li>
