@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ttbcliente`
+-- Estrutura da tabela `tbcliente`
 --
 
 CREATE TABLE IF NOT EXISTS `tbcliente` (
