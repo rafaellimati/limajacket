@@ -115,7 +115,7 @@
         					</thead>
         					 <tbody>
                             <?php 
-                                foreach($cor as $row):
+                                foreach($cores as $row):
                             ?>
 								<tr>
 									<td><?php echo $row->idCor;?></td>

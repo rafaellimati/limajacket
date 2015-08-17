@@ -28,7 +28,7 @@ class administrador extends CI_Controller {
 		$this->load->model('JaquetaModel');
 		$this->load->model('EstoqueModel');
 		$this->load->model('UsuarioModel');
-		$this->load->model('CorModel');
+		$this->load->model('corModel');
 		$this->load->model('TamanhoModel');
 		$this->load->model('StatusModel');
 		
@@ -101,8 +101,8 @@ class administrador extends CI_Controller {
 		}
 		$dados = array(
 		'pasta' => 'Cor',
-		'view'  => 'cor',
-		'cor'     => $this->CorModel->getAllCor()->result(),
+		'view' =>  $View, 
+		'cores'     => $this->corModel->getAllCor()->result(),
 		);
 		$this->load->view('administrador',$dados);
 	}
