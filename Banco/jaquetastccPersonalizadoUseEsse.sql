@@ -6,7 +6,7 @@
 -- Generation Time: 17-Ago-2015 às 05:35
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
-
+ 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbcliente`
+-- Estrutura da tabela `ttbcliente`
 --
 
 CREATE TABLE IF NOT EXISTS `tbcliente` (
