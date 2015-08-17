@@ -7,6 +7,7 @@ CREATE SCHEMA IF NOT EXISTS `JaquetasTcc` DEFAULT CHARACTER SET utf8 COLLATE utf
 CREATE TABLE IF NOT EXISTS `JaquetasTcc`.`TbCor` (
   `idCor` INT(11) NOT NULL AUTO_INCREMENT,
   `cor` VARCHAR(20) NOT NULL,
+  `flagAtivo` TINYINT(4) NOT NULL,
   PRIMARY KEY (`idCor`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
@@ -20,9 +21,15 @@ CREATE TABLE IF NOT EXISTS `JaquetasTcc`.`TbJaqueta` (
   `descricao` VARCHAR(150) NOT NULL,
   `idMarca` INT(11) NOT NULL,
   `idLogin` INT(11) NOT NULL,
+  `idTamanho` INT(11) NOT NULL,
+  `idCor` INT(11) NOT NULL,
+  `idStatus` INT(11) NOT NULL,
   PRIMARY KEY (`idJaqueta`),
   INDEX `fk_TbJaqueta_TbMarca1_idx` (`idMarca` ASC),
   INDEX `fk_TbJaqueta_TbLogin1_idx` (`idLogin` ASC),
+  INDEX `fk_TbJaqueta_TbTamanho1_idx` (`idTamanho` ASC),
+  INDEX `fk_TbJaqueta_TbCor1_idx` (`idCor` ASC),
+  INDEX `fk_TbJaqueta_TbStatus1_idx` (`idStatus` ASC),
   CONSTRAINT `fk_TbJaqueta_TbMarca1`
     FOREIGN KEY (`idMarca`)
     REFERENCES `JaquetasTcc`.`TbMarca` (`idMarca`)
@@ -31,6 +38,21 @@ CREATE TABLE IF NOT EXISTS `JaquetasTcc`.`TbJaqueta` (
   CONSTRAINT `fk_TbJaqueta_TbLogin1`
     FOREIGN KEY (`idLogin`)
     REFERENCES `JaquetasTcc`.`TbLogin` (`idLogin`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_TbJaqueta_TbTamanho1`
+    FOREIGN KEY (`idTamanho`)
+    REFERENCES `JaquetasTcc`.`TbTamanho` (`idTamanho`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_TbJaqueta_TbCor1`
+    FOREIGN KEY (`idCor`)
+    REFERENCES `JaquetasTcc`.`TbCor` (`idCor`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_TbJaqueta_TbStatus1`
+    FOREIGN KEY (`idStatus`)
+    REFERENCES `JaquetasTcc`.`TbStatus` (`idStatus`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -190,38 +212,10 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
 
-CREATE TABLE IF NOT EXISTS `JaquetasTcc`.`TbEstoque` (
-  `idEstoque` INT(11) NOT NULL AUTO_INCREMENT,
-  `quantidade` INT(11) NOT NULL,
-  `idCor` INT(11) NOT NULL,
-  `idTamanho` INT(11) NOT NULL,
-  `idJaqueta` INT(11) NOT NULL,
-  PRIMARY KEY (`idEstoque`),
-  INDEX `fk_TbEstoque_TbCor1_idx` (`idCor` ASC),
-  INDEX `fk_TbEstoque_TbTamanho1_idx` (`idTamanho` ASC),
-  INDEX `fk_TbEstoque_TbJaqueta1_idx` (`idJaqueta` ASC),
-  CONSTRAINT `fk_TbEstoque_TbCor1`
-    FOREIGN KEY (`idCor`)
-    REFERENCES `JaquetasTcc`.`TbCor` (`idCor`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_TbEstoque_TbTamanho1`
-    FOREIGN KEY (`idTamanho`)
-    REFERENCES `JaquetasTcc`.`TbTamanho` (`idTamanho`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_TbEstoque_TbJaqueta1`
-    FOREIGN KEY (`idJaqueta`)
-    REFERENCES `JaquetasTcc`.`TbJaqueta` (`idJaqueta`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_general_ci;
-
 CREATE TABLE IF NOT EXISTS `JaquetasTcc`.`TbTamanho` (
   `idTamanho` INT(11) NOT NULL AUTO_INCREMENT,
   `tamanho` VARCHAR(10) NOT NULL,
+  `flagAtivo` TINYINT(4) NOT NULL,
   PRIMARY KEY (`idTamanho`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
@@ -240,6 +234,14 @@ CREATE TABLE IF NOT EXISTS `JaquetasTcc`.`TbSexo` (
   `idSexo` INT(11) NOT NULL AUTO_INCREMENT,
   `sexo` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`idSexo`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS `JaquetasTcc`.`TbStatus` (
+  `idStatus` INT(11) NOT NULL AUTO_INCREMENT,
+  `descricao` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`idStatus`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
