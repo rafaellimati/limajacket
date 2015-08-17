@@ -95,10 +95,14 @@ class administrador extends CI_Controller {
 
 	public function Cor()
 	{
+		$View = $this->uri->segment(3);
+		if($View != "editar"){
+			$View = "cor";
+		}
 		$dados = array(
 		'pasta' => 'Cor',
 		'view'  => 'cor',
-		
+		'cor'     => $this->CorModel->getAllCor()->result(),
 		);
 		$this->load->view('administrador',$dados);
 	}
@@ -108,6 +112,7 @@ class administrador extends CI_Controller {
 		$dados = array(
 		'pasta' => 'Tamanho',
 		'view'   => 'tamanho',
+		'Tamanho' => $this->TamanhoModel->getAllTamanho()->result(),
 	 	);
 	 	$this->load->view('administrador',$dados);
 	}
@@ -117,6 +122,7 @@ class administrador extends CI_Controller {
 		$dados = array(
 		'pasta' => 'Status',
 		'view'   => 'status',
+		'Descricao'  => $this->StatusModel->getAllStatus()->result(),
 	 	);
 	 	$this->load->view('administrador', $dados);
 	}
@@ -124,6 +130,7 @@ class administrador extends CI_Controller {
 	public function login(){
 		$this->form_validation->set_rules('login','Login', 'trim|required|max_length[20]');
 		$this->form_validation->set_rules('senha', 'Senha', 'trim|required|strtolower');
+		
 
 				//Verifica se os campo foi preenchido corretamente e retorna true para a validação
 		if($this->form_validation->run()){

@@ -73,7 +73,13 @@ if($this->session->flashdata('edicaook')):
 							</div>
                             <label for="nome">Marca:</label>
                             <div class="input-group textos">
-                                <select name="flagAtivo">
+                                <?php 
+									echo form_dropdown('flagAtivo', array('0' => 'Inativo', '1' => 'Ativo'), $marca->flagAtivo);
+ 								?>
+                            	
+                            	
+                            	
+                                <!--<select name="flagAtivo">
                                     <?php if( $marca->flagAtivo == "1"): ?>
                                         <option value="<?php echo $marca->flagAtivo; ?>">Ativo<option>
                                         <option value="0">Inativo<option>
@@ -83,7 +89,7 @@ if($this->session->flashdata('edicaook')):
                                         <option value="<?php echo $marca->flagAtivo; ?>">Inativo<option>
                                         <option value="1">Ativo<option>
                                     <?php endif; ?>
-                                </select>
+                                </select>-->
                             </div>
                             <br>
         				   <button  type="submit" class="btn btn-lg btn-primary" >Alterar</button>

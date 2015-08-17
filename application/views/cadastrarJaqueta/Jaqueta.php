@@ -82,17 +82,17 @@
         				   </div>
         				   <br>
         				   <label for="textos">Valor:</label>
-        				   <div class="input-group telefone">
+        				   <div class="input-group textos">
         				   	<input type="text" id="Valor" name="valor" value= "" class="form-control" placeholder="Valor" required  >
         				   </div>
         				   <br>
         				   <label for="textos">Descrição:</label>
-        				   <div class="input-group telefone">
+        				   <div class="input-group textos ">
         				   	<input type="text" id="descricao" name="descricao" value= "" class="form-control" placeholder="Descrição" required  >
         				   </div>
         				   <br>
         				    <label for="textos">Marca:</label>
-        				   <div class="input-group telefone">
+        				   <div class="input-group textos">
         				   <!--<input type="text" id="marca" name="marca" value= "" class="form-control" placeholder="Marca" required  >-->
         				   <select name="idMarca">
         				   	<?php 
@@ -102,7 +102,9 @@
         				   	
         				   	?>
         				   </select>
-        				   <br>
+        				   <br><br>
+        				   <label for="textos">Cor:</label>
+        				   <div class="input-group textos">
         				   <select name="idCor">
         				   	<?php 
         				   	foreach ($Cor as $key) {
@@ -111,6 +113,10 @@
         				   	
         				   	?>
         				   </select>
+        				   <br>
+        				   <br>
+        				   <label for="textos">Tamanho:</label>
+        				   <div class="input-group textos">
         				   <select name="idTamanho">
         				   	<?php 
         				   	foreach ($Tamanho as $key) {
@@ -120,6 +126,9 @@
         				   	?>
         				   </select>
         				   <br>
+        				   <br>
+        				   <label for="textos">Status:</label>
+        				   <div class="input-group textos">
         				   <select name="idStatus">
         				   	<?php 
         				   	foreach ($Descricao as $key) {
@@ -128,6 +137,7 @@
         				   	
         				   	?>
         				   </select>
+        				   <br>
         				   <br>
         				   </div>
         				   <br>
@@ -149,6 +159,9 @@
         							<th>Valor</th>
         							<th>Descição</th>
         							<th>Marca</th>
+        							<th>Cor</th>
+        							<th>Tamanho</th>
+        							<th>Status</th>
         						</tr>
         					</thead>
         					 <tbody>
@@ -162,6 +175,10 @@
 									<td><?php echo $row->valor;?></td>
 									<td><?php echo $row->descricao;?></td>
 									<td><?php echo $row->idMarca;?></td>
+									<td><?php echo $row->idCor;?></td>
+									<td><?php echo $row->idTamanho;?></td>
+									<td><?php echo $row->descricao;?></td>
+									
 								</tr>
 						     <?php 
                                 endforeach;

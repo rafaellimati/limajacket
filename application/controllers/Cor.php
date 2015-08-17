@@ -61,7 +61,7 @@ class Cor extends CI_Controller {
 
 			$this->corModel->insertCor($dados);
 		}else{
-			$this->session->set_flashdata('erro', 'Tamanho já existe!');
+			$this->session->set_flashdata('erro', 'Cor já existe!');
 		}
 
 /*		$dados = array(
@@ -73,4 +73,26 @@ class Cor extends CI_Controller {
 		redirect('administrador/cor/cadastrar');
 
 	}
+
+		public function editar(){
+
+		$this->form_validation->set_rules('cor', 'Cor', 'trim|required|max_length[45]|strtolower|ucwords');
+		$this->form_validation->set_rules('idCor', 'idCor', 'required');
+
+		if($this->form_validation->run()){
+			//Pega os valores do formulário
+			$dados = elements(array('cor','flagAtivo'), $this->input->post());
+			//Envia um update pro banco passando o idMarca do formulário
+			$dados['flagAtivo'] = 1;
+			//setando flagAtivo para TRUE;
+			$this->corModel->updateCor($dados, array('idCor' => $this->input->post('idCor')));
+		
+		}else{
+			$this->session->set_flashdata('erro', 'Cor já existe!');
+		}
+
+
+		redirect('administrador/cor/editar');
+
 	}
+}

@@ -54,12 +54,13 @@ class usuario extends CI_Controller {
 		if($this->form_validation->run()){
 
 			$dados = elements(array('login', 'senha', 'nivelAcesso'), $this->input->post());
+			$dados['senha'] = md5($dados['senha']);
 
 			//$dados['senha'] = sha1($dados['login']);
 			/*$dados['ativo'] = 1;
             $dados['primeiro_acesso'] = 1;*/
 
-			$this->UsuarioModel->insertUsuario($dados);
+		    $this->UsuarioModel->insertUsuario($dados);
 		}else{
 			$this->session->set_flashdata('erro', 'Campo(s) obrigatório(s) não preenchido(s)');
 		}

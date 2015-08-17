@@ -67,7 +67,7 @@
         			<div class="container">
         				<form class="form" role="form" method="post" action="<?php echo base_url("marca/cadastrar")?>">
         				  	<label for="codigoCliente" class="sr-only">Código</label>
-        				  	<input type="text" id="idCliente" name="idCliente" value="" class="form-control codigo" readonly="readonly"> 
+        				  	<input type="text" id="idMarca" name="idMarca" value="" class="form-control codigo" readonly="readonly"> 
         		
         				   	<label for="nome">Marca:</label>
         				   	<div class="input-group textos">

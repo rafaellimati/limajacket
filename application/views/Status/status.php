@@ -109,24 +109,24 @@
         					<thead>
         						<tr>
         							<th># </th>
-                                    <th>Tamanho</th>
+                                    <th>Status</th>
         							<th></th>
         						</tr>
         					</thead>
         					 <tbody>
-                            <!--<?php 
-                                //foreach($cor as $row):
-                            ?>-->
+                            <?php 
+                                foreach($Descricao as $row):
+                            ?>
 								<tr>
-									<td><!--<?php echo $row->idCor;?>--></td>
-									<td><!--<?php echo $row->Cor;?>--></td>
+									<td><?php echo $row->idStatus;?></td>
+									<td><?php echo $row->descricao;?></td>
 									 <!--h<td><a class="glyphicon glyphicon-pencil btn" ref="<?php echo base_url('administrador/cor/editar/'); echo "/". $row->idCor;?>"</a> &nbsp;&nbsp;
                                          <a class="glyphicon glyphicon-remove btn red" href="#"></a> -->
                                     </td>
 								</tr>
-                            <!--<?php 
-                                //endforeach;
-                             ?>-->
+                            <?php 
+                                endforeach;
+                             ?>
                              </tbody>    
         				</table>
         				</div>

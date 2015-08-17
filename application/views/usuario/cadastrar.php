@@ -69,13 +69,13 @@
         		
         				   	<label for="login">Login:</label>
         				   	<div class="input-group textos">
-								<input type="text" id="login" name="login"  value="" class="form-control" placeholder="Senha" required autofocus  style="width: 400px;">
+								<input type="text" id="login" name="login"  value="" class="form-control" placeholder="Login" required autofocus  style="width: 400px;">
 								<span class="glyphicon glyphicon-search input-group-addon btn" onclick="fBusca()"></span>
 							</div><br>
         				   <label  for="Senha" >Senha:</label>
 							<input type="Password" id="senha" name="senha" class="form-control" style="width: 400px; placeholder="Senha" required >
 							<label for="Senha" >Repita Senha:</label>
-							<input type="Password" id="senha" name="senha" class="form-control" style="width: 400px; placeholder="Senha">
+							<input type="Password" id="senha" name="senha" class="form-control" style="width: 400px"; placeholder="Senha">
         				   </div>
         				   <br>
         				   <button type="submit" class="btn btn-lg btn-primary" >Cadastrar</button>

@@ -32,7 +32,7 @@ class UsuarioModel extends CI_Model{
 
 		$this->db->from('tbLogin');
 
-		$this->db->order_by('login');
+		$this->db->order_by('idlogin');
 
 		//$this->db->where('ativo', 1);
 
