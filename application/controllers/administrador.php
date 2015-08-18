@@ -86,7 +86,7 @@ class administrador extends CI_Controller {
 		'view'  => 'Jaqueta',
 		'marca' => $this->MarcaModel->getAllActive()->result(),
 		'jaqueta' => $this->JaquetaModel->getAllJaqueta()->result(),
-		'Cor'     => $this->CorModel->getAllCor()->result(),
+		'cor'     => $this->corModel->getAllCor()->result(),
 		'Tamanho' => $this->TamanhoModel->getAllTamanho()->result(),
 		'Descricao'  => $this->StatusModel->getAllStatus()->result(),
 		);
