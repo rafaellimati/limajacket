@@ -2,7 +2,7 @@
 
 class MarcaModel extends CI_Model{
 
-	public function insertMarca($dados = null){
+	 public function insertMarca($dados = null){
 
 		if($dados != null){
 

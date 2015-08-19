@@ -73,4 +73,26 @@ class Tamanho extends CI_Controller {
 		redirect('administrador/tamanho/cadastrar');
 
 	}
+
+public function editar(){
+
+		$this->form_validation->set_rules('tamanho', 'Tamanho', 'trim|required|max_length[45]|strtolower|ucwords');
+		$this->form_validation->set_rules('idTamanho', 'idTamanho', 'required');
+
+		if($this->form_validation->run()){
+			//Pega os valores do formulário
+			$dados = elements(array('tamanho','flagAtivo'), $this->input->post());
+			//Envia um update pro banco passando o idMarca do formulário
+			//$dados['flagAtivo'] = 1;
+			//setando flagAtivo para TRUE;
+			$this->TamanhoModel->updateTamanho($dados, array('idTamanho' => $this->input->post('idTamanho')));
+		
+		}else{
+			$this->session->set_flashdata('erro', 'Tamanho já existe!');
+		}
+
+
+		redirect('administrador/Tamanho/editar');
+
+	}
 	}

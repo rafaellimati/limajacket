@@ -1,63 +1,3 @@
-<script type="text/javascript">
-		function  fBusca(){
-			busca=document.getElementById('nome').value;
-			url="gerenciarcliente.php?nomeCliente="+busca;
-			window.location=url;
-			}
-						/*jQuery(document).ready(function() {
-            //Inicio Mascara Telefone
-            jQuery('input[type=tel]').mask("(99) 9999-9999?9").ready(function(event) {
-                var target, phone, element;
-                target = (event.currentTarget) ? event.currentTarget : event.srcElement;
-                phone = target.value.replace(/\D/g, '');
-                element = $(target);
-                element.unmask();
-                if(phone.length > 10) {
-                    element.mask("(99) 99999-999?9");
-                } else {
-                    element.mask("(99) 9999-9999?9");
-                }
-            });
-            //Fim Mascara Telefone
-            //Inicio Mascara RG
-            //jQuery("#rg").mask("99.999.999-*");
-            //Fim Mascara CPF
-            //Inicio Mascara CPF
-            //jQuery("#cpf").mask("999.999.999-99");
-            //Fim Mascara CPF
-        });
-        (jQuery);/*/
-
-
-
-       $(document).ready(function(){
-       	  $('#btnlimpar').click(function(){
-       	  	$('div').each(function(i){
-       	  		alert(i);
-       	  		$(this).css('background','red');
-       	  	});
-       	});
-
-
-
-     /*  $("#tabela-marca tr").click(function () {
-          var valor = $.trim($(this).find('td').eq(0).text());
-          alert(valor);
-       });*/
-
-
-       });
-       
-       
-       $('#nome').click(function(){
-        $this.css('background','#c2e9f1');
-       })
-       
-       $('#btnlimpar').disable='True';
-       
-       
-		</script>
-		<br><br><br>
 	 <div class="container posicaopainel">
 	 	<div class="panel panel-default">
         		<div class="panel-heading">
@@ -103,7 +43,6 @@
                         </form>
         				<p> </p>
         				<p> </p>
-        				<?php //echo $marcas; ?>
         				<div class="table-responsive tabelas">
         				<table class="table table-bordered table-hover" id="tabela-cor">
         					<thead>

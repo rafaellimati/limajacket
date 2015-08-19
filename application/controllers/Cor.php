@@ -83,7 +83,7 @@ class Cor extends CI_Controller {
 			//Pega os valores do formulário
 			$dados = elements(array('cor','flagAtivo'), $this->input->post());
 			//Envia um update pro banco passando o idMarca do formulário
-			$dados['flagAtivo'] = 1;
+			//$dados['flagAtivo'] = 1;
 			//setando flagAtivo para TRUE;
 			$this->corModel->updateCor($dados, array('idCor' => $this->input->post('idCor')));
 		

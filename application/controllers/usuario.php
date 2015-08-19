@@ -55,6 +55,7 @@ class usuario extends CI_Controller {
 
 			$dados = elements(array('login', 'senha', 'nivelAcesso'), $this->input->post());
 			$dados['senha'] = md5($dados['senha']);
+			$dados['nivelAcesso']= 2;
 
 			//$dados['senha'] = sha1($dados['login']);
 			/*$dados['ativo'] = 1;

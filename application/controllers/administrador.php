@@ -65,7 +65,7 @@ class administrador extends CI_Controller {
 		
 		$this->load->view('administrador', $dados);
 	}
-	public function Marca()
+        public function Marca()
 	{
 		$View = $this->uri->segment(3);
 		if($View != "editar"){
@@ -109,10 +109,14 @@ class administrador extends CI_Controller {
 	
 	public function Tamanho()
 	{
+		$View = $this->uri->segment(3);
+		if($View != "editar"){
+			$View = "Tamanho";
+		}
 		$dados = array(
 		'pasta' => 'Tamanho',
-		'view'   => 'tamanho',
-		'Tamanho' => $this->TamanhoModel->getAllTamanho()->result(),
+		'view' =>  $View, 
+		'Tamanhos' => $this->TamanhoModel->getAllTamanho()->result(),
 	 	);
 	 	$this->load->view('administrador',$dados);
 	}

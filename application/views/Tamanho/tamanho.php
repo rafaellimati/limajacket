@@ -1,63 +1,3 @@
-<script type="text/javascript">
-		function  fBusca(){
-			busca=document.getElementById('nome').value;
-			url="gerenciarcliente.php?nomeCliente="+busca;
-			window.location=url;
-			}
-						/*jQuery(document).ready(function() {
-            //Inicio Mascara Telefone
-            jQuery('input[type=tel]').mask("(99) 9999-9999?9").ready(function(event) {
-                var target, phone, element;
-                target = (event.currentTarget) ? event.currentTarget : event.srcElement;
-                phone = target.value.replace(/\D/g, '');
-                element = $(target);
-                element.unmask();
-                if(phone.length > 10) {
-                    element.mask("(99) 99999-999?9");
-                } else {
-                    element.mask("(99) 9999-9999?9");
-                }
-            });
-            //Fim Mascara Telefone
-            //Inicio Mascara RG
-            //jQuery("#rg").mask("99.999.999-*");
-            //Fim Mascara CPF
-            //Inicio Mascara CPF
-            //jQuery("#cpf").mask("999.999.999-99");
-            //Fim Mascara CPF
-        });
-        (jQuery);/*/
-
-
-
-       $(document).ready(function(){
-       	  $('#btnlimpar').click(function(){
-       	  	$('div').each(function(i){
-       	  		alert(i);
-       	  		$(this).css('background','red');
-       	  	});
-       	});
-
-
-
-     /*  $("#tabela-marca tr").click(function () {
-          var valor = $.trim($(this).find('td').eq(0).text());
-          alert(valor);
-       });*/
-
-
-       });
-       
-       
-       $('#nome').click(function(){
-        $this.css('background','#c2e9f1');
-       })
-       
-       $('#btnlimpar').disable='True';
-       
-       
-		</script>
-		<br><br><br>
 	 <div class="container posicaopainel">
 	 	<div class="panel panel-default">
         		<div class="panel-heading">
@@ -65,7 +5,7 @@
         		</div>
         		<div class="panel-body">
         			<div class="container">
-        				<form class="form" role="form" method="post" action="<?php echo base_url("tamanho/cadastrar")?>">
+        				<form class="form" role="form" method="post" action="<?php echo base_url("Tamanho/cadastrar")?>">
         				  	<label for="codigoCliente" class="sr-only">Código</label>
         				  	<input type="text" id="idTamanho" name="idTamanho" value="" class="form-control codigo" readonly="readonly"> 
         		
@@ -103,9 +43,8 @@
                         </form>
         				<p> </p>
         				<p> </p>
-        				<?php //echo $marcas; ?>
         				<div class="table-responsive tabelas">
-        				<table class="table table-bordered table-hover" id="tabela-marca">
+        				<table class="table table-bordered table-hover" id="tabela-tamanho">
         					<thead>
         						<tr>
         							<th># </th>
@@ -115,13 +54,13 @@
         					</thead>
         					 <tbody>
                             <?php 
-                                foreach($Tamanho as $row):
+                                foreach($Tamanhos as $row):
                             ?>
 								<tr>
 									<td><?php echo $row->idTamanho;?></td>
 									<td><?php echo $row->tamanho;?></td>
-									 <!--h<td><a class="glyphicon glyphicon-pencil btn" ref="<?php echo base_url('administrador/cor/editar/'); echo "/". $row->idCor;?>"</a> &nbsp;&nbsp;
-                                         <a class="glyphicon glyphicon-remove btn red" href="#"></a> -->
+									 <td><a class="glyphicon glyphicon-pencil btn" href="<?php echo base_url('administrador/Tamanho/editar/'); echo "/". $row->idTamanho;?>"></a> &nbsp;&nbsp;
+                                         <a class="glyphicon glyphicon-remove btn red" href="#"></a>
                                     </td>
 								</tr>
                             <?php 

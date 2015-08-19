@@ -21,40 +21,7 @@ if($this->session->flashdata('edicaook')):
     </div>
 </div>
 <?php endif; ?>
-<script type="text/javascript">
-		function  fBusca(){
-			busca=document.getElementById('nome').value;
-			url="gerenciarcliente.php?nomeCliente="+busca;
-			window.location=url;
-			}
-       $(document).ready(function(){
-       	  $('#btnlimpar').click(function(){
-       	  	$('div').each(function(i){
-       	  		alert(i);
-       	  		$(this).css('background','red');
-       	  	});
-       	});
 
-
-
-     /*  $("#tabela-marca tr").click(function () {
-          var valor = $.trim($(this).find('td').eq(0).text());
-          alert(valor);
-       });*/
-
-
-       });
-       
-       
-       $('#nome').click(function(){
-        $this.css('background','#c2e9f1');
-       })
-       
-       $('#btnlimpar').disable='True';
-       
-       
-		</script>
-		<br><br><br>
 	 <div class="container posicaopainel">
 	 	<div class="panel panel-default">
         		<div class="panel-heading">
@@ -76,20 +43,6 @@ if($this->session->flashdata('edicaook')):
                                 <?php 
 									echo form_dropdown('flagAtivo', array('0' => 'Inativo', '1' => 'Ativo'), $marca->flagAtivo);
  								?>
-                            	
-                            	
-                            	
-                                <!--<select name="flagAtivo">
-                                    <?php if( $marca->flagAtivo == "1"): ?>
-                                        <option value="<?php echo $marca->flagAtivo; ?>">Ativo<option>
-                                        <option value="0">Inativo<option>
-                                    <?php endif; ?>
-                                    <?php if ($marca->flagAtivo == "0"): ?>
-
-                                        <option value="<?php echo $marca->flagAtivo; ?>">Inativo<option>
-                                        <option value="1">Ativo<option>
-                                    <?php endif; ?>
-                                </select>-->
                             </div>
                             <br>
         				   <button  type="submit" class="btn btn-lg btn-primary" >Alterar</button>
@@ -109,8 +62,6 @@ if($this->session->flashdata('edicaook')):
 
                         </form>
         				<p> </p>
-        				<p> </p>
-        				<?php //echo $marcas; ?>
         				<div class="table-responsive tabelas">
         				<table class="table table-bordered table-hover" id="tabela-marca">
         					<thead>

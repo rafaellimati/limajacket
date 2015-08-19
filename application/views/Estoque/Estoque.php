@@ -1,14 +1,3 @@
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Placas</title>
-		<meta name="author" content="Rafael" />
-		<!-- Date: 2014-11-20 -->
-		<link type="text/css" href="<?php echo base_url ("static/css/bootstrap.css")?>" rel="stylesheet" media="screen">
-		<link type="text/css" href="<?php echo base_url ("static/css/Estilos.css")?>" rel="stylesheet" media="screen">
-		<!-- Date: 2014-11-20 -->
-	</head>
-
 		<div class="container posicaopainel" style:"margin-top:100px;">
 			<div class="panel panel-primary">
 				<div class="panel-heading">

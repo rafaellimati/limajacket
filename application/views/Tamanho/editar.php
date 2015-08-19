@@ -1,18 +1,18 @@
 <?php 
 
 //Pega o seguimento 4 da url
-$idCor = $this->uri->segment(4);
+$idTamanho = $this->uri->segment(4);
 
-if($idCor == null) redirect('administrador/cor');
+if($idTamanho == null) redirect('administrador/Tamanho');
 
-$cor = $this->corModel->getById($idCor)->row();
+$tamanho = $this->TamanhoModel->getById($idTamanho)->row();
 
 if($this->session->flashdata('edicaook')):
 ?>
 <div style="position: absolute; top: 128px;">
     <script>
         setTimeout(function(){
-            $('#corSucessoEditar').fadeOut(3000);
+            $('#tamanhoSucessoEditar').fadeOut(3000);
         }, 4000);
     </script>
     <div id="corSucessoEditar" class="alert alert-success fade in" style="width: 1038px;">
@@ -30,19 +30,19 @@ if($this->session->flashdata('edicaook')):
         		</div>
         		<div class="panel-body">
         			<div class="container">
-        				<form class="form" role="form" method="post" action="<?php echo base_url("cor/editar")?>">
+        				<form class="form" role="form" method="post" action="<?php echo base_url("Tamanho/editar")?>">
         				  	<label for="codigoCliente" class="sr-only">Código</label>
-        				  	<input type="text" id="idCor" name="idCor" value="<?php echo $cor->idCor; ?>" class="form-control codigo" readonly="readonly"> 
+        				  	<input type="text" id="idTamanho" name="idTamanho" value="<?php echo $tamanho->idTamanho; ?>" class="form-control codigo" readonly="readonly"> 
         		
-        				   	<label for="nome">Cor:</label>
+        				   	<label for="nome">Tamanho:</label>
         				   	<div class="input-group textos">
-								<input type="text" id="cor" name="cor" value= "<?php echo $cor->cor; ?>" class="form-control" placeholder="Nome Cor" required autofocus >
+								<input type="text" id="tamanho" name="tamanho" value= "<?php echo $tamanho->tamanho; ?>" class="form-control" placeholder="Nome Cor" required autofocus >
 									<span class="glyphicon glyphicon-search input-group-addon btn" onclick="fBusca()"></span>
 							</div>
-                            <label for="nome">Cor:</label>
+                            <label for="nome">Tamanho:</label>
                             <div class="input-group textos">
                                 <?php 
-									echo form_dropdown('flagAtivo', array('0' => 'Inativo', '1' => 'Ativo'), $cor->flagAtivo);
+									echo form_dropdown('flagAtivo', array('0' => 'Inativo', '1' => 'Ativo'), $tamanho->flagAtivo);
  								?>
                             </div>
                             <br>
@@ -75,12 +75,12 @@ if($this->session->flashdata('edicaook')):
         					</thead>
         					 <tbody>
                             <?php 
-                                foreach($cores as $row):
+                                foreach($Tamanhos as $row):
                             ?>
 								<tr>
-									<td><?php echo $row->idCor;?></td>
-									<td><?php echo $row->cor;?></td>
-									 <td><a class="glyphicon glyphicon-pencil btn" href="<?php echo base_url('cor/editar/'); echo "/". $row->idCor;?>"></a> &nbsp;&nbsp;
+									<td><?php echo $row->idTamanho;?></td>
+									<td><?php echo $row->tamanho;?></td>
+									 <td><a class="glyphicon glyphicon-pencil btn" href="<?php echo base_url('Tamanho/editar/'); echo "/". $row->idTamanho;?>"></a> &nbsp;&nbsp;
                                          <a class="glyphicon glyphicon-remove btn red" href="#"></a> 
                                     </td>
 								</tr>
