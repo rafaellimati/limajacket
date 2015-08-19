@@ -1,7 +1,7 @@
 		<div class="container posicaopainel" style:"margin-top:100px;">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h3><span class="glyphicon glyphicon-thumbs-up"> </span>  Cadastrar Estoque</h3>
+					<h3><span class="glyphicon glyphicon-thumbs-up"> </span>  Pesquisar Estoque</h3>
 				</div>
 				   <div class="panel-body" >
 					<div class="container"style:"width:260px";>
@@ -17,27 +17,9 @@
 					      <input type="text" class="form-control"  id="quantidade" name="quantidade" placeholder="Ex: 1,5">
 					  </div>
 					  <p></p>
-					 </form>
-					 <form class="form" role="form" method="post" action="<?php echo base_url("estoque/cadastrar")?>">
-					  <div class="form-group textos">
-					      <label for="dataCadastro">Tamanho:</label><br>
-					      <input type="text" class="form-control" id="idTamanho" name="idTamanho" placeholder="Ex: 2,0">
-					  </div>
 					  <p></p>
-					 </form>
-					 <form class="form" role="form" method="post" action="<?php echo base_url("estoque/cadastrar")?>">
-					  <label for="form-group textos">Cor:</label><br>
-					  <div class="input-group money">
-					      <input type="text" class="form-control" id="idCor" name="idCor" placeholder="Cor">
-					  </div>
-					  <p></p>
-					 </form>
-					 <form class="form" role="form" method="post" action="<?php echo base_url("estoque/cadastrar")?>">
 					  <label for="form-group textos">Jaqueta (comobox):</label><br>
 					  <div class="input-group money">
-					      <!--<input type="text" class="form-control" id="jaqueta" name="jaqueta" placeholder="valorPlaca">-->
-					  	<input type="hidden" id="bt" name="bt" value="">
-					  </div>
 					  <select name="idJaqueta">
 					  <?php 
         				   	foreach ($jaqueta as $key) {

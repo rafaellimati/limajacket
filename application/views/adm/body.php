@@ -18,6 +18,7 @@
 	       		<li><a href="<?php echo base_url("administrador/Cor") ?>">Cor</a></li>
 	       		<li><a href="<?php echo base_url("administrador/Tamanho") ?>">Tamanho</a></li>
 	       		<li><a href="<?php echo base_url("administrador/Status") ?>"> Status</a></li>
+	       		<li><a href="<?php echo base_url("administrador/Estoque") ?>"> Estoque</a></li>
 	       		<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Relatorios<span class="caret"> </span></a>
 	       			<ul class="dropdown-menu" role="menu">
 	       				<li><a href="#">Cliente</a></li>
