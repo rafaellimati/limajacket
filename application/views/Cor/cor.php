@@ -1,6 +1,7 @@
 	 <div class="container posicaopainel">
 	 	<div class="panel panel-default">
         		<div class="panel-heading">
+        			<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
         			<h3><span class="glyphicon glyphicon-thumbs-up"></span> Gerenciar Cores</h3>
         		</div>
         		<div class="panel-body">
