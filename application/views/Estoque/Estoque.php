@@ -2,6 +2,7 @@
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h3><span class="glyphicon glyphicon-thumbs-up"> </span>  Pesquisar Estoque</h3>
+					
 				</div>
 				   <div class="panel-body" >
 					<div class="container"style:"width:260px";>
