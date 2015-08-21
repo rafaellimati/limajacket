@@ -61,16 +61,23 @@ class EstoqueModel extends CI_Model{
 		return $this->db->get();
 	}
 	
-		/*public function getAllEstoque(){
+	public function getAllEstoque(){
 
-		$this->db->from('TbEstoque');
+		$this->db->select('count(idJaqueta) as quantidade ,jaqueta , tecido, valor,tbjaqueta.descricao as detalhes ,  marca, cor, tbstatus.descricao as statusDesc, tamanho ');
 
-		$this->db->order_by('quantidade');
 
-		//$this->db->where('ativo', 1);
+		$this->db->from('TbJaqueta');
+		$this->db->order_by('jaqueta');
+
+		$this->db->join('tbmarca', 'tbjaqueta.idMarca = tbmarca.idMarca', 'inner');
+		$this->db->join('tbcor', 'tbjaqueta.idCor = tbcor.idCor ', 'inner');
+		$this->db->join('tbstatus', 'tbjaqueta.idStatus = tbstatus.idStatus', 'inner');
+		$this->db->join('tbtamanho', 'tbjaqueta.idTamanho = tbtamanho.idTamanho', 'inner');
+
+		$this->db->group_by('tamanho, cor, jaqueta');
 
 		return $this->db->get();
-	}*/
+	}
 	
 	
 }

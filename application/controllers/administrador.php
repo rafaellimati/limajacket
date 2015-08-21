@@ -60,7 +60,7 @@ class administrador extends CI_Controller {
 		'pasta' => 'Estoque',
 		'view'  => 'Estoque',
 		'jaqueta' => $this->JaquetaModel->getAllJaqueta()->result(),
-		//'estoque' => $this->estoqueModel->getAllEstoque()->result(),
+		'estoque' => $this->EstoqueModel->getAllEstoque()->result()
 		);
 		
 		$this->load->view('administrador', $dados);
