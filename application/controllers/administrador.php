@@ -60,7 +60,7 @@ class administrador extends CI_Controller {
 		'pasta' => 'Estoque',
 		'view'  => 'Estoque',
 		'jaqueta' => $this->JaquetaModel->getAllJaqueta()->result(),
-		'estoque' => $this->EstoqueModel->getAllEstoque()->result()
+		//'estoque' => $this->estoqueModel->getAllEstoque()->result(),
 		);
 		
 		$this->load->view('administrador', $dados);
@@ -130,6 +130,14 @@ class administrador extends CI_Controller {
 	 	);
 	 	$this->load->view('administrador', $dados);
 	}
+	
+		public function inicio()
+		{
+			$dados = array(
+			'pasta' => 'inicio',
+			'view'  => 'inicio',
+			);
+		}
 	
 	public function login(){
 		$this->form_validation->set_rules('login','Login', 'trim|required|max_length[20]');
