@@ -26,7 +26,7 @@ class administrador extends CI_Controller {
 		//Carrega as funções da model marca
 		$this->load->model('MarcaModel');
 		$this->load->model('JaquetaModel');
-		$this->load->model('EstoqueModel');
+		$this->load->model('estoqueModel');
 		$this->load->model('UsuarioModel');
 		$this->load->model('corModel');
 		$this->load->model('TamanhoModel');
@@ -60,7 +60,7 @@ class administrador extends CI_Controller {
 		'pasta' => 'Estoque',
 		'view'  => 'Estoque',
 		'jaqueta' => $this->JaquetaModel->getAllJaqueta()->result(),
-		//'estoque' => $this->estoqueModel->getAllEstoque()->result(),
+		'estoque' => $this->estoqueModel->getAllEstoque()->result(),
 		);
 		
 		$this->load->view('administrador', $dados);
