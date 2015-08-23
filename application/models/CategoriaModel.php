@@ -15,14 +15,14 @@ class CategoriaModel extends CI_Model{
 		}
 	}
 	
-		public function getAllCategoria(){
+	public function getAllCategoria(){
 
 		$this->db->from('TbCategoria');
 
-		$this->db->order_by('idCategoria');
+		$this->db->order_by('categoria');
 
 		//$this->db->where('ativo', 1);
 
-		return $this->db->get();
+		return $this->db->get()->result();
 	}
 }

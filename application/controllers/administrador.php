@@ -88,7 +88,7 @@ class administrador extends CI_Controller {
 		'jaqueta' => $this->JaquetaModel->getAllJaqueta()->result(),
 		'cor'     => $this->corModel->getAllCor()->result(),
 		'Tamanho' => $this->TamanhoModel->getAllTamanho()->result(),
-		'Categoria'  => $this->CategoriaModel->getAllCategoria()->result(),
+		'Categoria'  => $this->CategoriaModel->getAllCategoria(),
 		);
 		$this->load->view('administrador',$dados);
 	}
@@ -126,7 +126,7 @@ class administrador extends CI_Controller {
 		$dados = array(
 		'pasta' => 'Categoria',
 		'view'   => 'categoria',
-		'Categoria'  => $this->CategoriaModel->getAllCategoria()->result(),
+		'Categoria'  => $this->CategoriaModel->getAllCategoria(),
 	 	);
 	 	$this->load->view('administrador', $dados);
 	}

@@ -8,16 +8,16 @@
 //if($this->session->userdata('is_logged_in')){
 
 	//Inclue o arquivo de cabeçalho
-	$this->load->view('includes/header');
+	$this->load->view('loja/header');
 
 	//Inclue o arquivo de corpo
-	$this->load->view('includes/body');
+	$this->load->view('loja/body');
 
 	//Inclue o arquivo que for chamado pela controladora
-	if($pasta != '') $this->load->view($pasta .'/'. $view);
+	//if($pasta != '') $this->load->view($pasta .'/'. $view);
 
 	//Inclue o arquivo de rodapé
-	$this->load->view('includes/footer');
+	$this->load->view('loja/footer');
 
 /*}else{
 	redirect('login');
