@@ -30,7 +30,7 @@ class administrador extends CI_Controller {
 		$this->load->model('UsuarioModel');
 		$this->load->model('corModel');
 		$this->load->model('TamanhoModel');
-		$this->load->model('StatusModel');
+		$this->load->model('CategoriaModel');
 		
 	}
 
@@ -88,7 +88,7 @@ class administrador extends CI_Controller {
 		'jaqueta' => $this->JaquetaModel->getAllJaqueta()->result(),
 		'cor'     => $this->corModel->getAllCor()->result(),
 		'Tamanho' => $this->TamanhoModel->getAllTamanho()->result(),
-		'Descricao'  => $this->StatusModel->getAllStatus()->result(),
+		'Categoria'  => $this->CategoriaModel->getAllCategoria()->result(),
 		);
 		$this->load->view('administrador',$dados);
 	}
@@ -121,12 +121,12 @@ class administrador extends CI_Controller {
 	 	$this->load->view('administrador',$dados);
 	}
 		
-		public function Status()
+		public function Categoria()
 	{
 		$dados = array(
-		'pasta' => 'Status',
-		'view'   => 'status',
-		'Descricao'  => $this->StatusModel->getAllStatus()->result(),
+		'pasta' => 'Categoria',
+		'view'   => 'categoria',
+		'Categoria'  => $this->CategoriaModel->getAllCategoria()->result(),
 	 	);
 	 	$this->load->view('administrador', $dados);
 	}
@@ -137,6 +137,7 @@ class administrador extends CI_Controller {
 			'pasta' => 'inicio',
 			'view'  => 'inicio',
 			);
+			$this->load->view('administrador', $dados);
 		}
 	
 	public function login(){
@@ -168,7 +169,7 @@ class administrador extends CI_Controller {
                 $this->session->set_userdata($session);
 
                 //Redireciona para a pagina principal
-                redirect('administrador/usuario');
+                redirect('administrador/inicio');
                                 
                                 
             }else{

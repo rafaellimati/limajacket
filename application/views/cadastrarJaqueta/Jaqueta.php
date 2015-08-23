@@ -14,9 +14,9 @@
 								<input type="text" id="jaqueta" style="width:260px"; name="jaqueta" value= "" class="form-control" placeholder="Nome Jaqueta" required autofocus >
 							</div>
 							<br>
-        				   <label for="textos">Tecido:</label>
+        				   <label for="textos">Quantidade:</label>
         				   <div class="input-group textos">
-        				   	<input type="text" id="tecido" name="tecido" value= "" class="form-control" placeholder="Tecido" required  >
+        				   	<input type="text" id="quantidade" name="quantidade" value= "" class="form-control" placeholder="Quantidade" required  >
         				   </div>
         				   <br>
         				   <label for="textos">Valor:</label>
@@ -64,12 +64,12 @@
         				   </select>
         				   <br>
         				   <br>
-        				   <label for="textos">Status:</label>
+        				   <label for="textos">Categoria:</label>
         				   <div class="input-group textos">
-        				   <select name="idStatus">
+        				   <select name="idCategoria">
         				   	<?php 
-        				   	foreach ($Descricao as $key) {
-								   echo "<option value=\"$key->idStatus\">$key->descricao</option>";
+        				   	foreach ($Categoria as $key) {
+								   echo "<option value=\"$key->idCategoria\">$key->categoria</option>";
 							   }
         				   	
         				   	?>
@@ -92,13 +92,13 @@
         						<tr>
         							<th># </th>
         							<th>Jaqueta</th>
-        							<th>tecido</th>
+        							<th>Quantidade</th>
         							<th>Valor</th>
         							<th>Descição</th>
         							<th>Marca</th>
         							<th>Cor</th>
         							<th>Tamanho</th>
-        							<th>Status</th>
+        							<th>Categoria</th>
         						</tr>
         					</thead>
         					 <tbody>
@@ -108,13 +108,13 @@
 								<tr>
 									<td><?php echo $row->idJaqueta;?></a></td>
 									<td><?php echo $row->jaqueta;?></td>
-									<td><?php echo $row->tecido;?></td>
+									<td><?php echo $row->quantidade;?></td>
 									<td><?php echo $row->valor;?></td>
 									<td><?php echo $row->detalhes;?></td>
 									<td><?php echo $row->marca;?></td>
 									<td><?php echo $row->cor;?></td>
 									<td><?php echo $row->tamanho;?></td>
-									<td><?php echo $row->statusDesc;?></td>
+									<td><?php echo $row->categoria;?></td>
 									
 								</tr>
 						     <?php 
