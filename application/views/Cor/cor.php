@@ -13,7 +13,6 @@
         				   	<label for="nome">Cor:</label>
         				   	<div class="input-group textos">
 								<input type="text" id="cor" name="cor" value= "" class="form-control" placeholder="Nome Cor" required autofocus >
-									<span class="glyphicon glyphicon-search input-group-addon btn" onclick="fBusca()"></span>
 							</div>
                             <br>
         				   <button  type="submit" class="btn btn-lg btn-primary" >Cadastrar</button>

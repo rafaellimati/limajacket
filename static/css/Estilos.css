@@ -3,7 +3,7 @@ body {
 }
 
 	.posicaopainel{
-		margin-top:100px;
+		margin-top:40px;
 	}
 
 	.codigo{
@@ -12,10 +12,10 @@ body {
 	}
 	
 	.telefone{
-		width:260px;
+		width:60px;
 	}
 	
-	.texto{
+	.input-group{
 		width:260px;
 	}
 

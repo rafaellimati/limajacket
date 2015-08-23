@@ -12,7 +12,6 @@
         				   	<label for="nome">Categoria:</label>
         				   	<div class="input-group textos">
 								<input type="text" id="categoria" name="categoria" value= "" class="form-control" placeholder="Digite a Categoria" required autofocus >
-									<span class="glyphicon glyphicon-search input-group-addon btn" onclick="fBusca()"></span>
 							</div>
                             <br>
         				   <button  type="submit" class="btn btn-lg btn-primary" >Cadastrar</button>

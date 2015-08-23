@@ -37,7 +37,6 @@ if($this->session->flashdata('edicaook')):
         				   	<label for="nome">Tamanho:</label>
         				   	<div class="input-group textos">
 								<input type="text" id="tamanho" name="tamanho" value= "<?php echo $tamanho->tamanho; ?>" class="form-control" placeholder="Nome Cor" required autofocus >
-									<span class="glyphicon glyphicon-search input-group-addon btn" onclick="fBusca()"></span>
 							</div>
                             <label for="nome">Tamanho:</label>
                             <div class="input-group textos">
