@@ -13,7 +13,7 @@
 	       		<ul class="nav navbar-nav">
 	       		<li role="presentation" class="active"><a href="<?php echo base_url("administrador/inicio") ?>">Administrativo</a></li>
 	       		<li role="presentation" ><a href="<?php echo base_url("administrador/usuario") ?>">Gerenciar Admin</a></li>
-	       		<li role="presentation" ><a href="<?php echo base_url("administrador/marca") ?>">Marca</a></li>
+	       		<li role="presentation" ><a href="<?php echo base_url("admin/marca") ?>">Marca</a></li>
 	       		<li role="presentation" ><a href="<?php echo base_url("administrador/Tamanho") ?>" >Tamanho</a></li>
 	       		<li role="presentation" ><a href="<?php echo base_url("administrador/Cor") ?>">Cor</a></li>
 	       		<li role="presentation" ><a href="<?php echo base_url("administrador/categoria") ?>">Categoria</a></li>
@@ -23,7 +23,7 @@
 	       		</ul>
 	       		<ul class="nav navbar-nav navbar-right">
 	       			<li> <a href="#" ><?php echo $this->session->userdata('login'); ?> </a> </li>
-	       			<li> <a href="<?php echo base_url('administrador/logout') ?>">Sair </a> </li>
+	       			<li> <a href="<?php echo base_url('admin/login/logout') ?>">Sair </a> </li>
 	       			<li> <a href="#"><span class="glyphicon glyphicon-search" area-hidden="true"> </span></a></li>
 	       		</ul>
 	       		

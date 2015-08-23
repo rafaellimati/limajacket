@@ -27,12 +27,23 @@ class marca extends CI_Controller {
 	public function index()
 	{
 		
-		$dados = array(
+/*		$dados = array(
 		'pasta' =>'usuario',
 		'view'  =>'cadastrar');
 	
 		//$this->load->view('administrador', $dados);
-		redirect('administrador/marca/cadastrar');
+		redirect('administrador/marca/cadastrar');*/
+
+/*		$View = $this->uri->segment(3);
+		if($View != "editar"){
+			$View = "Marca";
+		}*/
+		$dados = array(
+		'pasta' => 'Marca',
+		'view' =>  'Marca',
+		'marcas' => $this->MarcaModel->getAllMarca()->result()
+		);
+		$this->load->view('admin', $dados);
 	}
 
 
@@ -64,13 +75,15 @@ class marca extends CI_Controller {
 			$this->session->set_flashdata('erro', 'Marca já existe!');
 		}
 
-/*		$dados = array(
-			'pasta' => 'usuario',
-			'view' => 'cadastrar' );
-		$this->load->view('Administrador', $dados);
-*/
+		$dados = array(
+			'pasta' => 'Marca',
+			'view' => 'Marca',
+			'marcas' => $this->MarcaModel->getAllMarca()->result()
+			 );
+		$this->load->view('admin', $dados);
 
-		redirect('administrador/marca/cadastrar');
+
+		//redirect('administrador/marca/cadastrar');
 
 	}
 
@@ -90,7 +103,13 @@ class marca extends CI_Controller {
 		}
 
 
-		redirect('administrador/marca/editar');
+		//redirect('administrador/marca/editar');
+		$dados = array(
+			'pasta' => 'Marca',
+			'view' => 'editar',
+			'marcas' => $this->MarcaModel->getAllMarca()->result()
+			 );
+		$this->load->view('admin', $dados);
 
 	}
 }

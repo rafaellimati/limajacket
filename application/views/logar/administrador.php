@@ -22,7 +22,7 @@
 		</nav>
 		<div class="container" style="width:260px;margin-top:150px;">
 
-			<form class="form" role="form" method="post" action="<?php echo base_url("administrador/login") ?>">
+			<form class="form" role="form" method="post" action="<?php echo base_url("admin/login/logar") ?>">
 				<h2 class="form-signin-heading">Login</h2>
 				<label for="login" class="input-group textos">Login</label>
 				<input type="text" id="login" name="login"  value="" class="form-control" placeholder="Login" required autofocus><br>

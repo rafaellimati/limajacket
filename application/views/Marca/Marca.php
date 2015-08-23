@@ -5,7 +5,7 @@
         		</div>
         		<div class="panel-body">
         			<div class="container">
-        				<form class="form" role="form" method="post" action="<?php echo base_url("marca/cadastrar")?>">
+        				<form class="form" role="form" method="post" action="<?php echo base_url("admin/marca/cadastrar")?>">
         				  	<label for="codigoCliente" class="sr-only">Código</label>
         				  	<input type="text" id="idMarca" name="idMarca" value="" class="form-control codigo" readonly="readonly"> 
         		
@@ -34,11 +34,20 @@
                                     $('#edicaook').fadeOut(3000);
                                 }, 4000);
                             </script>
-                            <div id="edicaook">
-                                <font color="#FC5555"><?php echo $this->session->flashdata('edicaook'); ?></font>
+                            <div id="edicaook" class="alert alert-success">
+                                <font><?php echo $this->session->flashdata('edicaook'); ?></font>
                             </div>
                         <?php endif; ?>
-
+                        <?php if($this->session->flashdata('cadastrook')): ?>
+                            <script>
+                                setTimeout(function(){
+                                    $('#cadastrook').fadeOut(3000);
+                                }, 4000);
+                            </script>
+                            <div id="cadastrook" class="alert alert-success">
+                                <font><?php echo $this->session->flashdata('cadastrook'); ?></font>
+                            </div>
+                        <?php endif; ?>
                         </form>
         				<p> </p>
         				<p> </p>
@@ -61,7 +70,7 @@
 								<tr>
 									<td><?php echo $row->idMarca;?></td>
 									<td><?php echo $row->marca;?></td>
-									 <td><a title="Editar marca" class="glyphicon glyphicon-pencil btn" href="<?php echo base_url('administrador/marca/editar/'); echo "/". $row->idMarca;?>"></a> &nbsp;&nbsp;
+									 <td><a title="Editar marca" class="glyphicon glyphicon-pencil btn" href="<?php echo base_url('admin/marca/editar/'); echo "/". $row->idMarca;?>"></a> &nbsp;&nbsp;
                                          <a class="glyphicon glyphicon-remove btn red" href="#"></a> 
                                     </td>
 								</tr>

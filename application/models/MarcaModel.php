@@ -11,7 +11,7 @@ class MarcaModel extends CI_Model{
 			$this->session->set_flashdata('cadastrook','Operação realizada com sucesso.');
 			
 			//redirect('usuario/cadastrar');
-			redirect('administrador/marca');
+			redirect('admin/marca');
 		}
 	}
 
@@ -36,7 +36,7 @@ class MarcaModel extends CI_Model{
 			$this->session->set_flashdata('edicaook', 'Operação realizada com sucesso.');
 
 			//redirect('usuario/editar');
-			redirect(current_url());
+			redirect('admin/marca');
 		}
 	}
 

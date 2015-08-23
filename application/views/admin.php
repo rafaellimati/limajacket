@@ -8,20 +8,20 @@
 if($this->session->userdata('is_logged_in') && $this->session->userdata('nivelAcesso') == 2){
 
 	//Inclue o arquivo de cabeçalho
-	$this->load->view('adm/header');
+	$this->load->view('admin/header');
 
 	//Inclue o arquivo de corpo
-	$this->load->view('adm/body');
+	$this->load->view('admin/body');
 
 	//Inclue o arquivo que for chamado pela controladora
 	if($pasta != '') $this->load->view($pasta .'/'. $view);
 
 	//Inclue o arquivo de rodapé
-	$this->load->view('adm/footer');
+	$this->load->view('admin/footer');
 
 }else{
-	$this->session->set_flashdata('loginInvalido', 'Usuário ou Senha invalidos.');
-	redirect('administrador');
+	//$this->session->set_flashdata('loginInvalido', 'Usuário ou Senha invalidos.');
+	redirect('admin/login');
 }
 ?>
 

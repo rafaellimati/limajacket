@@ -29,7 +29,7 @@ if($this->session->flashdata('edicaook')):
         		</div>
         		<div class="panel-body">
         			<div class="container">
-        				<form class="form" role="form" method="post" action="<?php echo base_url("marca/editar")?>">
+        				<form class="form" role="form" method="post" action="<?php echo base_url("admin/marca/editar")?>">
         				  	<label for="codigoCliente" class="sr-only">Código</label>
         				  	<input type="text" id="idMarca" name="idMarca" value="<?php echo $marca->idMarca; ?>" class="form-control codigo" readonly="readonly"> 
         		
@@ -77,7 +77,7 @@ if($this->session->flashdata('edicaook')):
 								<tr>
 									<td><?php echo $row->idMarca;?></td>
 									<td><?php echo $row->marca;?></td>
-									 <td><a class="glyphicon glyphicon-pencil btn" href="<?php echo base_url('administrador/marca/editar/'); echo "/". $row->idMarca;?>"></a> &nbsp;&nbsp;
+									 <td><a class="glyphicon glyphicon-pencil btn" href="<?php echo base_url('admin/marca/editar/'); echo "/". $row->idMarca;?>"></a> &nbsp;&nbsp;
                                          <a class="glyphicon glyphicon-remove btn red" href="#"></a> 
                                     </td>
 								</tr>
