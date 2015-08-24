@@ -3,7 +3,7 @@
 //Pega o seguimento 4 da url
 $idTamanho = $this->uri->segment(4);
 
-if($idTamanho == null) redirect('administrador/Tamanho');
+if($idTamanho == null) redirect('admin/Tamanho');
 
 $tamanho = $this->TamanhoModel->getById($idTamanho)->row();
 
@@ -26,11 +26,11 @@ if($this->session->flashdata('edicaook')):
 	 <div class="container posicaopainel">
 	 	<div class="panel panel-default">
         		<div class="panel-heading">
-        			<h3><span class="glyphicon glyphicon-thumbs-up"></span> Gerenciar Cliente</h3>
+        			<h3><span class="glyphicon glyphicon-thumbs-up"></span> Gerenciar Tamanho</h3>
         		</div>
         		<div class="panel-body">
         			<div class="container">
-        				<form class="form" role="form" method="post" action="<?php echo base_url("Tamanho/editar")?>">
+        				<form class="form" role="form" method="post" action="<?php echo base_url("admin/tamanho/editar")?>">
         				  	<label for="codigoCliente" class="sr-only">Código</label>
         				  	<input type="text" id="idTamanho" name="idTamanho" value="<?php echo $tamanho->idTamanho; ?>" class="form-control codigo" readonly="readonly"> 
         		
@@ -64,7 +64,7 @@ if($this->session->flashdata('edicaook')):
         				<p> </p>
         				<p> </p>
         				<div class="table-responsive tabelas">
-        				<table class="table table-bordered table-hover" id="tabela-cor">
+        				<table class="table table-bordered table-hover dataTables" id="tabela-cor">
         					<thead>
         						<tr>
         							<th># </th>
@@ -79,7 +79,7 @@ if($this->session->flashdata('edicaook')):
 								<tr>
 									<td><?php echo $row->idTamanho;?></td>
 									<td><?php echo $row->tamanho;?></td>
-									 <td><a class="glyphicon glyphicon-pencil btn" href="<?php echo base_url('Tamanho/editar/'); echo "/". $row->idTamanho;?>"></a> &nbsp;&nbsp;
+									 <td><a class="glyphicon glyphicon-pencil btn" href="<?php echo base_url('admin/Tamanho/editar/'); echo "/". $row->idTamanho;?>"></a> &nbsp;&nbsp;
                                          <a class="glyphicon glyphicon-remove btn red" href="#"></a> 
                                     </td>
 								</tr>
@@ -95,4 +95,31 @@ if($this->session->flashdata('edicaook')):
 	 	</div>
 	 </div>
 	</body>
+	
+	<script type="text/javascript">
+
+    $(document).ready(function() {
+        $('.dataTables').DataTable({
+                "responsive": true,
+                "oLanguage": {
+                        "oPaginate": { "sFirst": "<<", "sLast": ">>", "sNext": ">", "sPrevious": "<" },
+                        "sEmptyTable": 'Não foram encontrados registros. Tabela Vazia!',
+                        "sInfo": "<span>Exibindo de <b>_START_</b> até <b>_END_</b> de <b>_TOTAL_</b> registros encontrados.</span>",
+                        "sInfoEmpty": " ",
+                        "sInfoFiltered": "",
+                        "sInfoThousands": ".",
+                        "sLengthMenu": "Exibir _MENU_ registros",
+                        "sLoadingRecords": "<center>Carregando...</center>",
+                        "sProcessing": '<b>Processando...</b>', //"Processando...",
+                        "sSearch": "Pesquisa:",
+                        "sZeroRecords": "<center>Não foram encontrados registros.</center>"
+                },
+                "sPaginationType": "full_numbers",
+                "bFilter": true,
+                "bProcessing": true,
+                "bServerSide": false
+        });
+    });
+
+</script>
 </html>

@@ -3,7 +3,7 @@
 //Pega o seguimento 4 da url
 $idMarca = $this->uri->segment(4);
 
-if($idMarca == null) redirect('administrador/marca');
+if($idMarca == null) redirect('admin/marca');
 
 $marca = $this->MarcaModel->getById($idMarca)->row();
 
@@ -25,7 +25,7 @@ if($this->session->flashdata('edicaook')):
 	 <div class="container posicaopainel">
 	 	<div class="panel panel-default">
         		<div class="panel-heading">
-        			<h3><span class="glyphicon glyphicon-thumbs-up"></span> Gerenciar Cliente</h3>
+        			<h3><span class="glyphicon glyphicon-thumbs-up"></span> Gerenciar Marcas</h3>
         		</div>
         		<div class="panel-body">
         			<div class="container">

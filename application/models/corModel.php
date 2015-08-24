@@ -11,7 +11,7 @@ class corModel extends CI_Model{
 			$this->session->set_flashdata('cadastrook','Cadastro realizado com sucesso.');
 			
 			//redirect('usuario/cadastrar');
-			redirect('administrador/cor');
+			redirect('admin/cor');
 		}
 	}
 	
@@ -35,8 +35,8 @@ class corModel extends CI_Model{
 
 			$this->session->set_flashdata('edicaook', 'Alteração realizada com sucesso.');
 
-			//redirect('usuario/editar');
-			redirect(current_url());
+			redirect('admin/cor');
+			//redirect(current_url());
 		}
 	}
 	

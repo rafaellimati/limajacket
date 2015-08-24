@@ -5,7 +5,7 @@
         		</div>
         		<div class="panel-body">
         			<div class="container">
-        				<form class="form" role="form" method="post" action="<?php echo base_url('usuario/cadastrar') ?>">
+        				<form class="form" role="form" method="post" action="<?php echo base_url('admin/usuario/cadastrar') ?>">
         				  	<label for="codigoCliente" class="sr-only">Código</label>
         				  	<!--<input type="text" id="idCliente" name="idCliente" value="" class="form-control codigo" readonly="readonly"> -->
         		

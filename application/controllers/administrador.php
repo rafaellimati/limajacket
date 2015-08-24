@@ -77,8 +77,8 @@ class administrador extends CI_Controller {
 		'marcas' => $this->MarcaModel->getAllMarca()->result()
 		);
 		$this->load->view('administrador', $dados);
+	
 	}
-
 	public function Jaqueta()
 	{
 		$dados = array(

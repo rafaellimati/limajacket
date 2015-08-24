@@ -5,7 +5,7 @@
         		</div>
         		<div class="panel-body">
         			<div class="container">
-        				<form class="form" role="form" method="post" action="<?php echo base_url("Tamanho/cadastrar")?>">
+        				<form class="form" role="form" method="post" action="<?php echo base_url("admin/Tamanho/cadastrar")?>">
         				  	<label for="codigoCliente" class="sr-only">Código</label>
         				  	<input type="text" id="idTamanho" name="idTamanho" value="" class="form-control codigo" readonly="readonly"> 
         		
@@ -58,7 +58,7 @@
 								<tr>
 									<td><?php echo $row->idTamanho;?></td>
 									<td><?php echo $row->tamanho;?></td>
-									 <td><a class="glyphicon glyphicon-pencil btn" href="<?php echo base_url('administrador/Tamanho/editar/'); echo "/". $row->idTamanho;?>"></a> &nbsp;&nbsp;
+									 <td><a class="glyphicon glyphicon-pencil btn" href="<?php echo base_url('admin/Tamanho/editar/'); echo "/". $row->idTamanho;?>"></a> &nbsp;&nbsp;
                                          <a class="glyphicon glyphicon-remove btn red" href="#"></a>
                                     </td>
 								</tr>

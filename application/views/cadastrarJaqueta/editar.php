@@ -1,3 +1,14 @@
+<?php 
+
+//Pega o seguimento 4 da url
+$idJaqueta = $this->uri->segment(4);
+
+if($idJaqueta == null) redirect('admin/jaqueta');
+
+$Jaqueta = $this->JaquetaModel->getById($idJaqueta)->row();
+
+if($this->session->flashdata('edicaook'));
+?>
 <div class="container posicaopainel">
 	 	<div class="panel panel-default">
         		<div class="panel-heading">
@@ -5,7 +16,7 @@
         		</div>
         		<div class="panel-body">
         			<div class="container">
-        				<form class="form" role="form" method="post" action="<?php echo base_url("admin/jaqueta/cadastrar")?>">
+        				<form class="form" role="form" method="post" action="<?php echo base_url("admin/jaqueta/editar")?>">
         				  	<label for="codigoCliente" class="sr-only">Código</label>
         				  	<input type="text" id="idJaqueta" name="idJaqueta" value="" class="form-control codigo" readonly="readonly"> 
         					<br>
@@ -79,8 +90,8 @@
         				   </div>
         				   <br>
         				   
-        				   <button type="submit" class="btn btn-lg btn-primary" >Cadastrar</button>
-        				   <!--<button onclick="document.getElementById('op').value='update';" type="submit" class="btn btn-lg btn-primary" >Alterar</button>-->
+        				   <button  type="submit" class="btn btn-lg btn-primary" >Alterar</button>
+        				   <!--<button type="submit" class="btn btn-lg btn-primary" >Cadastrar</button>-->
         				   <button id="btnlimpar" type="reset" class="btn btn-lg btn-warning">Limpar</button>
         				</form>
         				<p><?php echo validation_errors(); ?> </p>
@@ -99,12 +110,12 @@
         							<th>Cor</th>
         							<th>Tamanho</th>
         							<th>Categoria</th>
-        							<th></th>
+        							<th> </th>
         						</tr>
         					</thead>
         					 <tbody>
         					 	<?php 
-                                foreach($jaquetas as $row):
+                                foreach($Jaquetas as $row):
                             ?>
 								<tr>
 									<td><?php echo $row->idJaqueta;?></a></td>
@@ -118,6 +129,7 @@
 									<td><?php echo $row->categoria;?></td>
 									<td><a class="glyphicon glyphicon-pencil btn" href="<?php echo base_url('admin/jaqueta/editar/'); echo "/". $row->idJaqueta;?>"></a> &nbsp;&nbsp;
                                          <a class="glyphicon glyphicon-remove btn red" href="#"></a> 
+                                    </td>
 								</tr>
 						     <?php 
                                 endforeach;

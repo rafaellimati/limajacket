@@ -6,7 +6,7 @@
         		</div>
         		<div class="panel-body">
         			<div class="container">
-        				<form class="form" role="form" method="post" action="<?php echo base_url("cor/cadastrar")?>">
+        				<form class="form" role="form" method="post" action="<?php echo base_url("admin/cor/cadastrar")?>">
         				  	<label for="codigoCliente" class="sr-only">Código</label>
         				  	<input type="text" id="idCor" name="idCor" value="" class="form-control codigo" readonly="readonly"> 
         		
@@ -59,7 +59,7 @@
 								<tr>
 									<td><?php echo $row->idCor;?></td>
 									<td><?php echo $row->cor;?></td>
-									 <td><a class="glyphicon glyphicon-pencil btn" href="<?php echo base_url('administrador/cor/editar/'); echo "/". $row->idCor;?>"></a> &nbsp;&nbsp;
+									 <td><a class="glyphicon glyphicon-pencil btn" href="<?php echo base_url('admin/cor/editar/'); echo "/". $row->idCor;?>"></a> &nbsp;&nbsp;
                                          <a class="glyphicon glyphicon-remove btn red" href="#"></a>
                                     </td>
 								</tr>

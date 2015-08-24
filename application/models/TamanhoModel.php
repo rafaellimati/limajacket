@@ -11,7 +11,7 @@ class TamanhoModel extends CI_Model{
 			$this->session->set_flashdata('cadastrook','Operação realizada com sucesso.');
 			
 			//redirect('usuario/cadastrar');
-			redirect('administrador/tamanho');
+			redirect('admin/tamanho');
 		}	
 	}
 	
@@ -46,8 +46,8 @@ class TamanhoModel extends CI_Model{
 
 			$this->session->set_flashdata('edicaook', 'Alteração realizada com sucesso.');
 
-			//redirect('usuario/editar');
-			redirect(current_url());
+			redirect('admin/Tamanho');
+			//redirect(current_url());
 		}
 	}
 }

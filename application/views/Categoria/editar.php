@@ -1,52 +1,44 @@
 <?php 
 
 //Pega o seguimento 4 da url
-$idCor = $this->uri->segment(4);
+$idCategoria = $this->uri->segment(4);
 
-if($idCor == null) redirect('admin/cor');
+if($idCategoria == null) redirect('admin/categoria');
 
-$cor = $this->corModel->getById($idCor)->row();
+$categoria = $this->CategoriaModel->getById($idCategoria)->row();
 
 if($this->session->flashdata('edicaook')):
 ?>
 <div style="position: absolute; top: 128px;">
     <script>
         setTimeout(function(){
-            $('#corSucessoEditar').fadeOut(3000);
+            $('#marcaSucessoEditar').fadeOut(3000);
         }, 4000);
     </script>
-    <div id="corSucessoEditar" class="alert alert-success fade in" style="width: 1038px;">
+    <div id="marcaSucessoEditar" class="alert alert-success fade in" style="width: 1038px;">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <?php echo $this->session->flashdata('edicaook'); ?>
     </div>
 </div>
 <?php endif; ?>
-
-		<br><br><br>
 	 <div class="container posicaopainel">
 	 	<div class="panel panel-default">
         		<div class="panel-heading">
-        			<h3><span class="glyphicon glyphicon-thumbs-up"></span> Gerenciar Cores</h3>
+        			<h3><span class="glyphicon glyphicon-thumbs-up"></span> Gerenciar Categoria</h3>
         		</div>
         		<div class="panel-body">
         			<div class="container">
-        				<form class="form" role="form" method="post" action="<?php echo base_url("admin/cor/editar")?>">
+        				<form class="form" role="form" method="post" action="<?php echo base_url("admin/categoria/editar")?>">
         				  	<label for="codigoCliente" class="sr-only">Código</label>
-        				  	<input type="text" id="idCor" name="idCor" value="<?php echo $cor->idCor; ?>" class="form-control codigo" readonly="readonly"> 
+        				  	<input type="text" id="idCategoria" name="idCategoria" value="<?php echo $categoria->idCategoria; ?>" class="form-control codigo" readonly="readonly"> 
         		
-        				   	<label for="nome">Cor:</label>
+        				   	<label for="nome">Categoria:</label>
         				   	<div class="input-group textos">
-								<input type="text" id="cor" name="cor" value= "<?php echo $cor->cor; ?>" class="form-control" placeholder="Nome Cor" required autofocus >
+								<input type="text" id="categoria" name="categoria" value= "<?php echo $categoria->categoria; ?>" class="form-control" placeholder="Digite a Categoria" required autofocus >
 							</div>
-                            <label for="nome">Cor:</label>
-                            <div class="input-group textos">
-                                <?php 
-									echo form_dropdown('flagAtivo', array('0' => 'Inativo', '1' => 'Ativo'), $cor->flagAtivo);
- 								?>
-                            </div>
                             <br>
+        				<!-- <button  type="submit" class="btn btn-lg btn-primary" >Cadastrar</button> -->
         				   <button  type="submit" class="btn btn-lg btn-primary" >Alterar</button>
-        				   <!-- <button  type="submit" class="btn btn-lg btn-primary" >Alterar</button> -->
         				   <button id="btnlimpar" type="submit" class="btn btn-lg btn-warning">Limpar</button>
         				
                         <?php if($this->session->flashdata('erro')): ?>
@@ -59,34 +51,43 @@ if($this->session->flashdata('edicaook')):
                                 <font color="#FC5555"><?php echo $this->session->flashdata('erro'); ?></font>
                             </div>
                         <?php endif; ?>
+                        <?php if($this->session->flashdata('edicaook')): ?>
+                            <script>
+                                setTimeout(function(){
+                                    $('#edicaook').fadeOut(3000);
+                                }, 4000);
+                            </script>
+                            <div id="edicaook">
+                                <font color="#FC5555"><?php echo $this->session->flashdata('edicaook'); ?></font>
+                            </div>
+                        <?php endif; ?>
 
                         </form>
         				<p> </p>
         				<p> </p>
         				<div class="table-responsive tabelas">
-        				<table class="table table-bordered table-hover dataTables" id="tabela-cor">
+        				<table class="table table-bordered table-hover dataTables" id="tabela-categoria">
         					<thead>
         						<tr>
         							<th># </th>
-                                    <th>Cor</th>
+                                    <th>Categoria</th>
         							<th></th>
         						</tr>
         					</thead>
         					 <tbody>
                             <?php 
-                                foreach($cores as $row):
+                                foreach($Categorias as $row):
                             ?>
 								<tr>
-									<td><?php echo $row->idCor;?></td>
-									<td><?php echo $row->cor;?></td>
-									 <td><a class="glyphicon glyphicon-pencil btn" href="<?php echo base_url('admin/cor/editar/'); echo "/". $row->idCor;?>"></a> &nbsp;&nbsp;
-                                         <a class="glyphicon glyphicon-remove btn red" href="#"></a> 
+									<td><?php echo $row->idCategoria;?></td>
+									<td><?php echo $row->categoria;?></td>
+									 <td><a class="glyphicon glyphicon-pencil btn" href="<?php echo base_url('admin/categoria/editar/'); echo "/". $row->idCategoria;?>"</a> &nbsp;&nbsp;
+                                         <a class="glyphicon glyphicon-remove btn red" href="#"></a>
                                     </td>
 								</tr>
                             <?php 
                                 endforeach;
                              ?>
-                             <?php echo validation_errors(); ?> 
                              </tbody>    
         				</table>
         				</div>

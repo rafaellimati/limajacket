@@ -11,7 +11,7 @@ class UsuarioModel extends CI_Model{
 			$this->session->set_flashdata('cadastrook','Operação realizada com sucesso.');
 			
 			//redirect('usuario/cadastrar');
-			redirect('administrador/usuario');
+			redirect('admin/usuario');
 		}
 	}
 

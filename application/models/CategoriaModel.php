@@ -11,7 +11,7 @@ class CategoriaModel extends CI_Model{
 			$this->session->set_flashdata('cadastrook','Operação realizada com sucesso.');
 			
 			//redirect('usuario/cadastrar');
-			redirect('administrador/categoria');
+			redirect('admin/categoria');
 		}
 	}
 	
@@ -23,6 +23,33 @@ class CategoriaModel extends CI_Model{
 
 		//$this->db->where('ativo', 1);
 
-		return $this->db->get()->result();
+		return $this->db->get();
 	}
+	
+		public function getById($id = null){
+
+		if($id != null){
+			
+			$this->db->where('idCategoria', $id);
+
+			$this->db->limit(1);
+
+			return $this->db->get('TbCategoria');
+		}
+	}
+
+
+		public function updateMarca($dados = null, $condition = null){
+
+		if($dados != null && $condition != null){
+
+			$this->db->update('TbCategoria', $dados, $condition);
+
+			$this->session->set_flashdata('edicaook', 'Alteração realizada com sucesso.');
+
+			//redirect('usuario/editar');
+			redirect('admin/categoria');
+		}
+	}
+		
 }

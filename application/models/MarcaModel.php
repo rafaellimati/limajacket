@@ -33,7 +33,7 @@ class MarcaModel extends CI_Model{
 
 			$this->db->update('TbMarca', $dados, $condition);
 
-			$this->session->set_flashdata('edicaook', 'Operação realizada com sucesso.');
+			$this->session->set_flashdata('edicaook', 'Alteração realizada com sucesso.');
 
 			//redirect('usuario/editar');
 			redirect('admin/marca');

@@ -6,7 +6,7 @@
 				</div>
 				   <div class="panel-body" >
 					<div class="container"style:"width:260px";>
-						<form class="form" role="form" method="post" action="<?php echo base_url("estoque/cadastrar")?>">
+						<form class="form" role="form" method="post" action="<?php echo base_url("admin/estoque/cadastrar")?>">
 						<?php echo validation_errors(); ?> 
 						
 						<div class="table-responsive tabelas">

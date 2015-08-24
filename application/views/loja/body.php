@@ -93,7 +93,7 @@
         <div class="box-content">
           <ul>
           <?php 
-            foreach ($categorias as $categoria):
+            foreach ($Categorias as $categoria):
           ?>
             <li><a href="#"><?php echo $categoria->categoria ?></a></li>
 
