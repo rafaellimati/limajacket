@@ -89,6 +89,13 @@ if($this->session->flashdata('edicaook'));
         				   <br>
         				   </div>
         				   <br>
+        				    <label for="nome">Jaqueta:</label>
+                            <div class="input-group textos">
+                                <?php 
+									echo form_dropdown('flagAtivo', array('0' => 'Inativo', '1' => 'Ativo'), $Jaqueta->flagAtivo);
+ 								?>
+                            </div>
+                            <br>
         				   
         				   <button  type="submit" class="btn btn-lg btn-primary" >Alterar</button>
         				   <!--<button type="submit" class="btn btn-lg btn-primary" >Cadastrar</button>-->

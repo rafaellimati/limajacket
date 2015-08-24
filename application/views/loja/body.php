@@ -95,7 +95,7 @@
           <?php 
             foreach ($Categorias as $categoria):
           ?>
-            <li><a href="#"><?php echo $categoria->categoria ?></a></li>
+            <li><a href="#"><?php echo $Categorias->categoria ?></a></li>
 
           <?php 
             endforeach;

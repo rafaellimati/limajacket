@@ -36,6 +36,12 @@ if($this->session->flashdata('edicaook')):
         				   	<div class="input-group textos">
 								<input type="text" id="categoria" name="categoria" value= "<?php echo $categoria->categoria; ?>" class="form-control" placeholder="Digite a Categoria" required autofocus >
 							</div>
+							 <label for="nome">Categoria:</label>
+                            <div class="input-group textos">
+                                <?php 
+									echo form_dropdown('flagAtivo', array('0' => 'Inativo', '1' => 'Ativo'), $categoria->flagAtivo);
+ 								?>
+                            </div>
                             <br>
         				<!-- <button  type="submit" class="btn btn-lg btn-primary" >Cadastrar</button> -->
         				   <button  type="submit" class="btn btn-lg btn-primary" >Alterar</button>
