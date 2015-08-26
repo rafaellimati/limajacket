@@ -93,9 +93,9 @@
         <div class="box-content">
           <ul>
           <?php 
-            foreach ($Categorias as $categoria):
+            foreach ($categorias as $categoria):
           ?>
-            <li><a href="#"><?php echo $Categorias->categoria ?></a></li>
+            <li><a href="<?php echo base_url("Principal/categoria"); ?>"><?php echo $categoria->categoria ?></a></li>
 
           <?php 
             endforeach;

@@ -7,7 +7,7 @@
         			<div class="container">
         				<form class="form" role="form" method="post" action="<?php echo base_url('admin/usuario/cadastrar') ?>">
         				  	<label for="codigoCliente" class="sr-only">Código</label>
-        				  	<!--<input type="text" id="idCliente" name="idCliente" value="" class="form-control codigo" readonly="readonly"> -->
+        				  	<input type="text" id="idLogin" name="idLogin" value="" class="form-control codigo" readonly="readonly">
         		
         				   	<label for="login">Login:</label>
         				   	<div class="input-group textos">
@@ -15,10 +15,10 @@
 							</div><br>
         				   <label  for="Senha" >Senha:</label>
 							<input type="Password" id="senha" name="senha" class="form-control" style="width: 400px; placeholder="Senha">
-							<label for="Senha"> Repita Senha: </label>
-							<input type="Password" id="repitasenha" name="repitasenha" class="form-control" style="width: 400px"; placeholder="Senha">
+							<!--<label for="Senha" > Repita Senha: </label>
+							<input type="Password" id="repitasenha" name="repitasenha" class="form-control" style="width: 400px"; placeholder="Senha">-->
         				   </div>
-        				   <br>
+        				   <br><br><br>
         				   <button type="submit" class="btn btn-lg btn-primary" >Cadastrar</button>
         				   <!--<button onclick="document.getElementById('op').value='update';" type="submit" class="btn btn-lg btn-primary" >Alterar</button>-->
         				   <button id="btnlimpar" type="submit" class="btn btn-lg btn-warning">Limpar</button>

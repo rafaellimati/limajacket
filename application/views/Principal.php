@@ -14,7 +14,7 @@
 	$this->load->view('loja/body');
 
 	//Inclue o arquivo que for chamado pela controladora
-	//if($pasta != '') $this->load->view($pasta .'/'. $view);
+	if($pasta != '') $this->load->view($pasta .'/'. $view);
 
 	//Inclue o arquivo de rodapé
 	$this->load->view('loja/footer');

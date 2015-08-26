@@ -28,14 +28,22 @@ class Principal extends CI_Controller {
 	public function index()
 	{
 		$dados = array(
-		'categorias' => $this->CategoriaModel->getAllCategoria()
+		'categorias' => $this->CategoriaModel->getAllCategoria()->result()
 		);
 		
 		$this->load->view('Principal', $dados);
 
-		
+	}
+	
+		 public function Categoria()
+	{
+		$dados = array(
+		'pasta' => 'lojaCategoria',
+		'view'  => 'categoriaView',
+		'categorias' => $this->CategoriaModel->getAllCategoria()->result()
+		);
+		$this->load->view('Principal', $dados);
 	}
 }
-
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */
