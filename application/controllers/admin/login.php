@@ -39,7 +39,7 @@ class login extends CI_Controller {
         $this->form_validation->set_rules('senha', 'Senha', 'trim|required|strtolower');
         
 
-                //Verifica se os campo foi preenchido corretamente e retorna true para a validação
+        //Verifica se os campo foi preenchido corretamente e retorna true para a validação
         if($this->form_validation->run()){
 
             //Pega os valores que esta no post e transforma em array

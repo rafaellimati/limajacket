@@ -28,10 +28,13 @@ class Principal extends CI_Controller {
 	public function index()
 	{
 		$dados = array(
+		'pasta' => 'loja',
+		'view'  => '$view',
 		'categorias' => $this->CategoriaModel->getAllCategoria()->result()
 		);
 		
-		$this->load->view('Principal', $dados);
+		redirect('Principal/categoria');
+		//$this->load->view('Principal', $dados);
 
 	}
 	

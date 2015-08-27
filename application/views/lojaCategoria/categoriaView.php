@@ -1,4 +1,4 @@
-  <form action="<?php echo base_url("Principal/categoria"); ?>" method="post">
+ <!-- <form action="<?php echo base_url("Principal/categoria"); ?>" method="post">-->
     <div id="main">
     <div class="cl">&nbsp;</div>
     <!-- Content -->
@@ -79,7 +79,7 @@
       <div class="box search">
         <h2>Search by <span></span></h2>
         <div class="box-content">
-          <!--<form action="#" method="post">-->
+          <form action="<?php echo base_url("Principal/categoria"); ?>" method="post">
             <label>Keyword</label>
             <input type="text" class="field" />
             <label>Category</label>
@@ -99,7 +99,7 @@
             <input type="submit" class="search-submit" value="Search" />
             <p> <a href="#" class="bul">Advanced search</a><br />
               <a href="#" class="bul">Contact Customer Support</a> </p>
-          </form>
+           </form> 
         </div>
       </div>
       <!-- Categories -->
@@ -132,4 +132,4 @@
     <!-- End Sidebar -->
     <div class="cl">&nbsp;</div>
   </div>
-  </form>
+  <!--</form>-->
