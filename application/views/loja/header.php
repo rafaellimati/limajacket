@@ -8,28 +8,4 @@
 <script src="<?php echo base_url("static/js/jquery-1.4.1.min.js"); ?>" type="text/javascript"></script>
 <script src="<?php echo base_url("static/js/jquery.jcarousel.pack.js"); ?>" type="text/javascript"></script>
 <script src="<?php echo base_url("static/js/jquery-func.js"); ?>" type="text/javascript"></script>
-</head>
-<body>
-<!-- Shell -->
-<div class="shell">
-  <!-- Header -->
-  <div id="header">
-    <h1 id="logo"><a href="#">Lima Jacket</a></h1>
-    <!-- Cart -->
-    <div id="cart"> <a href="#" class="cart-link">Carrinho</a>
-      <div class="cl">&nbsp;</div>
-      <span>Produto: <strong>4</strong></span> &nbsp;&nbsp; <span>Custo: <strong>$250.99</strong></span> </div>
-    <!-- End Cart -->
-    <!-- Navigation -->
-    <div id="navigation">
-      <ul>
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#">Compras</a></li>
-        <li><a href="#">Pedidos</a></li>
-        <li><a href="#">Quem somos</a></li>
-        <li><a href="#">Contato</a></li>
-      </ul>
-    </div>
-    <!-- End Navigation -->
-  </div>
-  <!-- End Header -->
+</head> 

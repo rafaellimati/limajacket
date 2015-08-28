@@ -29,12 +29,12 @@ class Principal extends CI_Controller {
 	{
 		$dados = array(
 		'pasta' => 'loja',
-		'view'  => '$view',
+		'view'  => 'inicio',
 		'categorias' => $this->CategoriaModel->getAllCategoria()->result()
 		);
 		
-		redirect('Principal/categoria');
-		//$this->load->view('Principal', $dados);
+		//redirect('Principal/categoria');
+		$this->load->view('Principal', $dados);
 
 	}
 	
