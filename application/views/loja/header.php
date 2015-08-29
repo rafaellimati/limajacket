@@ -4,7 +4,7 @@
 <title>Lima Jacket</title>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="<?php echo base_url("static/css/style.css"); ?>" type="text/css" media="all" />
-<!--[if lte IE 6]><link rel="stylesheet" href="<?php echo base_url("static/css/ie6.css"); ?>" type="text/css" media="all" /><![endif]-->
+<link rel="stylesheet" href="<?php echo base_url("static/css/ie6.css"); ?>" type="text/css" media="all" />
 <script src="<?php echo base_url("static/js/jquery-1.4.1.min.js"); ?>" type="text/javascript"></script>
 <script src="<?php echo base_url("static/js/jquery.jcarousel.pack.js"); ?>" type="text/javascript"></script>
 <script src="<?php echo base_url("static/js/jquery-func.js"); ?>" type="text/javascript"></script>

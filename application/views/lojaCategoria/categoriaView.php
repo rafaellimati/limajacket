@@ -7,7 +7,7 @@
       <div class="products">
         <div class="cl">&nbsp;</div>
         <ul>
-          <li> <a href="#"><img src="<?php echo base_url("static/css/images/big1.jpg"); ?>" alt="" /></a>
+          <li> <a href="Principal/compra"><img src="<?php echo base_url("static/css/images/big1.jpg"); ?>" alt="" /></a>
             <div class="product-info">
               <h3>LOREM IPSUM</h3>
               <div class="product-desc">
@@ -17,7 +17,7 @@
                 <strong class="price">$58.99</strong> </div>
             </div>
           </li>
-          <li> <a href="#"><img src="<?php echo base_url("static/css/images/big1.jpg"); ?>"  alt="" /></a>
+          <li> <a href="Principal/compra"><img src="<?php echo base_url("static/css/images/big2.jpg"); ?>"  alt="" /></a>
             <div class="product-info">
               <h3>LOREM IPSUM</h3>
               <div class="product-desc">
@@ -27,7 +27,7 @@
                 <strong class="price">$58.99</strong> </div>
             </div>
           </li>
-          <li class="last"> <a href="#"><img src="<?php echo base_url("static/css/images/big1.jpg"); ?>" alt="" /></a>
+          <li class="last"> <a href="Principal/compra"><img src="<?php echo base_url("static/css/images/big3.jpg"); ?>" alt="" /></a>
             <div class="product-info">
               <h3>LOREM IPSUM</h3>
               <div class="product-desc">
@@ -37,7 +37,7 @@
                 <strong class="price">$58.99</strong> </div>
             </div>
           </li>
-		  <li class=""> <a href="#"><img src="<?php echo base_url("static/css/images/big1.jpg"); ?>" alt="" /></a>
+		  <li class=""> <a href="Principal/compra"><img src="<?php echo base_url("static/css/images/big1.jpg"); ?>" alt="" /></a>
             <div class="product-info">
               <h3>LOREM IPSUM</h3>
               <div class="product-desc">
@@ -47,7 +47,7 @@
                 <strong class="price">$58.99</strong> </div>
             </div>
           </li>
-		  <li class=""> <a href="#"><img src="<?php echo base_url("static/css/images/big1.jpg"); ?>" alt="" /></a>
+		  <li class=""> <a href="Principal/compra"><img src="<?php echo base_url("static/css/images/big2.jpg"); ?>" alt="" /></a>
             <div class="product-info">
               <h3>LOREM IPSUM</h3>
               <div class="product-desc">
@@ -57,7 +57,7 @@
                 <strong class="price">$58.99</strong> </div>
             </div>
           </li>
-		  <li class="last"> <a href="#"><img src="<?php echo base_url("static/css/images/big1.jpg"); ?>" alt="" /></a>
+		  <li class="last"> <a href="Principal/compra"><img src="<?php echo base_url("static/css/images/big3.jpg"); ?>" alt="" /></a>
             <div class="product-info">
               <h3>LOREM IPSUM</h3>
               <div class="product-desc">
@@ -150,27 +150,27 @@
     <div class="more-products">
       <div class="more-products-holder">
         <ul>
-          <li><a href="#"><img src="<?php echo base_url("static/css/images/small1.jpg"); ?>" alt="" /></a></li>
-          <li><a href="#"><img src="<?php echo base_url("static/css/images/small2.jpg"); ?>" alt="" /></a></li>
-          <li><a href="#"><img src="<?php echo base_url("static/css/images/small3.jpg"); ?>" alt="" /></a></li>
-          <li><a href="#"><img src="<?php echo base_url("static/css/images/small4.jpg"); ?>" alt="" /></a></li>
-          <li><a href="#"><img src="<?php echo base_url("static/css/images/small5.jpg"); ?>" alt="" /></a></li>
-          <li><a href="#"><img src="<?php echo base_url("static/css/images/small6.jpg"); ?>" alt="" /></a></li>
-          <li><a href="#"><img src="<?php echo base_url("static/css/images/small7.jpg"); ?>" alt="" /></a></li>
-          <li><a href="#"><img src="<?php echo base_url("static/css/images/small1.jpg"); ?>" alt="" /></a></li>
-          <li><a href="#"><img src="<?php echo base_url("static/css/images/small2.jpg"); ?>" alt="" /></a></li>
-          <li><a href="#"><img src="<?php echo base_url("static/css/images/small3.jpg"); ?>" alt="" /></a></li>
-          <li><a href="#"><img src="<?php echo base_url("static/css/images/small4.jpg"); ?>" alt="" /></a></li>
-          <li><a href="#"><img src="<?php echo base_url("static/css/images/small5.jpg"); ?>" alt="" /></a></li>
-          <li><a href="#"><img src="<?php echo base_url("static/css/images/small6.jpg"); ?>" alt="" /></a></li>
-          <li><a href="#"><img src="<?php echo base_url("static/css/images/small7.jpg"); ?>" alt="" /></a></li>
-          <li><a href="#"><img src="<?php echo base_url("static/css/images/small1.jpg"); ?>" alt="" /></a></li>
-          <li><a href="#"><img src="<?php echo base_url("static/css/images/small2.jpg"); ?>" alt="" /></a></li>
-          <li><a href="#"><img src="<?php echo base_url("static/css/images/small3.jpg"); ?>" alt="" /></a></li>
-          <li><a href="#"><img src="<?php echo base_url("static/css/images/small4.jpg"); ?>" alt="" /></a></li>
-          <li><a href="#"><img src="<?php echo base_url("static/css/images/small5.jpg"); ?>" alt="" /></a></li>
-          <li><a href="#"><img src="<?php echo base_url("static/css/images/small6.jpg"); ?>" alt="" /></a></li>
-          <li class="last"><a href="#"><img src="<?php echo base_url("static/css/images/small7.jpg"); ?>" alt="" /></a></li>
+          <li><a href="Principal/compra"><img src="<?php echo base_url("static/css/images/small1.jpg"); ?>" alt="" /></a></li>
+          <li><a href="Principal/compra"><img src="<?php echo base_url("static/css/images/small2.jpg"); ?>" alt="" /></a></li>
+          <li><a href="Principal/compra"><img src="<?php echo base_url("static/css/images/small3.jpg"); ?>" alt="" /></a></li>
+          <li><a href="Principal/compra"><img src="<?php echo base_url("static/css/images/small4.jpg"); ?>" alt="" /></a></li>
+          <li><a href="Principal/compra"><img src="<?php echo base_url("static/css/images/small5.jpg"); ?>" alt="" /></a></li>
+          <li><a href="Principal/compra"><img src="<?php echo base_url("static/css/images/small6.jpg"); ?>" alt="" /></a></li>
+          <li><a href="Principal/compra"><img src="<?php echo base_url("static/css/images/small7.jpg"); ?>" alt="" /></a></li>
+          <li><a href="Principal/compra"><img src="<?php echo base_url("static/css/images/small1.jpg"); ?>" alt="" /></a></li>
+          <li><a href="Principal/compra"><img src="<?php echo base_url("static/css/images/small2.jpg"); ?>" alt="" /></a></li>
+          <li><a href="Principal/compra><img src="<?php echo base_url("static/css/images/small3.jpg"); ?>" alt="" /></a></li>
+          <li><a href="Principal/compra"><img src="<?php echo base_url("static/css/images/small4.jpg"); ?>" alt="" /></a></li>
+          <li><a href="Principal/compra"><img src="<?php echo base_url("static/css/images/small5.jpg"); ?>" alt="" /></a></li>
+          <li><a href="Principal/compra"><img src="<?php echo base_url("static/css/images/small6.jpg"); ?>" alt="" /></a></li>
+          <li><a href="Principal/compra"><img src="<?php echo base_url("static/css/images/small7.jpg"); ?>" alt="" /></a></li>
+          <li><a href="Principal/compra"><img src="<?php echo base_url("static/css/images/small1.jpg"); ?>" alt="" /></a></li>
+          <li><a href="Principal/compra><img src="<?php echo base_url("static/css/images/small2.jpg"); ?>" alt="" /></a></li>
+          <li><a href="Principal/compra><img src="<?php echo base_url("static/css/images/small3.jpg"); ?>" alt="" /></a></li>
+          <li><a href="Principal/compra"><img src="<?php echo base_url("static/css/images/small4.jpg"); ?>" alt="" /></a></li>
+          <li><a href="Principal/compra"><img src="<?php echo base_url("static/css/images/small5.jpg"); ?>" alt="" /></a></li>
+          <li><a href="Principal/compra"><img src="<?php echo base_url("static/css/images/small6.jpg"); ?>" alt="" /></a></li>
+          <li class="last"><a href="Principal/compra"><img src="<?php echo base_url("static/css/images/small7.jpg"); ?>" alt="" /></a></li>
         </ul>
       </div>
       <div class="more-nav"> <a href="#" class="prev">previous</a> <a href="#" class="next">next</a> </div>
@@ -204,4 +204,10 @@
     <!-- End Text Cols-->
   </div>
   <!-- End Side Full-->
+  <!--Footer--> 
+  <div id="footer">
+    <p class="left"> <a href="#">Inicio</a> <span>|</span> <a href="#">Contato</a> <span>|</span> <a href="#">Minha Conta</a> <span>|</span> <a href="#">Galeria</a> <span>|</span> <a href="#">Trabalhe Conosco</a> </p>
+    <p class="right"> &copy; 2015 LimaJacket. Ltda </p>
+  </div>
+  <!-- End Footer -->
   </form>

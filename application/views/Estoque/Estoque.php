@@ -1,7 +1,7 @@
 		<div class="container posicaopainel" style:"margin-top:100px;">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h3><span class="glyphicon glyphicon-thumbs-up"> </span>  Pesquisar Estoque</h3>
+					<h3><span class="glyphicon glyphicon-thumbs-up"> </span>  Pesquisar Jaqueta</h3>
 					
 				</div>
 				   <div class="panel-body" >

@@ -38,6 +38,7 @@ class Principal extends CI_Controller {
 
 	}
 	
+	
 		 public function Categoria()
 	{
 		$dados = array(
@@ -47,6 +48,73 @@ class Principal extends CI_Controller {
 		);
 		$this->load->view('Principal', $dados);
 	}
+
+
+         public function Compra()
+	{
+		$dados = array(
+		'pasta' => 'Compra',
+		'view'  => 'CompraView',
+		//'compra' => $this->CompraModel->getAllCompra()->result()
+		);
+		$this->load->view('Principal', $dados);
+	}
+	
+	
+	
+	public function Pedido()
+			{
+				$dados = array(
+				'pasta' => 'Pedido',
+				'view'  => 'PedidoView',
+				//'Pedido' => $this->PedidoModel->getAllPedido()->result()
+				);
+				
+				$this->load->view('Principal', $dados);
+			}
+	
+	
+	
+	public function Cliente()
+		{
+			$dados = array(
+			'pasta' => 'lojaCliente',
+			'view'  => 'ClienteView',
+			//'Cliente' => $this->ClienteModel->getAllCliente()->result()
+			);
+			
+			$this->load->view('Principal', $dados);
+		}
+
+		
+		
+		public function Login()
+		
+			{
+				$dados = array(
+				'pasta' => 'lojaLogin',
+				'view'  => 'loginView',
+				//'Login' => $this->LoginModel->getAllLogin()->result()
+				);
+				
+				$this->load->view('Principal', $dados);
+			}
+	
+	
+		
+		
+		public function Pagamento()
+		
+			{
+				$dados = array(
+				'pasta' => 'lojaPagamento',
+				'view'  => 'pagamentoView',
+				//'Login' => $this->LoginModel->getAllLogin()->result()
+				);
+				
+				$this->load->view('Principal', $dados);
+			}
+	
 }
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */
