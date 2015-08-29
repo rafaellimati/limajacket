@@ -26,6 +26,35 @@ class CategoriaModel extends CI_Model{
 		return $this->db->get();
 	}
 	
+	public function DropDownCategoria(){
+		
+		//$this->db->select('categoria', 'idCategoria');
+		
+		$this->db->from('TbCategoria');
+		
+		$result = $this->db->get();
+		
+		$return = array();
+
+  		//Verifica se a quantidade de registros e maior que 0
+  		if($result->num_rows > 0){
+
+	   //Varivavel $return com o primeiro indice 0 com o valor 'Selecione'
+	   //$return[''] = 'Selecione';
+	
+	   //Percore os valores 
+	   foreach($result->result_array() as $row){
+	    //O indice que será o id receberá o valor
+	    $return[$row['idCategoria']] = $row['categoria'];
+	   }
+  }
+
+  //Retorna o array preenchido
+  return $return;
+	
+	
+	}
+	
 		public function getById($id = null){
 
 		if($id != null){
@@ -39,7 +68,7 @@ class CategoriaModel extends CI_Model{
 	}
 
 
-		public function updateMarca($dados = null, $condition = null){
+		public function updateCategoria($dados = null, $condition = null){
 
 		if($dados != null && $condition != null){
 

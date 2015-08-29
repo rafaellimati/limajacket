@@ -39,9 +39,9 @@ class Jaqueta extends CI_Controller {
 			if($this->form_validation->run()){
 
 				//Pega os campos e recebe os valores do post
-				$dados = elements(array('jaqueta','quantidade','valor','descricao','idMarca','idLogin','idCor','idTamanho','idCategoria','flagAtivo'), $this->input->post());
+				$dados = elements(array('jaqueta','quantidade','valor','descricao','idMarca','idLogin','idCor','idTamanho','idCategoria','flagAtivo','imagem'), $this->input->post());
 				$dados['idLogin'] = $this->session->userdata('id');
-				$dados["imagem"]  = $this->upload_foto();
+				$dados['imagem']  = $this->upload_foto();
 				//setando flagAtivo para True
 				$dados['flagAtivo'] = 1;
 	
@@ -91,7 +91,7 @@ class Jaqueta extends CI_Controller {
 						'marca' => $this->MarcaModel->getAllActive()->result(),
 						'cor'     => $this->corModel->getAllCor()->result(),
 						'Tamanho' => $this->TamanhoModel->getAllTamanho()->result(),
-						'Categoria'  => $this->CategoriaModel->getAllCategoria()->result(),
+						'Categoria'  => $this->CategoriaModel->DropDownCategoria(),
 						 );
 						$this->load->view('admin', $dados);
 
@@ -105,7 +105,7 @@ class Jaqueta extends CI_Controller {
 						$config['max_height']  = '0';
 						$config['encrypt_name'] = true;		
 						$this->load->library('upload', $config);
-						if ( ! $this->upload->do_upload()){
+						if ( ! $this->upload->do_upload('imagem')){
 							$error = array('error' => $this->upload->display_errors());			
 							print_r($error);
 							exit();

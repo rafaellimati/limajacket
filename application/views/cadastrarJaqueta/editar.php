@@ -22,17 +22,17 @@ if($this->session->flashdata('edicaook'));
         					<br>
         				   	<label for="nome">Jaqueta:</label>
         				   	<div class="input-group textos">
-								<input type="text" id="jaqueta" style="width:260px"; name="jaqueta" value= "" class="form-control" placeholder="Nome Jaqueta" required autofocus >
+								<input type="text" id="jaqueta" style="width:260px"; name="jaqueta" value= ""<?php echo $Jaqueta->jaqueta; ?>"" class="form-control" placeholder="Nome Jaqueta" required autofocus >
 							</div>
 							<br>
         				   <label for="textos">Quantidade:</label>
         				   <div class="input-group textos">
-        				   	<input type="text" id="quantidade" name="quantidade" value= "" class="form-control" placeholder="Quantidade" required  >
+        				   	<input type="text" id="quantidade" name="quantidade" value= "<?php echo $Jaqueta-> quantidade; ?>" class="form-control" placeholder="Quantidade" required  >
         				   </div>
         				   <br>
         				   <label for="textos">Valor:</label>
         				   <div class="input-group textos">
-        				   	<input type="text" id="Valor" name="valor" value= "" class="form-control" placeholder="Valor" required  >
+        				   	<input type="text" id="Valor" name="valor" value= "<?php echo $Jaqueta-> valor; ?>" class="form-control" placeholder="Valor" required  >
         				   </div>
         				   <br>
         				   <label for="textos">Descrição:</label>
@@ -77,14 +77,9 @@ if($this->session->flashdata('edicaook'));
         				   <br>
         				   <label for="textos">Categoria:</label>
         				   <div class="input-group textos">
-        				   <select name="idCategoria">
         				   	<?php 
-        				   	foreach ($Categoria as $key) {
-								   echo "<option value=\"$key->idCategoria\">$key->categoria</option>";
-							   }
-        				   	
+								echo form_dropdown('idCategoria', $Categoria, $Jaqueta->idCategoria);
         				   	?>
-        				   </select>
         				   <br>
         				   <br>
         				   </div>

@@ -30,7 +30,7 @@ class Categoria extends CI_Controller {
 		$dados = array(
 		'pasta' =>'Categoria',
 		'view'  =>'categoria',
-	    'categoriaa'  =>$this->CategoriaModel->getAllCategoria()->result(),
+	    'categoria'  =>$this->CategoriaModel->getAllCategoria()->result(),
 		'Categorias'  => $this->CategoriaModel->getAllCategoria()->result(),
 		);
 	

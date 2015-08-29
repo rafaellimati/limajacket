@@ -5,7 +5,7 @@
         		</div>
         		<div class="panel-body">
         			<div class="container">
-        				<form class="form" role="form" method="post" action="<?php echo base_url("admin/jaqueta/cadastrar")?>">
+        				<form class="form" role="form"  method="post" enctype="multipart/form-data" action="<?php echo base_url("admin/jaqueta/cadastrar")?>">
         				  	<label for="codigoCliente" class="sr-only">Código</label>
         				  	<input type="text" id="idJaqueta" name="idJaqueta" value="" class="form-control codigo" readonly="readonly"> 
         					<br>
@@ -27,6 +27,11 @@
         				   <label for="textos">Descrição:</label>
         				   <div class="input-group textos ">
         				   	<input type="text" id="descricao" name="descricao" value= "" class="form-control" placeholder="Descrição" required  >
+        				   </div>
+        				   <br>
+        				  <label for="input-group textos">Imagem:</label>
+        				   <div class="type">
+        				   	<input type="file" id="imagem" name="imagem" class="form-file" placeholder="Imagem" required  >
         				   </div>
         				   <br>
         				    <label for="textos">Marca:</label>
