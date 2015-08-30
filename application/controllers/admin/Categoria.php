@@ -87,7 +87,7 @@ class Categoria extends CI_Controller {
 							//Pega os valores do formulário
 							$dados = elements(array('categoria','flagAtivo'), $this->input->post());
 							//Envia um update pro banco passando o idMarca do formulário
-							$this->CategoriaModel->updateMarca($dados, array('idCategoria' => $this->input->post('idCategoria')));
+							$this->CategoriaModel->updateCategoria($dados, array('idCategoria' => $this->input->post('idCategoria')));
 		
 				}else{
 						$this->session->set_flashdata('erro', 'Categoria já existe!');

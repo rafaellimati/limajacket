@@ -14,7 +14,9 @@
 								<input type="text" id="login" name="login"  value="" class="form-control" placeholder="Login" required autofocus  style="width: 400px;">
 							</div><br>
         				   <label  for="Senha" >Senha:</label>
-							<input type="Password" id="senha" name="senha" class="form-control" style="width: 400px; placeholder="Senha">
+        				   <div class="input-group textos">
+							<input type="Password" id="senha" name="senha" class="form-control" style="width: 400px"; placeholder= "Senha"  required autofocus>
+							</div>
 							<!--<label for="Senha" > Repita Senha: </label>
 							<input type="Password" id="repitasenha" name="repitasenha" class="form-control" style="width: 400px"; placeholder="Senha">-->
         				   </div>

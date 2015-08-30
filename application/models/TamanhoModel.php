@@ -15,6 +15,35 @@ class TamanhoModel extends CI_Model{
 		}	
 	}
 	
+	
+	public function DropDownTamanho(){
+		
+		//$this->db->select('categoria', 'idCategoria');
+		
+		$this->db->from('TbTamanho');
+		
+		$result = $this->db->get();
+		
+		$return = array();
+
+  		//Verifica se a quantidade de registros e maior que 0
+  		if($result->num_rows > 0){
+
+	   //Varivavel $return com o primeiro indice 0 com o valor 'Selecione'
+	   //$return[''] = 'Selecione';
+	
+	   //Percore os valores 
+	   foreach($result->result_array() as $row){
+	    //O indice que será o id receberá o valor
+	    $return[$row['idTamanho']] = $row['tamanho'];
+	   }
+  }
+
+  //Retorna o array preenchido
+  return $return;
+	
+}
+	
 		public function getAllTamanho(){
 
 		$this->db->from('TbTamanho');

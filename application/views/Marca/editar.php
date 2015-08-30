@@ -41,7 +41,6 @@ if($this->session->flashdata('edicaook')):
                             <div class="input-group textos">
                                 <?php 
 									echo form_dropdown('flagAtivo', array('0' => 'Inativo', '1' => 'Ativo'), $marca->flagAtivo);
- 								echo form_dropdown('flagAtivo', array('0' => 'Inativo', '1' => 'Ativo'), $marca->flagAtivo);
  								?>
                             </div>
                             <br>

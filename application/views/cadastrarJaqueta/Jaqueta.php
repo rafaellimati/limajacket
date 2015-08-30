@@ -31,7 +31,7 @@
         				   <br>
         				  <label for="input-group textos">Imagem:</label>
         				   <div class="type">
-        				   	<input type="file" id="imagem" name="imagem" class="form-file" placeholder="Imagem" required  >
+        				   	<input type="file" id="imagem" name="imagem" value" " class="form-file" placeholder="Imagem" required  >
         				   </div>
         				   <br>
         				    <label for="textos">Marca:</label>

@@ -88,9 +88,9 @@ class Jaqueta extends CI_Controller {
 						'view' => 'editar',
 						'Jaqueta' => $this->JaquetaModel->getAllJaqueta()->result(),
 						'Jaquetas' => $this->JaquetaModel->getAllJaqueta()->result(),
-						'marca' => $this->MarcaModel->getAllActive()->result(),
-						'cor'     => $this->corModel->getAllCor()->result(),
-						'Tamanho' => $this->TamanhoModel->getAllTamanho()->result(),
+						'marca' => $this->MarcaModel->DropDownMarca(),
+						'cor'     => $this->corModel->DropDownCor(),
+						'Tamanho' => $this->TamanhoModel->DropDownTamanho(),
 						'Categoria'  => $this->CategoriaModel->DropDownCategoria(),
 						 );
 						$this->load->view('admin', $dados);

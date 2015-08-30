@@ -15,6 +15,7 @@ class JaquetaModel extends CI_Model{
 		}
 	}
 	
+
 		public function getById($id = null){
 
 		if($id != null){

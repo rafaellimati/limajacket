@@ -18,61 +18,51 @@ if($this->session->flashdata('edicaook'));
         			<div class="container">
         				<form class="form" role="form" method="post" action="<?php echo base_url("admin/jaqueta/editar")?>">
         				  	<label for="codigoCliente" class="sr-only">Código</label>
-        				  	<input type="text" id="idJaqueta" name="idJaqueta" value="" class="form-control codigo" readonly="readonly"> 
+        				  	<input type="text" id="idJaqueta" name="idJaqueta" value="<?php echo $Jaqueta->idJaqueta; ?>" class="form-control codigo" readonly="readonly"> 
         					<br>
         				   	<label for="nome">Jaqueta:</label>
         				   	<div class="input-group textos">
-								<input type="text" id="jaqueta" style="width:260px"; name="jaqueta" value= ""<?php echo $Jaqueta->jaqueta; ?>"" class="form-control" placeholder="Nome Jaqueta" required autofocus >
+								<input type="text" id="jaqueta" style="width:260px"; name="jaqueta" value= "<?php echo $Jaqueta->jaqueta; ?>" class="form-control" placeholder="Nome Jaqueta" required autofocus >
 							</div>
 							<br>
         				   <label for="textos">Quantidade:</label>
         				   <div class="input-group textos">
-        				   	<input type="text" id="quantidade" name="quantidade" value= "<?php echo $Jaqueta-> quantidade; ?>" class="form-control" placeholder="Quantidade" required  >
+        				   	<input type="text" id="quantidade" name="quantidade" value= "<?php echo $Jaqueta-> quantidade; ?>"; class="form-control" placeholder="Quantidade" required  >
         				   </div>
         				   <br>
         				   <label for="textos">Valor:</label>
         				   <div class="input-group textos">
-        				   	<input type="text" id="Valor" name="valor" value= "<?php echo $Jaqueta-> valor; ?>" class="form-control" placeholder="Valor" required  >
+        				   	<input type="text" id="Valor" name="valor" value= "<?php echo $Jaqueta-> valor; ?>"; class="form-control" placeholder="Valor" required  >
         				   </div>
         				   <br>
         				   <label for="textos">Descrição:</label>
         				   <div class="input-group textos ">
-        				   	<input type="text" id="descricao" name="descricao" value= "" class="form-control" placeholder="Descrição" required  >
+        				   	<input type="text" id="descricao" name="descricao" value= "<?php echo $Jaqueta-> descricao; ?>" class="form-control" placeholder="Descrição" required  >
         				   </div>
         				   <br>
-        				    <label for="textos">Marca:</label>
+        				  <label for="input-group textos">Imagem:</label>
+        				   <div class="type">
+        				   	<input type="file" id="imagem" name="imagem" value= "<?php echo $Jaqueta-> imagem; ?>" class="form-file" placeholder="Imagem" required  >
+        				   </div>
+        				   <br>
+        				    <label for="textos"> Marca:</label>
         				   <div class="input-group textos">
-        				   <select name="idMarca">
-        				   	<?php 
-        				   	foreach ($marca as $key) {
-								   echo "<option value=\"$key->idMarca\">$key->marca</option>";
-							   }
-        				   	
+        				   <?php 
+								echo form_dropdown('idMarca', $marca, $Jaqueta->idMarca);
         				   	?>
-        				   </select>
         				   <br><br>
         				   <label for="textos">Cor:</label>
         				   <div class="input-group textos">
-        				   <select name="idCor">
-        				   	<?php 
-        				   	foreach ($cor as $key) {
-								   echo "<option value=\"$key->idCor\">$key->cor</option>";
-							   }
-        				   	
+        				   <?php 
+								echo form_dropdown('idCor', $cor, $Jaqueta->idCor);
         				   	?>
-        				   </select>
         				   <br>
         				   <br>
         				   <label for="textos">Tamanho:</label>
         				   <div class="input-group textos">
-        				   <select name="idTamanho">
         				   	<?php 
-        				   	foreach ($Tamanho as $key) {
-								   echo "<option value=\"$key->idTamanho\">$key->tamanho</option>";
-							   }
-        				   	
+								echo form_dropdown('idTamanho', $Tamanho, $Jaqueta->idTamanho);
         				   	?>
-        				   </select>
         				   <br>
         				   <br>
         				   <label for="textos">Categoria:</label>
