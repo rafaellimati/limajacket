@@ -55,13 +55,14 @@ class usuario extends CI_Controller {
 
 		if($this->form_validation->run()){
 
-			$dados = elements(array('login', 'senha', 'nivelAcesso'), $this->input->post());
+			$dados = elements(array('login', 'senha', 'nivelAcesso','dataCadastro','flagAtivo'), $this->input->post());
 			$dados['senha'] = md5($dados['senha']);
 			$dados['nivelAcesso']= 2;
+			$dados['dataCadastro']= date('Y-m-d');
 
 			//$dados['senha'] = sha1($dados['login']);
-			/*$dados['ativo'] = 1;
-            $dados['primeiro_acesso'] = 1;*/
+			$dados['flagAtivo'] = 1;
+            //$dados['primeiro_acesso'] = 1;
 
 		    $this->UsuarioModel->insertUsuario($dados);
 		}else{
@@ -80,6 +81,32 @@ class usuario extends CI_Controller {
 		//redirect('administrador/usuario/cadastrar');
 
 	}
+
+		public function editar(){
+
+					$this->form_validation->set_rules('login', 'Login', 'trim|required|max_length[45]|strtolower|ucwords');
+					$this->form_validation->set_rules('idLogin', 'idLogin', 'required');
+			
+					if($this->form_validation->run()){
+						//Pega os valores do formulário
+						$dados = elements(array('Login','senha','nivelAcesso','dataCadastro','flagAtivo'), $this->input->post());
+						//Envia um update pro banco passando o idMarca do formulário
+						$this->UsuarioModel->updateUsuario($dados, array('idLogin' => $this->input->post('idLogin')));
+					
+					}else{
+						$this->session->set_flashdata('erro', 'Login já existe!');
+					}
+			
+			
+					//redirect('administrador/marca/editar');
+					$dados = array(
+						'pasta' => 'usuario',
+						'view' => 'editar',
+						'login' => $this->UsuarioModel->getAllUsuario()->result()
+						 );
+					$this->load->view('admin', $dados);
+			
+				}
 }
 
 /* End of file welcome.php */

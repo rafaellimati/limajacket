@@ -1,3 +1,16 @@
+<?php 
+
+//Pega o seguimento 4 da url
+$idLogin = $this->uri->segment(4);
+
+if($idLogin == null) redirect('admin/usuario');
+
+$login = $this->UsuarioModel->getById($idLogin)->row();
+
+if($this->session->flashdata('edicaook')):
+	
+?>
+
 <div class="container posicaopainel">
 	 	<div class="panel panel-default">
         		<div class="panel-heading">
@@ -5,7 +18,7 @@
         		</div>
         		<div class="panel-body">
         			<div class="container">
-        				<form class="form" role="form" method="post" action="<?php echo base_url('admin/usuario/cadastrar') ?>">
+        				<form class="form" role="form" method="post" action="<?php echo base_url('admin/usuario/editar') ?>">
         				  	<label for="codigoCliente" class="sr-only">Código</label>
         				  	<input type="text" id="idLogin" name="idLogin" value="" class="form-control codigo" readonly="readonly">
         		
@@ -16,13 +29,15 @@
         				   <label  for="Senha" >Senha:</label>
         				   <div class="input-group textos">
 							<input type="Password" id="senha" name="senha" class="form-control" style="width: 400px"; placeholder= "Senha"  required autofocus>
-							</div>
-							<!--<label for="Senha" > Repita Senha: </label>
-							<input type="Password" id="repitasenha" name="repitasenha" class="form-control" style="width: 400px"; placeholder="Senha">-->
-        				   </div>
+							<label for="nome">Login:</label>
+                            <div class="input-group textos">
+                                <?php 
+									echo form_dropdown('flagAtivo', array('0' => 'Inativo', '1' => 'Ativo'), $login->flagAtivo);
+ 								?>
+                            </div>
         				   <br><br><br>
-        				   <button type="submit" class="btn btn-lg btn-primary" >Cadastrar</button>
-        				   <!--<button onclick="document.getElementById('op').value='update';" type="submit" class="btn btn-lg btn-primary" >Alterar</button>-->
+        				  <!-- <button type="submit" class="btn btn-lg btn-primary" >Cadastrar</button> -->
+        				   <button onclick="document.getElementById('op').value='update';" type="submit" class="btn btn-lg btn-primary" >Alterar</button>-->
         				   <button id="btnlimpar" type="submit" class="btn btn-lg btn-warning">Limpar</button>
         				</form>
         				<p> </p>
@@ -34,7 +49,7 @@
         						<tr>
         							<th># </th>
         							<th>Login</th>
-        							<th> </th>
+        							<th></th>
         						</tr>
         					</thead>
         					 <tbody>
@@ -56,6 +71,10 @@
         				</div>
         		    </div>
         		</div>
+        	</div>
+        </div>
+       </div>
+        
         		<script type="text/javascript">
         $(document).ready(function() {
         $('.dataTables').DataTable({
@@ -81,6 +100,4 @@
     });
 
 </script>
-	 	</div>
-	 </div>
-	 
+	</body>

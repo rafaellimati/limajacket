@@ -14,6 +14,19 @@ class UsuarioModel extends CI_Model{
 			redirect('admin/usuario');
 		}
 	}
+	
+		public function getById($id = null){
+
+		if($id != null){
+			
+			$this->db->where('idLogin', $id);
+
+			$this->db->limit(1);
+
+			return $this->db->get('TbLogin');
+		}
+	}
+	
 
 	public function updateUsuario($dados = null, $condition = null){
 

@@ -39,7 +39,7 @@ class Jaqueta extends CI_Controller {
 			if($this->form_validation->run()){
 
 				//Pega os campos e recebe os valores do post
-				$dados = elements(array('jaqueta','quantidade','valor','descricao','idMarca','idLogin','idCor','idTamanho','idCategoria','flagAtivo','imagem'), $this->input->post());
+				$dados = elements(array('jaqueta','quantidade','valor','descricao','dataCadastro','imagem','flagAtivo','idMarca','idLogin','idTamanho','idCor','idCategoria'), $this->input->post());
 				$dados['idLogin'] = $this->session->userdata('id');
 				$dados['imagem']  = $this->upload_foto();
 				//setando flagAtivo para True
