@@ -17,8 +17,6 @@
         				   <div class="input-group textos">
 							<input type="Password" id="senha" name="senha" class="form-control" style="width: 400px"; placeholder= "Senha"  required autofocus>
 							</div>
-							<!--<label for="Senha" > Repita Senha: </label>
-							<input type="Password" id="repitasenha" name="repitasenha" class="form-control" style="width: 400px"; placeholder="Senha">-->
         				   </div>
         				   <br><br><br>
         				   <button type="submit" class="btn btn-lg btn-primary" >Cadastrar</button>

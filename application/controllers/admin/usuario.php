@@ -84,12 +84,14 @@ class usuario extends CI_Controller {
 
 		public function editar(){
 
-					$this->form_validation->set_rules('login', 'Login', 'trim|required|max_length[45]|strtolower|ucwords');
-					$this->form_validation->set_rules('idLogin', 'idLogin', 'required');
+					//$this->form_validation->set_rules('login', 'Login', 'trim|required|max_length[45]|strtolower|ucwords');
+					//$this->form_validation->set_rules('idLogin', 'idLogin', 'required');
 			
 					if($this->form_validation->run()){
 						//Pega os valores do formulário
-						$dados = elements(array('Login','senha','nivelAcesso','dataCadastro','flagAtivo'), $this->input->post());
+						$dados = elements(array('login','senha','flagAtivo'), $this->input->post());
+						$dados['senha']= md5($dados['senha']);
+						
 						//Envia um update pro banco passando o idMarca do formulário
 						$this->UsuarioModel->updateUsuario($dados, array('idLogin' => $this->input->post('idLogin')));
 					
@@ -98,11 +100,12 @@ class usuario extends CI_Controller {
 					}
 			
 			
-					//redirect('administrador/marca/editar');
+					//redirect('administrador/marca/editar'); 
 					$dados = array(
 						'pasta' => 'usuario',
 						'view' => 'editar',
-						'login' => $this->UsuarioModel->getAllUsuario()->result()
+						'login' => $this->UsuarioModel->getAllUsuario()->result(),
+						'loginho' => $this->UsuarioModel->getAllUsuario()->result()
 						 );
 					$this->load->view('admin', $dados);
 			
