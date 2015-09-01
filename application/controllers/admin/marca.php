@@ -83,8 +83,6 @@ class marca extends CI_Controller {
 		$this->load->view('admin', $dados);
 
 
-		//redirect('administrador/marca/cadastrar');
-
 	}
 
 	public function editar(){
@@ -103,7 +101,6 @@ class marca extends CI_Controller {
 		}
 
 
-		//redirect('administrador/marca/editar');
 		$dados = array(
 			'pasta' => 'Marca',
 			'view' => 'editar',

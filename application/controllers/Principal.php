@@ -19,14 +19,15 @@ class Principal extends CI_Controller {
 	 */
 
 
-	public function __construct(){
+	/*public function __construct(){
 		parent::__construct();
 		$this->load->model('CategoriaModel');
-	}
+	}*/
 
 
 	public function index()
 	{
+		$this->load->model('CategoriaModel');
 		$dados = array(
 		'pasta' => 'loja',
 		'view'  => 'inicio',
