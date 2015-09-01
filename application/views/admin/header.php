@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>MenuPrincipal</title>
+		<title>Menu Principal</title>
 		<meta name="author" content="Aluno" />
 		<!-- Date: 2014-11-20 -->
 		<link type="text/css" href="<?php echo base_url("static/css/bootstrap.css") ?>" rel="stylesheet" media="screen">

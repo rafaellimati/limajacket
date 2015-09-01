@@ -39,7 +39,7 @@ class Principal extends CI_Controller {
 	}
 	
 	
-		 public function Categoria()
+		 /*public function Categoria()
 	{
 		$dados = array(
 		'pasta' => 'lojaCategoria',
@@ -50,7 +50,7 @@ class Principal extends CI_Controller {
 	}
 
 
-         public function Compra()
+        /* public function Compra()
 	{
 		$dados = array(
 		'pasta' => 'Compra',
@@ -113,7 +113,7 @@ class Principal extends CI_Controller {
 				);
 				
 				$this->load->view('Principal', $dados);
-			}
+			}*/
 	
 }
 /* End of file welcome.php */

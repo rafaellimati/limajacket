@@ -10,41 +10,36 @@
 								<img src="<?php echo base_url("static/css/images/big3.jpg"); ?>" alt="" />
 							</div>
 							<div id="similar-product" class="carousel slide" data-ride="carousel">
-								
-								  <!-- Wrapper for slides -->
-								    <div class="">
-										<div class="item ">
-										  <a><img src="<?php echo base_url("static/css/images/small1.jpg"); ?> alt=""></a>
-										  <a><img src="<?php echo base_url("static/css/images/small2.jpg"); ?> alt=""></a>
-										  <a><img src="<?php echo base_url("static/css/images/small3.jpg"); ?> alt=""></a>
-										</div>
-									</div>
 							</div>
-
 						</div>
 						<div class="col-sm-7">
-							<div class="product-information"><!--/product-information-->
+							<div class="product-information"> <!--/product-information-->
 								<h2>Jaqueta Preta tecido fino</h2>
 								<p>Descrição:</p>
 								<span>
 									<span>R$ 59</span>
 									<label> Quantidade:</label>
 									<input type="text" value="3" />
-									<button type="button" class="btn btn-fefault cart">
-										
-										Comprar
+									<button type="button"  class="btn btn-fefault cart">
+									    <link= "pedido">  Comprar </link>
 									</button>
 								</span>
-								<p><b>Categoria:</b> Feminino</p>
-								<p><b>Tamanho:</b> M</p>
-								<p><b>Cor:</b> Preta</p>
-								<a href=""><img src="<?php echo base_url("static/css/images/product-details/share.png"); ?> class="share img-responsive"  alt="" /></a>
-							</div><!--/product-information-->
+								<p><b> Categoria:</b> Feminino</p>
+								<p><b> Tamanho:</b> M</p>
+								<p><b> Cor:</b> Preta</p>
+								
+							  <!--/product-information-->
+							  
+							</div>
 						</div>
-					</div><!--/product-details-->
+					</div>
+					
+					<!--/product-details-->
 					
 					<div class="recommended_items">
+						
 						<!--recommended_items-->
+						
 						<h2 class="title text-center">recommended items</h2>
 						
 						<div data-ride="carousel">
@@ -89,18 +84,24 @@
 								</div>
 							</div>
 						</div>
-					</div><!--/recommended_items-->
+					</div>
+					
+					<!--/recommended_items-->
 					
 				</div>
 			</div>
 		</div>
+		
   <!--Footer--> 
+  
   <div id="footer">
-    <p class="left"> <a href="#">Inicio</a> <span>|</span> <a href="#">Contato</a> <span>|</span> <a href="#">Minha Conta</a> <span>|</span> <a href="#">Galeria</a> <span>|</span> <a href="#"> Trabalhe Conosco </a> </p>
+    <p class="left"> <a href="Principal">Inicio</a> <span>|</span> <a href="#">Contato</a> <span>|</span> <a href="Pedido">Minha Conta</a> <span>|</span> <a href="Categoria">Galeria</a> <span>|</span> <a href="#"> Trabalhe Conosco </a> </p>
     <p class="right"> &copy; 2015 LimaJacket. Ltda </p>
   </div>
   </div>
+  
   <!-- End Footer -->
+  
   		<link href="<?php echo base_url("static/css/bootstrap.minn.css"); ?>"  rel="stylesheet">
 		<link href="<?php echo base_url("static/css/font-awesome.min.css"); ?>" rel="stylesheet">
 		<link href="<?php echo base_url("static/css/prettyPhoto.css"); ?>" rel="stylesheet">

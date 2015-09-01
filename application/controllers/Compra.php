@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Cliente extends CI_Controller {
+class Compra extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -17,16 +17,22 @@ class Cliente extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+
+
+	public function __construct(){
+		parent::__construct();
+		//$this->load->model('CompraModel');
+	}
+
+	
 	public function index()
 	{
-		
 		$dados = array(
-		'pasta' =>'lojaCliente',
-		'view'  =>'clienteView');
-	
+		'pasta' => 'Compra',
+		'view'  => 'CompraView',
+		//'compra' => $this->CompraModel->getAllCompra()->result()
+		);
 		$this->load->view('Principal', $dados);
 	}
+	
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
