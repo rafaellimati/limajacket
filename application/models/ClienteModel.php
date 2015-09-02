@@ -26,6 +26,32 @@ class ClienteModel extends CI_Model{
 		return $this->db->get();
 	}
 		
+		public function getAllCidade(){
+			
+		$this->db->select_max('idCidade');
+			
+		$query = $this->db->get('TbCidade');
+
+		//$this->db->order_by('idCidade');
+
+		//$this->db->where('ativo', 1);
+		
+		$return = array();
+		
+		if($result->num_rows > 0){
+
+	   //Varivavel $return com o primeiro indice 0 com o valor 'Selecione'
+	   //$return[''] = 'Selecione';
+	
+	   //Percore os valores 
+	   foreach($result->result_array() as $row){
+	    //O indice que será o id receberá o valor
+	    $return[$row['idCidade']] = $row['cidade'];
+	}
+}
+		
+}
+		
 		
 		public function insertEndereco($dados = null){
 
@@ -39,5 +65,6 @@ class ClienteModel extends CI_Model{
 			redirect('cliente/endereco');
 		}
 	}
+		
 }
 	

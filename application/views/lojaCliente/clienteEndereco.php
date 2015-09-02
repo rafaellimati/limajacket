@@ -12,8 +12,17 @@
 						<div class="bill-to">
 							<p>Dados pessoais</p>
 							<div class="form-one">
-								<form action = "<?php echo base_url("cliente/estado"); ?>" method= "post">
-									<input type="text" disabled = "disabled" value= "(coloque ultima cidade)" id = "idCidade" name= "idCidade" placeholder="Cidade">
+								<form action = "<?php echo base_url("cliente/endereco"); ?>" method= "post">
+									<select name="idCidade">
+										<br>	
+        				   			<?php 
+        				   			foreach ($cidade as $key) {
+								   			echo "<option value=\"$key->idCidade\">$key->cidade</option>";
+							   				}
+        				   	
+        				   			?>
+        				   			</select>
+        				   			<br><br>
 									<input type="text"  id = "logradouro" name= "logradouro" placeholder="Logradouro">
 									<input type="text"  id = "bairro" name= "bairro" placeholder="Bairo">
 									<input type="text"  id = "numero" name= "numero" placeholder="Numero">

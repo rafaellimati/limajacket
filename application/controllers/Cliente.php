@@ -30,7 +30,8 @@ class Cliente extends CI_Controller {
 		$dados = array(
 		'pasta' => 'lojaCliente',
 		'view' => 'clienteCidade',
-		'Estado' => $this->ClienteModel->getAllEstado()->result()
+		'Estado' => $this->ClienteModel->getAllEstado()->result(),
+		'cidade' => $this->ClienteModel->getAllCidade()->result(),
 		);
 	
 		$this->load->view('Principal', $dados);
@@ -61,7 +62,6 @@ class Cliente extends CI_Controller {
 		$dados = array(
 			'pasta' => 'lojaCliente',
 			'view' => 'clienteCidade',
-			 'Estado' => $this->ClienteModel->getAllEstado()->result()
 			 );
 		$this->load->view('Principal', $dados);
 
@@ -82,7 +82,10 @@ class Cliente extends CI_Controller {
 
 			//Pega os campos e recebe os valores do post
 			$dados = elements(array('logradouro','bairro','numero','cep','idCidade'), $this->input->post());
-
+			/*$this -> db -> select_max ('idCidade');
+			$dados -> $this -> db -> get ('TbCidade');
+			$this -> db -> set('idCidade', $dados);
+			$this-> db ->insertEndereco('tbEndereco');*/
 			//setando flagAtivo para True
 			//$dados['flagAtivo'] = 1;
 
@@ -94,7 +97,8 @@ class Cliente extends CI_Controller {
 		$dados = array(
 			'pasta' => 'lojaCliente',
 			'view' => 'clienteEndereco',
-			 'Estado' => $this->ClienteModel->getAllEstado()->result()
+			 'Estado' => $this->ClienteModel->getAllEstado(),
+			 'cidade' => $this->ClienteModel->getAllCidade(),
 			 );
 		$this->load->view('Principal', $dados);
 
