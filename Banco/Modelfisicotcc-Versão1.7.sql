@@ -108,12 +108,12 @@ CREATE TABLE IF NOT EXISTS `JaquetasTcc`.`TbEndereco` (
   `bairro` VARCHAR(100) NOT NULL,
   `numero` VARCHAR(10) NOT NULL,
   `cep` VARCHAR(45) NOT NULL,
-  `idMunicipio` INT(11) NOT NULL,
+  `idCidade` INT(11) NOT NULL,
   PRIMARY KEY (`idEndereco`),
-  INDEX `fk_TbEndereco_TbMunicipio1_idx` (`idMunicipio` ASC),
+  INDEX `fk_TbEndereco_TbMunicipio1_idx` (`idCidade` ASC),
   CONSTRAINT `fk_TbEndereco_TbMunicipio1`
-    FOREIGN KEY (`idMunicipio`)
-    REFERENCES `JaquetasTcc`.`TbCidade` (`idMunicipio`)
+    FOREIGN KEY (`idCidade`)
+    REFERENCES `JaquetasTcc`.`TbCidade` (`idCidade`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -171,10 +171,10 @@ DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
 
 CREATE TABLE IF NOT EXISTS `JaquetasTcc`.`TbCidade` (
-  `idMunicipio` INT(11) NOT NULL AUTO_INCREMENT,
+  `idCidade` INT(11) NOT NULL AUTO_INCREMENT,
   `cidade` VARCHAR(100) NOT NULL,
   `idEstado` INT(11) NOT NULL,
-  PRIMARY KEY (`idMunicipio`),
+  PRIMARY KEY (`idCidade`),
   INDEX `fk_TbMunicipio_TbEstado1_idx` (`idEstado` ASC),
   CONSTRAINT `fk_TbMunicipio_TbEstado1`
     FOREIGN KEY (`idEstado`)
@@ -198,7 +198,7 @@ CREATE TABLE IF NOT EXISTS `JaquetasTcc`.`TbLogin` (
   `login` VARCHAR(100) NOT NULL,
   `senha` VARCHAR(45) NOT NULL,
   `nivelAcesso` INT(11) NOT NULL,
-  `dataCadastro` VARCHAR(20) NOT NULL,
+  `dataCadastro` DATE NOT NULL,
   `flagAtivo` TINYINT(4) NOT NULL,
   PRIMARY KEY (`idLogin`),
   UNIQUE INDEX `login_UNIQUE` (`login` ASC))

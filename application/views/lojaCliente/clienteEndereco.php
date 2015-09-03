@@ -3,12 +3,13 @@
 //Pega o seguimento 4 da url
 $idCidade = $this->uri->segment(3);
 
-//if(idCidade == null) redirect('cliente');
+//if($idCidade == null) redirect('cliente/cidade');
 
 $cidade = $this->ClienteModel->getAllCidade($idCidade)->row();
 
 if($this->session->flashdata('edicaook'));
-?>		
+?>
+
 	
 		<section id="cart_items">
 		<div class="container">
@@ -23,7 +24,7 @@ if($this->session->flashdata('edicaook'));
 						<div class="bill-to">
 							<p>Dados pessoais</p>
 							<div class="form-one">
-								<form role="form" action = "<?php echo base_url("cliente/endereco"); ?>" method= "post">
+								<form role="form" action = "<?php echo base_url("Cliente/endereco"); ?>" method= "post">
 									<!--<select name="idCidade">
 										<br>	
         				   			<?php 
@@ -33,12 +34,12 @@ if($this->session->flashdata('edicaook'));
         				   	
         				   			?>
         				            </select>-->
-        				   			<input type="text" id="idCidade" name="idCidade" value= "<?php echo $cidade-> cidade; ?>" class="form-control codigo"> 
+        				   			<input type="text" id="idcidade" name="idcidade" value= "<?php echo $cidade-> idCidade; ?>" class="form-control codigo"> 
 									<input type="text"  id = "logradouro" name= "logradouro" placeholder="LOGRADOURO">
 									<input type="text"  id = "bairro" name= "bairro" placeholder="BAIRRO">
 									<input type="text"  id = "numero" name= "numero" placeholder="Numero">
 									<input type="text"  id = "cep" name= "cep" placeholder="CEP">
-									<a class="btn btn-primary" href="">Confirme</a>
+									<button type="submit" class="btn btn-justified btn-primary" >Confirme</button>
 									<a class="btn btn-primary" href="">Limpar</a>
 							</div>
 							</form>

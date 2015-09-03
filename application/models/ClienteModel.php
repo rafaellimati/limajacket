@@ -10,7 +10,7 @@ class ClienteModel extends CI_Model{
 
 			$this->session->set_flashdata('cadastrook','Cadastro realizado com sucesso.');
 			
-			redirect('cliente/endereco');
+			redirect('Cliente/endereco');
 		}
 	}
 		
@@ -27,14 +27,27 @@ class ClienteModel extends CI_Model{
 		
 		public function getAllCidade(){
 			
-		$this->db->select_max('cidade');
+		$this->db->select_max('idCidade');
 
-		$query=$this->db->from('TbCidade');
+		$query= $this->db->from('TbCidade');
 		
 
 		return $this->db->get();
 	}
 		
+		
+			public function updateEndereco($dados = null, $condition = null){
+
+		if($dados != null && $condition != null){
+
+			$this->db->update('TbEndereco', $dados, $condition);
+
+			$this->session->set_flashdata('edicaook', 'Alteração realizada com sucesso.');
+
+			//redirect('usuario/editar');
+			redirect('cliente/cidade');
+		}
+	}
 		
 		
 		public function insertEndereco($dados = null){
@@ -46,7 +59,7 @@ class ClienteModel extends CI_Model{
 			$this->session->set_flashdata('cadastrook','Cadastro realizado com sucesso.');
 			
 			//redirect('usuario/cadastrar');
-			redirect('cliente/endereco');
+			redirect('cliente/cidade');
 		}
 	}
 		
