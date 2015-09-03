@@ -20,8 +20,10 @@
 									<span>R$ 59</span>
 									<label> Quantidade:</label>
 									<input type="text" value="3" />
-									<button type="button"  class="btn btn-fefault cart">
-									    <link= "pedido">  Comprar </link>
+									<button type="button" href= "<?php echo base_url("pedido"); ?>" class="btn btn-fefault cart">
+											    
+									     Comprar 
+									     
 									</button>
 								</span>
 								<p><b> Categoria:</b> Feminino</p>

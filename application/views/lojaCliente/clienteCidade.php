@@ -1,4 +1,3 @@
-<!-- <form action= method="post">-->
 	<section id="cart_items">
 		<div class="container">
 		<br><br><br>
@@ -25,7 +24,7 @@
         				   			?>
         				   			</select>
 									<button type="submit" class="btn btn-justified btn-primary" >Cadastrar</button>
-									<a class="btn btn-primary" href="">Limpar</a>
+									<a class="btn btn-primary" href=""> Limpar</a>
 								</form>
 							</div>
 						</div>
@@ -60,5 +59,3 @@
 		<script src="<?php echo base_url("static/js/bootstrap.minn.js"); ?>"></script>
 		<script src="<?php echo base_url("static/js/jquery.prettyPhoto.js"); ?>"></script>
 		<script src="<?php echo base_url("static/js/main.js"); ?>"></script>
-  
-  <!--</form>-->

@@ -21,6 +21,7 @@ class Cliente extends CI_Controller {
 	 public function __construct(){
 		parent::__construct();
 		$this->load->model('ClienteModel');
+		$this->load->model('CategoriaModel');
 	}
 	 
 	 
@@ -31,7 +32,7 @@ class Cliente extends CI_Controller {
 		'pasta' => 'lojaCliente',
 		'view' => 'clienteCidade',
 		'Estado' => $this->ClienteModel->getAllEstado()->result(),
-		'cidade' => $this->ClienteModel->getAllCidade()->result(),
+		//'cidade' => $this->ClienteModel->getAllCidade()->result(),
 		);
 	
 		$this->load->view('Principal', $dados);
@@ -71,7 +72,8 @@ class Cliente extends CI_Controller {
 	
 	public function Endereco(){
 
-		$Endereco = elements(array('logradouro','bairro','numero','cep','idCidade'), $this->input->post());
+		$Endereco = elements(array('idCidade','logradouro','bairro','numero','cep'), $this->input->post());
+		//$cidade['idCidade']= 'idCidade';
 
 		$this->form_validation->set_rules('logradouro', 'Logradouro', 'trim|required|max_length[45]|ucwords|is_unique[TbCidade.cidade]');
 		//Seta uma mensagem se já existir no banco.
@@ -81,11 +83,7 @@ class Cliente extends CI_Controller {
 		if($this->form_validation->run()){
 
 			//Pega os campos e recebe os valores do post
-			$dados = elements(array('logradouro','bairro','numero','cep','idCidade'), $this->input->post());
-			/*$this -> db -> select_max ('idCidade');
-			$dados -> $this -> db -> get ('TbCidade');
-			$this -> db -> set('idCidade', $dados);
-			$this-> db ->insertEndereco('tbEndereco');*/
+			$dados = elements(array('idCidade','logradouro','bairro','numero','cep'), $this->input->post());
 			//setando flagAtivo para True
 			//$dados['flagAtivo'] = 1;
 
@@ -98,7 +96,8 @@ class Cliente extends CI_Controller {
 			'pasta' => 'lojaCliente',
 			'view' => 'clienteEndereco',
 			 'Estado' => $this->ClienteModel->getAllEstado(),
-			 'cidade' => $this->ClienteModel->getAllCidade(),
+			 'cidade' => $this->ClienteModel->getAllCidade()->result(),
+
 			 );
 		$this->load->view('Principal', $dados);
 
