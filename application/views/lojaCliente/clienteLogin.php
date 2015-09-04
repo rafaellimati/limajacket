@@ -1,41 +1,19 @@
-<?php 
-
-//Pega o seguimento 4 da url
-$idCidade = $this->uri->segment(3);
-
-//if($idCidade == null) redirect('cliente/cidade');
-
-$cidade = $this->ClienteModel->getAllCidade($idCidade)->row();
-
-if($this->session->flashdata('edicaook'));
-?>
-
-	
-		<section id="cart_items">
+ <!-- <form action="<?php echo base_url("Principal/categoria"); ?>" method="post">-->
+	<section id="cart_items">
 		<div class="container">
 		<br><br><br>
 			<div class="shopper-informations">
 				<div class="row">
 					<div class="col-sm-3">
 						<div class="shopper-info">
-						</div>
-					</div>
-					<div class="col-sm-5 clearfix">
-						<div class="bill-to">
-							<p>Dados pessoais</p>
-							<div class="form-one">
-								<form role="form" action = "<?php echo base_url("Cliente/endereco"); ?>" method= "post">
-
-        				   			<input type="text" id="idcidade" name="idcidade" value= "<?php echo $cidade-> idCidade; ?>" class="form-control codigo"> 
-									<input type="text"  id = "logradouro" name= "logradouro" placeholder="LOGRADOURO">
-									<input type="text"  id = "bairro" name= "bairro" placeholder="BAIRRO">
-									<input type="text"  id = "numero" name= "numero" placeholder="Numero">
-									<input type="text"  id = "cep" name= "cep" placeholder="CEP">
-									<button type="submit" class="btn btn-justified btn-primary" >Confirme</button>
-									<a class="btn btn-primary" href="">Limpar</a>
-							</div>
+							<p>Cadastre seu Login</p>
+							<form role="form" action = "<?php echo base_url("Cliente/Login"); ?>" method= "post">
+								<input type="text" id="login" name="login" placeholder="Login">
+								<input type="password" id="senha" name="senha" placeholder="Senha">
+							
+							<button type="submit" class="btn btn-justified btn-primary"> Confirme</button>
+							<a class="btn btn-primary" href="">Limpar</a>
 							</form>
-
 						</div>
 					</div>				
 				</div>
@@ -68,4 +46,5 @@ if($this->session->flashdata('edicaook'));
 		<script src="<?php echo base_url("static/js/bootstrap.minn.js"); ?>"></script>
 		<script src="<?php echo base_url("static/js/jquery.prettyPhoto.js"); ?>"></script>
 		<script src="<?php echo base_url("static/js/main.js"); ?>"></script>
-
+  
+  <!--</form>-->

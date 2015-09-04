@@ -1,7 +1,20 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class ClienteModel extends CI_Model{
-	
+			
+		public function insertLogin($dados = null){
+
+		if($dados != null){
+
+			$this->db->insert('TbLogin', $dados);
+
+			$this->session->set_flashdata('cadastrook','Cadastro realizado com sucesso.');
+			
+			
+			redirect('Cliente/cidade');
+		}
+	}	
+			
 		public function insertCidade($dados = null){
 
 		if($dados != null){
@@ -12,6 +25,29 @@ class ClienteModel extends CI_Model{
 			
 			redirect('Cliente/endereco');
 		}
+	}
+		
+		
+		public function getAllDDD(){
+
+		$this->db->from('TbDdd');
+
+		$this->db->order_by('idDdd');
+
+		//$this->db->where('ativo', 1);
+
+		return $this->db->get();
+	}
+		
+		public function getAllTipoTelefone(){
+
+		$this->db->from('TbTipoTelefone');
+
+		$this->db->order_by('idTipoTelefone');
+
+		//$this->db->where('ativo', 1);
+
+		return $this->db->get();
 	}
 		
 		public function getAllEstado(){
@@ -36,19 +72,6 @@ class ClienteModel extends CI_Model{
 	}
 		
 		
-			public function updateEndereco($dados = null, $condition = null){
-
-		if($dados != null && $condition != null){
-
-			$this->db->update('TbEndereco', $dados, $condition);
-
-			$this->session->set_flashdata('edicaook', 'Alteração realizada com sucesso.');
-
-			//redirect('usuario/editar');
-			redirect('cliente/cidade');
-		}
-	}
-		
 		
 		public function insertEndereco($dados = null){
 
@@ -58,8 +81,20 @@ class ClienteModel extends CI_Model{
 
 			$this->session->set_flashdata('cadastrook','Cadastro realizado com sucesso.');
 			
-			//redirect('usuario/cadastrar');
-			redirect('cliente/cidade');
+			redirect('cliente/telefone');
+		}
+	}
+
+		
+		public function insertTelefone($dados = null){
+
+		if($dados != null){
+
+			$this->db->insert('TbTelefone', $dados);
+
+			$this->session->set_flashdata('cadastrook','Cadastro realizado com sucesso.');
+			
+			redirect('cliente/endereco');
 		}
 	}
 		

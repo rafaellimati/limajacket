@@ -1,17 +1,4 @@
-<?php 
-
-//Pega o seguimento 4 da url
-$idCidade = $this->uri->segment(3);
-
-//if($idCidade == null) redirect('cliente/cidade');
-
-$cidade = $this->ClienteModel->getAllCidade($idCidade)->row();
-
-if($this->session->flashdata('edicaook'));
-?>
-
-	
-		<section id="cart_items">
+	<section id="cart_items">
 		<div class="container">
 		<br><br><br>
 			<div class="shopper-informations">
@@ -22,20 +9,33 @@ if($this->session->flashdata('edicaook'));
 					</div>
 					<div class="col-sm-5 clearfix">
 						<div class="bill-to">
-							<p>Dados pessoais</p>
+							<p>Dados pessoais&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;Selecione DDD</p>
 							<div class="form-one">
-								<form role="form" action = "<?php echo base_url("Cliente/endereco"); ?>" method= "post">
-
-        				   			<input type="text" id="idcidade" name="idcidade" value= "<?php echo $cidade-> idCidade; ?>" class="form-control codigo"> 
-									<input type="text"  id = "logradouro" name= "logradouro" placeholder="LOGRADOURO">
-									<input type="text"  id = "bairro" name= "bairro" placeholder="BAIRRO">
-									<input type="text"  id = "numero" name= "numero" placeholder="Numero">
-									<input type="text"  id = "cep" name= "cep" placeholder="CEP">
-									<button type="submit" class="btn btn-justified btn-primary" >Confirme</button>
-									<a class="btn btn-primary" href="">Limpar</a>
+								<form action = "<?php echo base_url("cliente/telefone"); ?>" method= "post">
+									<input type="text" id="telefone" name="telefone" placeholder="Telefone">
+									<button type="submit" class="btn btn-justified btn-primary" >Cadastrar</button>
+									<a class="btn btn-primary" href=""> Limpar</a>
 							</div>
-							</form>
-
+							<div class="form-two">
+									<select name="idDdd">
+        				   			<?php 
+        				   			foreach ($DDD as $key) {
+								   			echo "<option value=\"$key->idDdd\">$key->ddd</option>";
+							   				}
+        				   	
+        				   			?>
+        				   			</select>
+        				   			<p></p>
+        				   			<select name="idTipoTelefone">
+        				   			<?php 
+        				   			foreach ($TipoTelefone as $key) {
+								   			echo "<option value=\"$key->idTipoTelefone\">$key->tipoTelefone</option>";
+							   				}
+        				   	
+        				   			?>
+        				   			</select>
+								</form>
+							</div>
 						</div>
 					</div>				
 				</div>
@@ -68,4 +68,3 @@ if($this->session->flashdata('edicaook'));
 		<script src="<?php echo base_url("static/js/bootstrap.minn.js"); ?>"></script>
 		<script src="<?php echo base_url("static/js/jquery.prettyPhoto.js"); ?>"></script>
 		<script src="<?php echo base_url("static/js/main.js"); ?>"></script>
-
