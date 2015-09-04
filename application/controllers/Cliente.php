@@ -173,6 +173,42 @@ class Cliente extends CI_Controller {
 
 	}
 
+		
+		public function Cadastrar(){
+
+		$cpf = elements(array('nome','cpf','email','dataNascimento'), $this->input->post());
+
+		$this->form_validation->set_rules('nome', 'Nome', 'trim|required|max_length[45]|ucwords|is_unique[TbCidade.cidade]');
+		$this->form_validation->set_message('is_unique', "O cpf ". $cpf['cpf'] ." já existe.");
+
+		//Verifica se o formmulário é válido
+		if($this->form_validation->run()){
+
+			//Pega os campos e recebe os valores do post
+			$dados = elements(array('nome','cpf','email','dataNascimento','dataCadastro','flagAtivo','idEndereco','idTelefone','idSexo','idLogin'), $this->input->post());
+			$dados['idEndereco'] = $this->input->post('idEndereco');
+			$dados['idTelefone'] = $this->input->post('idTelefone');
+			$dados['idSexo'] = $this->input->post('idSexo');
+			$dados['idLogin'] = $this->input->post('idLogin');
+			//setando flagAtivo para True
+			//$dados['flagAtivo'] = 1;
+
+			$this->ClienteModel->insertEndereco($dados);
+		}else{
+			$this->session->set_flashdata('erro', 'cadastrar já existe!');
+		}
+
+		$dados = array(
+			'pasta' => 'lojaCliente',
+			'view' => 'clienteCadastrar',
+			 'sexo' => $this->ClienteModel->getAllSexo()->result(),
+
+			 );
+		$this->load->view('Principal', $dados);
+
+
+	}
+
 
 
 }

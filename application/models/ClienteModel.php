@@ -97,6 +97,18 @@ class ClienteModel extends CI_Model{
 			redirect('cliente/endereco');
 		}
 	}
+
+		
+		public function getAllSexo(){
+
+		$this->db->from('TbSexo');
+
+		$this->db->order_by('idSexo');
+
+		//$this->db->where('ativo', 1);
+
+		return $this->db->get();
+	}
 		
 		
 }
