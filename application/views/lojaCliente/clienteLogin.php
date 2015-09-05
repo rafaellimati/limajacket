@@ -6,7 +6,7 @@
 				<div class="row">
 					<div class="col-sm-3">
 						<div class="shopper-info">
-							<p>Cadastre seu Login</p>
+							<p>1 Passo</p>&nbsp;&nbsp;&nbsp;&nbsp;<p>Cadastre seu Login</p> 
 							<form role="form" action = "<?php echo base_url("Cliente/Login"); ?>" method= "post">
 								<input type="text" id="login" name="login" placeholder="Login">
 								<input type="password" id="senha" name="senha" placeholder="Senha">

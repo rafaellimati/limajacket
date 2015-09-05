@@ -9,7 +9,7 @@
 							<input type="text" placeholder="Login" />
 							<input type="email" placeholder="Senha" />
 							<span>
-								<a href="Principal/cliente" class="bul">Cadastre-se aqui</a>
+								<a href="cliente" class="bul">Cadastre-se aqui</a>
 							</span>
 							<button type="submit" class="btn btn-default">Login</button>
 						</form>

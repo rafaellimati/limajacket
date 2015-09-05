@@ -111,28 +111,29 @@ class Cliente extends CI_Controller {
 
 		$Endereco = elements(array('logradouro','bairro','numero','cep','idCidade'), $this->input->post());
 
-		$this->form_validation->set_rules('logradouro', 'Logradouro', 'trim|required|max_length[45]|ucwords|is_unique[TbCidade.cidade]');
-		$this->form_validation->set_message('is_unique', "O endereço ". $Endereco['logradouro'] ." já existe.");
+		$this->form_validation->set_rules('logradouro', 'Logradouro', 'trim|required|max_length[45]|ucwords|');
+		//$this->form_validation->set_message('is_unique', "O endereço ". $Endereco['logradouro'] ." já existe.");
 
 		//Verifica se o formmulário é válido
 		if($this->form_validation->run()){
 
 			//Pega os campos e recebe os valores do post
-			$dados = elements(array('logradouro','bairro','numero','cep','idCidade'), $this->input->post());
-			$dados['idCidade'] = $this->input->post('idcidade');
+			$dados = elements(array('logradouro','bairro','numero','cep'), $this->input->post());
+			$dados['idCidade'] = $this->input->post('cidade');
 			//setando flagAtivo para True
 			//$dados['flagAtivo'] = 1;
 
 			$this->ClienteModel->insertEndereco($dados);
+			
 		}else{
-			$this->session->set_flashdata('erro', 'Marca já existe!');
+			$this->session->set_flashdata('erro', 'Endereç já existe!');
 		}
 
 		$dados = array(
 			'pasta' => 'lojaCliente',
 			'view' => 'clienteEndereco',
 			 'Estado' => $this->ClienteModel->getAllEstado(),
-			 'cidade' => $this->ClienteModel->getAllCidade()->result(),
+			 //'cidade' => $this->ClienteModel->getAllCidade()->result(),
 
 			 );
 		$this->load->view('Principal', $dados);
@@ -186,14 +187,13 @@ class Cliente extends CI_Controller {
 
 			//Pega os campos e recebe os valores do post
 			$dados = elements(array('nome','cpf','email','dataNascimento','dataCadastro','flagAtivo','idEndereco','idTelefone','idSexo','idLogin'), $this->input->post());
-			$dados['idEndereco'] = $this->input->post('idEndereco');
-			$dados['idTelefone'] = $this->input->post('idTelefone');
-			$dados['idSexo'] = $this->input->post('idSexo');
-			$dados['idLogin'] = $this->input->post('idLogin');
-			//setando flagAtivo para True
-			//$dados['flagAtivo'] = 1;
+			$dados['idEndereco'] = $this->input->post('enderecoPost');
+			$dados['idTelefone'] = $this->input->post('telefonePost');
+			$dados['idLogin'] = $this->input->post('loginPost');
+			$dados['dataCadastro']= date('Y-m-d');
+		    $dados['flagAtivo'] = 1;
 
-			$this->ClienteModel->insertEndereco($dados);
+			$this->ClienteModel->insertCadastrar($dados);
 		}else{
 			$this->session->set_flashdata('erro', 'cadastrar já existe!');
 		}

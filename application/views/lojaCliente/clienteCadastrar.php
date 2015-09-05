@@ -1,4 +1,72 @@
- <!-- <form action="<?php echo base_url("Principal/categoria"); ?>" method="post">-->
+<?php 
+
+//Pega o seguimento 4 da url
+$idEndereco = $this->uri->segment(3);
+
+//if($idCidade == null) redirect('cliente/cidade');
+
+$Endereco = $this->ClienteModel->getMaxEndereco($idEndereco)->row();
+
+if($this->session->flashdata('edicaook')):
+?>
+<div style="position: absolute; top: 128px;">
+    <script>
+        setTimeout(function(){
+            $('#enderecoSucessoEditar').fadeOut(3000);
+        }, 4000);
+    </script>
+    <div id="enderecoSucessoEditar" class="alert alert-success fade in" style="width: 1038px;">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <?php echo $this->session->flashdata('edicaook'); ?>
+    </div>
+</div>
+<?php endif; ?>
+
+<?php 
+$idLogin = $this->uri->segment(3);
+
+//if($idCidade == null) redirect('cliente/cidade');
+
+$Login = $this->ClienteModel->getMaxLogin($idLogin)->row();
+
+if($this->session->flashdata('edicaook')):
+?>
+<div style="position: absolute; top: 128px;">
+    <script>
+        setTimeout(function(){
+            $('#cadastrarSucessoEditar').fadeOut(3000);
+        }, 4000);
+    </script>
+    <div id="cadastrarSucessoEditar" class="alert alert-success fade in" style="width: 1038px;">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <?php echo $this->session->flashdata('edicaook'); ?>
+    </div>
+</div>
+<?php endif; ?>
+
+<?php 
+
+$idTelefone = $this->uri->segment(3);
+
+//if($idCidade == null) redirect('cliente/cidade');
+
+$Telefone = $this->ClienteModel->getMaxTelefone($idTelefone)->row();
+
+if($this->session->flashdata('edicaook')):
+?>
+<div style="position: absolute; top: 128px;">
+    <script>
+        setTimeout(function(){
+            $('#cadastrarSucessoEditar').fadeOut(3000);
+        }, 4000);
+    </script>
+    <div id="cadastrarSucessoEditar" class="alert alert-success fade in" style="width: 1038px;">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <?php echo $this->session->flashdata('edicaook'); ?>
+    </div>
+</div>
+<?php endif; ?>
+
 	<section id="cart_items">
 		<div class="container">
 		<br><br><br>
@@ -13,9 +81,9 @@
 									<input type="text"  id="cpf" name="cpf" placeholder="CPF*">
 									<input type="text"  id="email" name="email" placeholder="Email*">
 									<input type="text"  id="dataNascimento" name="dataNascimento" placeholder="Data Nascimento*">
-									<input type="text"  id="idEndereco" name="idEndereco" placeholder="Endereço">
-									<input type="text"  id="idTelefone" name="idTelefone" placeholder="Telefone">
-									<input type="text"  id="idLogin" name="idLogin" placeholder="idLogin">
+									<input type="text"  id="enderecoPost"  value= "<?php echo $Endereco-> idEndereco; ?>"  name="enderecoPost" placeholder="Endereço">
+									<input type="text"  id="telefonePost"  name="telefonePost" value= "<?php echo $Telefone-> idTelefone; ?>"   placeholder="Telefone">
+									<input type="text"  id="loginPost" name="loginPost" value= "<?php echo $Login-> idLogin; ?>"   placeholder="idLogin">
 									
 							
 									<select name="idSexo">

@@ -11,7 +11,7 @@ class ClienteModel extends CI_Model{
 			$this->session->set_flashdata('cadastrook','Cadastro realizado com sucesso.');
 			
 			
-			redirect('Cliente/cidade');
+			redirect('cliente/cidade');
 		}
 	}	
 			
@@ -23,9 +23,52 @@ class ClienteModel extends CI_Model{
 
 			$this->session->set_flashdata('cadastrook','Cadastro realizado com sucesso.');
 			
-			redirect('Cliente/endereco');
+			redirect('cliente/endereco');
 		}
 	}
+		
+		
+		public function insertEndereco($dados = null){
+
+		if($dados != null){
+
+			$this->db->insert('TbEndereco', $dados);
+
+			$this->session->set_flashdata('cadastrook','Cadastro realizado com sucesso.');
+			
+			redirect('cliente/telefone');
+		}
+	}
+		
+		
+		
+		public function insertTelefone($dados = null){
+
+		if($dados != null){
+
+			$this->db->insert('TbTelefone', $dados);
+
+			$this->session->set_flashdata('cadastrook','Cadastro realizado com sucesso.');
+			
+			redirect('cliente/cadastrar');
+		}
+	}
+		
+		
+		public function insertCadastrar($dados = null){
+
+		if($dados != null){
+
+			$this->db->insert('TbCliente', $dados);
+
+			$this->session->set_flashdata('cadastrook','Cadastro realizado com sucesso.');
+			
+			redirect('login');
+		}
+	}
+		
+
+		
 		
 		
 		public function getAllDDD(){
@@ -70,35 +113,42 @@ class ClienteModel extends CI_Model{
 
 		return $this->db->get();
 	}
-		
-		
-		
-		public function insertEndereco($dados = null){
 
-		if($dados != null){
 
-			$this->db->insert('TbEndereco', $dados);
-
-			$this->session->set_flashdata('cadastrook','Cadastro realizado com sucesso.');
+		public function getMaxEndereco(){
 			
-			redirect('cliente/telefone');
-		}
+		$this->db->select_max('idEndereco');
+
+		$query= $this->db->from('TbEndereco');
+		
+
+		return $this->db->get();
 	}
+		
+		public function getMaxLogin(){
+		
+		$this->db->select_max('idLogin');
+
+		$query= $this->db->from('TbLogin');
 
 		
-		public function insertTelefone($dados = null){
+		return $this->db->get();
 
-		if($dados != null){
-
-			$this->db->insert('TbTelefone', $dados);
-
-			$this->session->set_flashdata('cadastrook','Cadastro realizado com sucesso.');
+		
+	}
+		
+		public function getMaxTelefone(){
 			
-			redirect('cliente/endereco');
-		}
-	}
+		$this->db->select_max('idTelefone');
 
+		$query= $this->db->from('TbTelefone');
 		
+
+		return $this->db->get();
+	}
+		
+		
+	
 		public function getAllSexo(){
 
 		$this->db->from('TbSexo');
