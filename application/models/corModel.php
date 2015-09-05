@@ -9,8 +9,7 @@ class corModel extends CI_Model{
 			$this->db->insert('TbCor', $dados);
 
 			$this->session->set_flashdata('cadastrook','Cadastro realizado com sucesso.');
-			
-			//redirect('usuario/cadastrar');
+
 			redirect('admin/cor');
 		}
 	}
@@ -30,15 +29,12 @@ class corModel extends CI_Model{
 		
 		public function DropDownCor(){
 		
-		//$this->db->select('categoria', 'idCategoria');
-		
 		$this->db->from('TbCor');
 		
 		$result = $this->db->get();
 		
 		$return = array();
 
-  		//Verifica se a quantidade de registros e maior que 0
   		if($result->num_rows > 0){
 
 	   //Varivavel $return com o primeiro indice 0 com o valor 'Selecione'
@@ -66,7 +62,6 @@ class corModel extends CI_Model{
 			$this->session->set_flashdata('edicaook', 'Alteração realizada com sucesso.');
 
 			redirect('admin/cor');
-			//redirect(current_url());
 		}
 	}
 	
@@ -75,8 +70,6 @@ class corModel extends CI_Model{
 		$this->db->from('TbCor');
 
 		$this->db->order_by('idCor');
-
-		//$this->db->where('ativo', 1);
 
 		return $this->db->get();
 	}

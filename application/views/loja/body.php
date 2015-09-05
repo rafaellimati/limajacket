@@ -15,7 +15,7 @@
         <li><a href="Principal" class="active">Inicio</a></li>
         <li><a href="Categoria">Compras</a></li>
         <li><a href="Pedido">Pedidos</a></li>
-        <li><a href="#">Login</a></li>
+        <li><a href="login">Login</a></li>
         <li><a href="#">Contato</a></li>
       </ul>
     </div>

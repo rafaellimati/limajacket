@@ -1,10 +1,10 @@
- <!-- <form action="<?php echo base_url("Principal/categoria"); ?>" method="post">-->
     <section>
 		<div class="container">
 			<div class="row">
 			<br><br><br><br><br>
 				<div class="col-sm-9 padding-right:70px;">
-					<div class="product-details"><!--product-details-->
+					<div class="product-details">
+						<!--product-details-->
 						<div class="col-sm-5">
 							<div class="view-product">
 								<img src="<?php echo base_url("static/css/images/big3.jpg"); ?>" alt="" />
@@ -13,7 +13,8 @@
 							</div>
 						</div>
 						<div class="col-sm-7">
-							<div class="product-information"> <!--/product-information-->
+							<div class="product-information">
+								 <!--/product-information-->
 								<h2>Jaqueta Preta tecido fino</h2>
 								<p>Descrição:</p>
 								<span>
@@ -118,4 +119,3 @@
     	<script src="<?php echo base_url("static/js/jquery.prettyPhoto.js"); ?>"></script>
     	<script src="<?php echo base_url("static/js/main.js"); ?>"></script>
   
-  <!--</form>-->

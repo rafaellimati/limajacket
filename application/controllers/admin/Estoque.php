@@ -19,7 +19,6 @@ class Estoque extends CI_Controller {
 		);
 	
 		$this->load->view('admin', $dados);
-		//redirect('administrador/estoque/cadastrar');
 	}
 
 
@@ -36,8 +35,6 @@ public function cadastrarEstoque(){
 				$dados = elements(array('quantidade','idCor','idTamanho','idJaqueta'), $this->input->post());
 				$this->EstoqueModel->insertEstoque($dados);
 				
-				//setando flagAtivo para True
-				//$dados['flagAtivo'] = 1;
 	
 				
 			}else{

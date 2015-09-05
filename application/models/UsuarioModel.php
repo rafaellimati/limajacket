@@ -10,7 +10,6 @@ class UsuarioModel extends CI_Model{
 
 			$this->session->set_flashdata('cadastrook','Operação realizada com sucesso.');
 			
-			//redirect('usuario/cadastrar');
 			redirect('admin/usuario');
 		}
 	}
@@ -36,7 +35,6 @@ class UsuarioModel extends CI_Model{
 
 			$this->session->set_flashdata('edicaook', 'Cadastro alterado com sucesso.');
 
-			//redirect('usuario/editar');
 			redirect(current_url());
 		}
 	}
@@ -47,7 +45,6 @@ class UsuarioModel extends CI_Model{
 
 		$this->db->order_by('idlogin');
 
-		//$this->db->where('ativo', 1);
 
 		return $this->db->get();
 	}

@@ -1,4 +1,3 @@
- <!-- <form action="<?php echo base_url("Principal/categoria"); ?>" method="post">-->
    <section id="cart_items">
 		<div class="container">
 		<br><br><br><br>
@@ -133,7 +132,8 @@
 					</span>
 				</div>
 		</div>
-	</section> <!--/#cart_items--> 
+	</section>
+	 <!--/#cart_items--> 
   <!--Footer--> 
   <div id="footer">
     <p class="left"> <a href="#">Inicio</a> <span>|</span> <a href="#">Contato</a> <span>|</span> <a href="#">Minha Conta</a> <span>|</span> <a href="#">Galeria</a> <span>|</span> <a href="#"> Trabalhe Conosco </a> </p>
@@ -160,5 +160,3 @@
 		<script src="<?php echo base_url("static/js/bootstrap.minn.js"); ?>"></script>
 		<script src="<?php echo base_url("static/js/jquery.prettyPhoto.js"); ?>"></script>
 		<script src="<?php echo base_url("static/js/main.js"); ?>"></script>
-  
-  <!--</form>-->

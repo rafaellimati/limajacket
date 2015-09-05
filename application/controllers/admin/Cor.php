@@ -34,31 +34,23 @@ class Cor extends CI_Controller {
 		);
 	
 		$this->load->view('admin', $dados);
-		//redirect('administrador/cor/cadastrar');
 	}
 
 
 	public function cadastrar(){
 
 		$Cor = elements(array('cor'), $this->input->post());
-		//$email = elements(array('email'), $this->input->post());
-		
-		//Faz as devidas validações [remove espaços,
-		// 							verifica se foi preenchido,
-		//							se é menor que 45 caracteres,
-		//							Capitaliza a palavra
-		//						 	e se já existe no banco de dados]
+
 		$this->form_validation->set_rules('cor', 'Cor', 'trim|required|max_length[45]|ucwords|is_unique[TbCor.cor]');
-		//Seta uma mensagem se já existir no banco.
+
 		$this->form_validation->set_message('is_unique', "A cor ". $Cor['cor'] ." já existe.");
 
-		//Verifica se o formmulário é válido
+
 		if($this->form_validation->run()){
 
-			//Pega os campos e recebe os valores do post
+
 			$dados = elements(array('cor','flagAtivo'), $this->input->post());
 
-			//setando flagAtivo para True
 			$dados['flagAtivo'] = 1;
 
 			$this->corModel->insertCor($dados);
@@ -73,8 +65,6 @@ class Cor extends CI_Controller {
 		$this->load->view('Admin', $dados);
 
 
-		//redirect('administrador/cor/cadastrar');
-
 	}
 
 		public function editar(){
@@ -83,11 +73,9 @@ class Cor extends CI_Controller {
 		$this->form_validation->set_rules('idCor', 'idCor', 'required');
 
 		if($this->form_validation->run()){
-			//Pega os valores do formulário
+
 			$dados = elements(array('cor','flagAtivo'), $this->input->post());
-			//Envia um update pro banco passando o idMarca do formulário
-			//$dados['flagAtivo'] = 1;
-			//setando flagAtivo para TRUE;
+
 			$this->corModel->updateCor($dados, array('idCor' => $this->input->post('idCor')));
 		
 		}else{

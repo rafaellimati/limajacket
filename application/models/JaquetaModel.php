@@ -9,8 +9,7 @@ class JaquetaModel extends CI_Model{
 			$this->db->insert('TbJaqueta', $dados);
 
 			$this->session->set_flashdata('cadastrook','Operação realizada com sucesso.');
-			
-			//redirect('usuario/cadastrar');
+
 			redirect('admin/jaqueta');
 		}
 	}

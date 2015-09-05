@@ -45,7 +45,6 @@ if($this->session->flashdata('edicaook')):
                             </div>
                             <br>
         				   <button  type="submit" class="btn btn-lg btn-primary" >Alterar</button>
-        				   <!-- <button  type="submit" class="btn btn-lg btn-primary" >Alterar</button> -->
         				   <button id="btnlimpar" type="submit" class="btn btn-lg btn-warning">Limpar</button>
         				
                         <?php if($this->session->flashdata('erro')): ?>

@@ -10,7 +10,6 @@ class CategoriaModel extends CI_Model{
 
 			$this->session->set_flashdata('cadastrook','Operação realizada com sucesso.');
 			
-			//redirect('usuario/cadastrar');
 			redirect('admin/categoria');
 		}
 	}
@@ -21,14 +20,11 @@ class CategoriaModel extends CI_Model{
 
 		$this->db->order_by('categoria');
 
-		//$this->db->where('ativo', 1);
-
 		return $this->db->get();
 	}
 	
 	public function DropDownCategoria(){
 		
-		//$this->db->select('categoria', 'idCategoria');
 		
 		$this->db->from('TbCategoria');
 		
@@ -49,7 +45,6 @@ class CategoriaModel extends CI_Model{
 	   }
   }
 
-  //Retorna o array preenchido
   return $return;
 	
 	
@@ -76,7 +71,6 @@ class CategoriaModel extends CI_Model{
 
 			$this->session->set_flashdata('edicaook', 'Alteração realizada com sucesso.');
 
-			//redirect('usuario/editar');
 			redirect('admin/categoria');
 		}
 	}

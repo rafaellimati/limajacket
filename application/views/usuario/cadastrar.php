@@ -20,7 +20,6 @@
         				   </div>
         				   <br><br><br>
         				   <button type="submit" class="btn btn-lg btn-primary" >Cadastrar</button>
-        				   <!--<button onclick="document.getElementById('op').value='update';" type="submit" class="btn btn-lg btn-primary" >Alterar</button>-->
         				   <button id="btnlimpar" type="submit" class="btn btn-lg btn-warning">Limpar</button>
         				</form>
         				<p> </p>

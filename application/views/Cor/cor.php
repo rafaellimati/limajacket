@@ -16,7 +16,6 @@
 							</div>
                             <br>
         				   <button  type="submit" class="btn btn-lg btn-primary" >Cadastrar</button>
-        				   <!-- <button  type="submit" class="btn btn-lg btn-primary" >Alterar</button> -->
         				   <button id="btnlimpar" type="submit" class="btn btn-lg btn-warning">Limpar</button>
         				<?php echo validation_errors(); ?> 
                         <?php if($this->session->flashdata('erro')): ?>

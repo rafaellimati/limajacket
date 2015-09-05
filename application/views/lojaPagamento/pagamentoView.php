@@ -1,9 +1,9 @@
- <!-- <form action="<?php echo base_url("Principal/categoria"); ?>" method="post">-->
-   	<section id="form"><!--form-->
+   	<section id="form">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-1">
-					<div class="Pagamento-form"><!--login form-->
+					<div class="Pagamento-form">
+						<!--login form-->
 						<h2>Pagamento:</h2>
 						<form action="#">
 							
@@ -13,7 +13,8 @@
   						<br>
 							<button type="button" class="btn btn-default cart">Confirmar Pagamento</button>
 						</form>
-					</div><!--/login form-->
+				     <!--/login form-->
+					</div>
 				</div>
 			</div>
 		</div>
@@ -44,5 +45,3 @@
 		<script src="<?php echo base_url("static/js/bootstrap.minn.js"); ?>"></script>
 		<script src="<?php echo base_url("static/js/jquery.prettyPhoto.js"); ?>"></script>
 		<script src="<?php echo base_url("static/js/main.js"); ?>"></script>
-  
-  <!--</form>-->

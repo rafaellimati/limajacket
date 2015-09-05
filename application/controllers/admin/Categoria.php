@@ -35,31 +35,24 @@ class Categoria extends CI_Controller {
 		);
 	
 		$this->load->view('admin', $dados);
-		//redirect('administrador/categoria/cadastrar');
 	}
 
 
 	public function cadastrar(){
 
 		$Categoria = elements(array('categoria'), $this->input->post());
-		//$email = elements(array('email'), $this->input->post());
-		
-		//Faz as devidas validações [remove espaços,
-		// 							verifica se foi preenchido,
-		//							se é menor que 45 caracteres,
-		//							Capitaliza a palavra
-		//						 	e se já existe no banco de dados]
+
 		$this->form_validation->set_rules('categoria', 'Categoria', 'trim|required|max_length[45]|ucwords|is_unique[TbCategoria.categoria]');
-		//Seta uma mensagem se já existir no banco.
+
 		$this->form_validation->set_message('is_unique', "A descrição da". $Categoria['categoria'] ." já existe.");
 
-		//Verifica se o formmulário é válido
+
 		if($this->form_validation->run()){
 
-			//Pega os campos e recebe os valores do post
+
 			$dados = elements(array('categoria'), $this->input->post());
 
-			//setando flagAtivo para True
+
 			$dados['flagAtivo'] = 1;
 
 			$this->CategoriaModel->insertCategoria($dados);
@@ -74,7 +67,7 @@ class Categoria extends CI_Controller {
 			);
 		$this->load->view('Admin', $dados);
 
-		//redirect('administrador/categoria/cadastrar');
+
 
 	}
 
@@ -84,9 +77,9 @@ class Categoria extends CI_Controller {
 				$this->form_validation->set_rules('idCategoria', 'idCategoria', 'required');
 
 					if($this->form_validation->run()){
-							//Pega os valores do formulário
+
 							$dados = elements(array('categoria','flagAtivo'), $this->input->post());
-							//Envia um update pro banco passando o idMarca do formulário
+
 							$this->CategoriaModel->updateCategoria($dados, array('idCategoria' => $this->input->post('idCategoria')));
 		
 				}else{
@@ -94,7 +87,7 @@ class Categoria extends CI_Controller {
 				}
 
 
-					//redirect('administrador/marca/editar');
+
 				$dados = array(
 					'pasta' => 'Categoria',
 					'view' => 'editar',

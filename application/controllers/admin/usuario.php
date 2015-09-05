@@ -34,7 +34,6 @@ class usuario extends CI_Controller {
 		);
 	
 		$this->load->view('admin', $dados);
-		//redirect('administrador/usuario/cadastrar');
 	}
 
 
@@ -43,14 +42,8 @@ class usuario extends CI_Controller {
 		$login = elements(array('login'), $this->input->post());
 		$email = elements(array('email'), $this->input->post());
 		
-		// $this->form_validation->set_rules('nome', 'Nome', 'trim|required|max_length[45]|strtolower|ucwords');
-		// $this->form_validation->set_message('is_unique', "O email ". $email['email'] ." já existe.");
 		$this->form_validation->set_rules('login', 'Email', 'trim|required|max_length[45]|strtolower|is_unique[TbLogin.login]');
 		$this->form_validation->set_message('is_unique', "O login ". $login['login'] ." já existe.");
-	/*	$this->form_validation->set_rules('login', 'Login', 'trim|required|max_length[45]|strtolower|is_unique[tb_usuario.login]');
-		$this->form_validation->set_rules('id_perfil', 'required');
-*/		//$this->form_validation->set_rules('senha','Senha','trim|required|strtolower');
-		//$this->form_validation->set_rules('confirmiSenha','Repita a Senha','trim|required|strtolower|matches[senha]');
 
 
 		if($this->form_validation->run()){
@@ -60,9 +53,7 @@ class usuario extends CI_Controller {
 			$dados['nivelAcesso']= 2;
 			$dados['dataCadastro']= date('Y-m-d');
 
-			//$dados['senha'] = sha1($dados['login']);
 			$dados['flagAtivo'] = 1;
-            //$dados['primeiro_acesso'] = 1;
 
 		    $this->UsuarioModel->insertUsuario($dados);
 		}else{
@@ -78,29 +69,24 @@ class usuario extends CI_Controller {
 		$this->load->view('Admin', $dados);
 
 
-		//redirect('administrador/usuario/cadastrar');
-
 	}
 
 		public function editar(){
 
-					//$this->form_validation->set_rules('login', 'Login', 'trim|required|max_length[45]|strtolower|ucwords');
-					//$this->form_validation->set_rules('idLogin', 'idLogin', 'required');
+					$this->form_validation->set_rules('login', 'Login', 'trim|required|max_length[45]|strtolower|ucwords');
+					$this->form_validation->set_rules('idLogin', 'idLogin', 'required');
 			
 					if($this->form_validation->run()){
-						//Pega os valores do formulário
+
 						$dados = elements(array('login','senha','flagAtivo'), $this->input->post());
 						$dados['senha']= md5($dados['senha']);
 						
-						//Envia um update pro banco passando o idMarca do formulário
 						$this->UsuarioModel->updateUsuario($dados, array('idLogin' => $this->input->post('idLogin')));
 					
 					}else{
 						$this->session->set_flashdata('erro', 'Login já existe!');
 					}
 			
-			
-					//redirect('administrador/marca/editar'); 
 					$dados = array(
 						'pasta' => 'usuario',
 						'view' => 'editar',

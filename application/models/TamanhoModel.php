@@ -9,16 +9,14 @@ class TamanhoModel extends CI_Model{
 			$this->db->insert('TbTamanho', $dados);
 
 			$this->session->set_flashdata('cadastrook','Operação realizada com sucesso.');
-			
-			//redirect('usuario/cadastrar');
+
 			redirect('admin/tamanho');
 		}	
 	}
 	
 	
 	public function DropDownTamanho(){
-		
-		//$this->db->select('categoria', 'idCategoria');
+
 		
 		$this->db->from('TbTamanho');
 		
@@ -50,8 +48,6 @@ class TamanhoModel extends CI_Model{
 
 		$this->db->order_by('idTamanho');
 
-		//$this->db->where('ativo', 1);
-
 		return $this->db->get();
 	}
 
@@ -76,7 +72,6 @@ class TamanhoModel extends CI_Model{
 			$this->session->set_flashdata('edicaook', 'Alteração realizada com sucesso.');
 
 			redirect('admin/Tamanho');
-			//redirect(current_url());
 		}
 	}
 }
