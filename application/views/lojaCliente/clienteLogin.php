@@ -9,7 +9,7 @@
 							<p>1 Passo</p>&nbsp;&nbsp;&nbsp;&nbsp;<p>Cadastre seu Login</p> 
 							<form role="form" action = "<?php echo base_url("Cliente/Login"); ?>" method= "post">
 								<input type="text" id="login" name="login" placeholder="Login">
-								<input type="password" id="senha" name="senha" placeholder="Senha">
+								<input type="Password" id="senha" name="senha" class="form-control" placeholder="Senha">
 							
 							<button type="submit" class="btn btn-justified btn-primary"> Confirme</button>
 							<a class="btn btn-primary" href="">Limpar</a>

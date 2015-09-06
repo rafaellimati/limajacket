@@ -11,7 +11,7 @@
 						<tr class="cart_menu">
 							<td class="image">Item</td>
 							<td class="description"></td>
-							<td class="price">Preço</td>
+							<td class="price">preço</td>
 							<td class="quantity">Quantidade</td>
 							<td class="total">Total</td>
 							<td></td>
@@ -31,16 +31,16 @@
 							</td>
 							<td class="cart_quantity">
 								<div class="cart_quantity_button">
-									<a class="cart_quantity_up" href=""> + </a>
+									<!--<a class="cart_quantity_up" href=""> + </a>-->
 									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-									<a class="cart_quantity_down" href=""> - </a>
+									<!--<a class="cart_quantity_down" href=""> - </a>-->
 								</div>
 							</td>
 							<td class="cart_total">
 								<p class="cart_total_price">$59</p>
 							</td>
 							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+								<!--<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>-->
 							</td>
 						</tr>
 
@@ -57,16 +57,16 @@
 							</td>
 							<td class="cart_quantity">
 								<div class="cart_quantity_button">
-									<a class="cart_quantity_up" href=""> + </a>
+									<!--<a class="cart_quantity_up" href=""> + </a>-->
 									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-									<a class="cart_quantity_down" href=""> - </a>
+									<!--<a class="cart_quantity_down" href=""> - </a>-->
 								</div>
 							</td>
 							<td class="cart_total">
 								<p class="cart_total_price">$59</p>
 							</td>
 							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+								<!--<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>-->
 							</td>
 						</tr>
 						<tr>
@@ -82,16 +82,16 @@
 							</td>
 							<td class="cart_quantity">
 								<div class="cart_quantity_button">
-									<a class="cart_quantity_up" href=""> + </a>
+									<!--<a class="cart_quantity_up" href=""> + </a>-->
 									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-									<a class="cart_quantity_down" href=""> - </a>
+								<!--<a class="cart_quantity_down" href=""> - </a>-->
 								</div>
 							</td>
 							<td class="cart_total">
 								<p class="cart_total_price">$59</p>
 							</td>
 							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+								<!--<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>-->
 							</td>
 						</tr>
 						<tr>

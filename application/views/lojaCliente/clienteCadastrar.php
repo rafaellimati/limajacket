@@ -81,9 +81,9 @@ if($this->session->flashdata('edicaook')):
 									<input type="text"  id="cpf" name="cpf" placeholder="CPF*">
 									<input type="text"  id="email" name="email" placeholder="Email*">
 									<input type="text"  id="dataNascimento" name="dataNascimento" placeholder="Data Nascimento*">
-									<input type="text"  id="enderecoPost"  value= "<?php echo $Endereco-> idEndereco; ?>"  name="enderecoPost" placeholder="Endereço">
-									<input type="text"  id="telefonePost"  name="telefonePost" value= "<?php echo $Telefone-> idTelefone; ?>"   placeholder="Telefone">
-									<input type="text"  id="loginPost" name="loginPost" value= "<?php echo $Login-> idLogin; ?>"   placeholder="idLogin">
+									<input type="text"  id="enderecoPost" readonly="readonly"  value= "<?php echo $Endereco-> idEndereco; ?>"  name="enderecoPost" placeholder="Endereço">
+									<input type="text"  id="telefonePost" readonly="readonly"  name="telefonePost" value= "<?php echo $Telefone-> idTelefone; ?>"   placeholder="Telefone">
+									<input type="text"  id="loginPost" readonly="readonly" name="loginPost" value= "<?php echo $Login-> idLogin; ?>"   placeholder="idLogin">
 									
 							
 									<select name="idSexo">

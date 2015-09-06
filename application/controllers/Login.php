@@ -21,7 +21,7 @@ class Login extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		//$this->load->model('CategoriaModel');
+		$this->load->model('UsuarioModel', 'LoginModel');
 	}
 
 
@@ -38,6 +38,70 @@ class Login extends CI_Controller {
 
 	}
 	
+	//Responsável por fazer o login na parte do site
+    public function logar(){
+        $this->form_validation->set_rules('login','Login', 'trim|required|max_length[20]|is_unique');
+        $this->form_validation->set_rules('senha', 'Senha', 'trim|required|strtolower');
+        
+
+        //Verifica se os campo foi preenchido corretamente e retorna true para a validação
+        if($this->form_validation->run()){
+
+            //Pega os valores que esta no post e transforma em array
+            $dados = elements(array('login', 'senha'), $this->input->post());
+
+            //Verifica se os dados estão validos enviando os valores para a model
+            if($this->UsuarioModel->doValidateloja($dados)){
+
+                //Retorna todas as informações do usuario
+                $dados = $this->UsuarioModel->getUsuarioloja($dados);
+                
+                //Dados de sessão do usuario
+                $session = array(
+                        'id'           => $dados[0]['idLogin'],
+                        'nivelAcesso'    => $dados[0]['nivelAcesso'],
+                        'login'        => $dados[0]['login'],
+                        'is_logged_in' => true
+                );
+
+                //Enviar os dados para a view
+                $this->session->set_userdata($session);
+
+                //Redireciona para a pagina principal
+                redirect('Principal');
+                                
+                                
+            }else{
+                    //Redireciona para a tela de login              
+                    $this->session->set_flashdata('loginInvalido', 'Usuário ou Senha invalidos.');
+                    redirect('login');
+            }
+        }else{
+            //Redireciona para a tela de login          
+            $this->session->set_flashdata('loginVazio', 'Campo(s) obrigatório(s) não preenchido(s).');
+            redirect('login');
+        }
+    }
+	
+	//Método responsavel por fazer o logout do sistema
+    public function logout(){
+
+        //Verifica se a sessão existi 
+        if($this->session->userdata('is_logged_in')){
+            //Destroy a session do usuario
+            $session = array(
+                'id'           => '',
+                'nivelAcesso'    => '',
+                'login'        => '',
+                'is_logged_in' => false
+            );
+
+            $this->session->unset_userdata($session);
+            $this->session->sess_destroy();
+            //Redireciona para a url padrão "raiz"
+            redirect(base_url('login'));
+        }
+    }
 	
 	
 	

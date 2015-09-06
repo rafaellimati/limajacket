@@ -4,13 +4,13 @@
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form">
 						<h2>Login:</h2>
-						<form action="#">
-							<input type="text" placeholder="Login" />
-							<input type="email" placeholder="Senha" />
+						<form role="form" action = "<?php echo base_url("Login/logar"); ?>" method= "post">
+							<input type="text" id="login" name="login" placeholder="Login" />
+							<input type="Password" id="senha" name="senha" class="form-control" placeholder="Senha" />
 							<span>
 								<a href="cliente" class="bul">Cadastre-se aqui</a>
 							</span>
-							<button type="submit" class="btn btn-default">Login</button>
+							<button type="submit" class="btn btn-justified btn-primary"> ENTRAR</button>
 						</form>
 					<!--/login form-->	
 					</div>

@@ -20,17 +20,28 @@
       <div class="products">
         <div class="cl">&nbsp;</div>
         <ul>
-          <li> <a href="compra"><img src="<?php echo base_url("static/css/images/big1.jpg"); ?>" alt="" /></a>
+        	<?php 
+            foreach ($jaquetas as $jaqueta):
+          ?>
+
+            <li> <a href="compra"><img src="<?php echo base_url("produtos/ .$imagem"); ?>" alt="" /></a>
             <div class="product-info">
-              <h3>LOREM IPSUM</h3>
+              <h3><?php echo $jaqueta->jaqueta ?></h3>
               <div class="product-desc">
-                <h4>WOMEN’S</h4>
-                <p>Lorem ipsum dolor sit<br />
-                  amet</p>
-                <strong class="price">$58.99</strong> </div>
+                <p><?php echo $jaqueta->descricao ?><br />
+                 </p>
+                <strong class="price"><?php echo $jaqueta->valor ?></strong> </div>
             </div>
           </li>
-          <li> <a href="compra"><img src="<?php echo base_url("static/css/images/big2.jpg"); ?>" alt="" /></a>
+
+          <?php 
+            endforeach;
+          ?>
+        	
+          
+          
+          
+       <!--   <li> <a href="compra"><img src="<?php echo base_url("static/css/images/big2.jpg"); ?>" alt="" /></a>
             <div class="product-info">
               <h3>LOREM IPSUM</h3>
               <div class="product-desc">
@@ -79,7 +90,7 @@
                   amet</p>
                 <strong class="price">$58.99</strong> </div>
             </div>
-          </li>
+          </li>-->
         </ul>
         <div class="cl">&nbsp;</div>
       </div>

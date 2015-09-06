@@ -70,6 +70,26 @@ class UsuarioModel extends CI_Model{
 			}
 		}
 	}
+	
+	public function getUsuarioloja($dados = null){
+
+		if($dados != null){
+
+			//Monta a consulta com a seguintes condições
+			$this->db->where('login', $dados['login']);
+			//$this->db->where('senha', sha1($dados['senha']));
+			$this->db->where('senha', $dados['senha']);
+
+			//Armazena os registro na variavel query
+			$query = $this->db->get('TbLogin');
+
+			//Verifica se foi encontrado um registro com os dados igual a das condições
+			if($query->num_rows){	
+				//Retorna o registro com os dados semelhantes ao aos dados que foram informados		
+				return $query->result_array();
+			}
+		}
+	}
 
 
 		//Método responsavel pela verificação do login e senha no banco de dados
@@ -91,5 +111,25 @@ class UsuarioModel extends CI_Model{
 			}
 		}
 	}
+	
+	
+	public function doValidateloja($dados = null){
 
-}
+		if($dados != null){
+
+			//Monta a consulta com a seguintes condições
+			$this->db->where('login', $dados['login']);
+			//$this->db->where('senha', sha1($dados['senha']));
+			$this->db->where('senha', $dados['senha']);
+
+			//Armazena os registro na variavel query
+			$query = $this->db->get('TbLogin');
+
+			//Verifica se foi encontrado um registro com os dados igual a das condições
+			if($query->num_rows == 1){
+					return true;
+			}
+		}
+	}
+	
+	}

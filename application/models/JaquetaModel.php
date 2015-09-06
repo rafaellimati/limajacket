@@ -27,6 +27,20 @@ class JaquetaModel extends CI_Model{
 		}
 	}
 	
+	public function getLojaJaqueta(){
+
+     	$this->db->from('TbJaqueta');
+
+		$this->db->order_by('idJaqueta');
+
+		//$this->db->where('ativo', 1);
+
+		return $this->db->get();
+	
+	
+	}
+	
+	
 	
 	public function getAllJaqueta(){
 

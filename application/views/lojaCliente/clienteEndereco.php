@@ -36,7 +36,7 @@ if($this->session->flashdata('edicaook')):
 							<p>Dados pessoais</p>
 							<div class="form-one">
 								<form  action = "<?php echo base_url("cliente/endereco"); ?>" method= "post">
-        				   			<input type="text" id ="cidade" name ="cidade" value = "<?php echo $cidade-> idCidade; ?>" class="form-control codigo"> 
+        				   			<input type="text" readonly="readonly" id ="cidade" name ="cidade" value = "<?php echo $cidade-> idCidade; ?>" class="form-control codigo"> 
 									<input type="text"  id = "logradouro" name = "logradouro" placeholder="LOGRADOURO">
 									<input type="text"  id = "bairro" name= "bairro" placeholder="BAIRRO">
 									<input type="text"  id = "numero" name= "numero" placeholder="Numero">
