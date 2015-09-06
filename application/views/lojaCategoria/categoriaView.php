@@ -1,4 +1,27 @@
- <!-- <form action="<?php echo base_url("Principal/categoria"); ?>" method="post">-->
+<?php 
+
+//Pega o seguimento 4 da url
+$idCategoria = $this->uri->segment(3);
+
+//if($idCategoria == null) redirect('categoria');
+
+$categoria = $this->CategoriaModel->getAllCategoriaView($idCategoria)->row_array();
+
+if($this->session->flashdata('edicaook')):
+?>
+<div style="position: absolute; top: 128px;">
+    <script>
+        setTimeout(function(){
+            $('#categoriaSucessoEditar').fadeOut(3000);
+        }, 4000);
+    </script>
+    <div id="categoriaSucessoEditar" class="alert alert-success fade in" style="width: 1038px;">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <?php echo $this->session->flashdata('edicaook'); ?>
+    </div>
+</div>
+<?php endif; ?>
+
     <div id="main">
     <div class="cl">&nbsp;</div>
     <!-- Content -->

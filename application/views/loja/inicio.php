@@ -20,11 +20,11 @@
       <div class="products">
         <div class="cl">&nbsp;</div>
         <ul>
-        	<?php 
+        	<?php
             foreach ($jaquetas as $jaqueta):
           ?>
 
-            <li> <a href="compra"><img src="<?php echo base_url("produtos/ .$imagem"); ?>" alt="" /></a>
+            <li> <a href="compra"><img width="231" height="383" src="<?php echo base_url("produtos/$jaqueta->imagem"); ?>" alt="" /></a>
             <div class="product-info">
               <h3><?php echo $jaqueta->jaqueta ?></h3>
               <div class="product-desc">
@@ -134,7 +134,7 @@
           	<?php 
             foreach ($categorias as $categoria):
           ?>
-            <li><a href="categoria"><?php echo $categoria->categoria ?></a></li>
+            <li><a href="<?php echo base_url('categoria/'.$categoria->idCategoria) ?>"><?php echo $categoria->categoria ?></a></li>
 
           <?php 
             endforeach;

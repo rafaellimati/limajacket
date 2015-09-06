@@ -31,7 +31,7 @@ class JaquetaModel extends CI_Model{
 
      	$this->db->from('TbJaqueta');
 
-		$this->db->order_by('idJaqueta');
+		$this->db->order_by('Jaqueta');
 
 		//$this->db->where('ativo', 1);
 

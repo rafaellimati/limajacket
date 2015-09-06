@@ -14,6 +14,10 @@ class CategoriaModel extends CI_Model{
 		}
 	}
 	
+	
+	//Objeto da lista de categoria 
+    //na lateral do site
+	
 	public function getAllCategoria(){
 
 		$this->db->from('TbCategoria');
@@ -49,7 +53,29 @@ class CategoriaModel extends CI_Model{
 	
 	
 	}
+	   
+	   //objeto impressão categoria de fotos
+	   //Descrição e preço dos produtos.
+	   
+	   	public function getAllCategoriaView(){
+
+		$this->db->from('TbCategoria');
+
+		return $this->db->get();
+	}
 	
+		public function getByIdCategoria($id = null){
+
+		if($id != null){
+			
+			$this->db->where('idCategoria', $id);
+
+			$this->db->limit(1);
+
+			return $this->db->get('TbCategoria');
+		}
+	}
+
 		public function getById($id = null){
 
 		if($id != null){
