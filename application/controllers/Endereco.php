@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Cidade extends CI_Controller {
+class Endereco extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -30,7 +30,7 @@ class Cidade extends CI_Controller {
 		
 		$dados = array(
 		'pasta' => 'lojaCliente',
-		'view' => 'clienteCidade',
+		'view' => 'clienteEndereco',
 		'Estado' => $this->ClienteModel->getAllEstado()->result(),
 		//'cidade' => $this->ClienteModel->getAllCidade()->result(),
 		);
@@ -40,35 +40,39 @@ class Cidade extends CI_Controller {
 	
 	public function Cadastrar(){
 
-		$cidade = elements(array('cidade','idEstado'), $this->input->post());
+		$Endereco = elements(array('logradouro','bairro','numero','cep','idCidade'), $this->input->post());
 
-		$this->form_validation->set_rules('cidade', 'Cidade', 'trim|required|max_length[45]|ucwords|]');
-		//Seta uma mensagem se já existir no banco.
-		$this->form_validation->set_message('is_unique', "O marca ". $cidade['cidade'] ." já existe.");
+		$this->form_validation->set_rules('logradouro', 'Logradouro', 'trim|required|max_length[45]|ucwords|');
+		//$this->form_validation->set_message('is_unique', "O endereço ". $Endereco['logradouro'] ." já existe.");
 
 		//Verifica se o formmulário é válido
 		if($this->form_validation->run()){
 
 			//Pega os campos e recebe os valores do post
-			$dados = elements(array('cidade','idEstado'), $this->input->post());
-
+			$dados = elements(array('logradouro','bairro','numero','cep'), $this->input->post());
+			$dados['idCidade'] = $this->input->post('cidade');
 			//setando flagAtivo para True
 			//$dados['flagAtivo'] = 1;
 
-			$this->ClienteModel->insertCidade($dados);
+			$this->ClienteModel->insertEndereco($dados);
+			
 		}else{
-			$this->session->set_flashdata('erro', 'Marca já existe!');
+			$this->session->set_flashdata('erro', 'Endereç já existe!');
 		}
 
 		/*$dados = array(
 			'pasta' => 'lojaCliente',
-			'view' => 'clienteCidade',
+			'view' => 'clienteEndereco',
+			 'Estado' => $this->ClienteModel->getAllEstado(),
+			 //'cidade' => $this->ClienteModel->getAllCidade()->result(),
+
 			 );
 		$this->load->view('Principal', $dados);*/
 
 
 	}
-}
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+	}
+	
+	
+	
+	

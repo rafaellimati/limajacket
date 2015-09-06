@@ -11,7 +11,7 @@ class ClienteModel extends CI_Model{
 			$this->session->set_flashdata('cadastrook','Cadastro realizado com sucesso.');
 			
 			
-			redirect('cliente/cidade');
+			redirect('cidade');
 		}
 	}	
 			
@@ -23,7 +23,7 @@ class ClienteModel extends CI_Model{
 
 			$this->session->set_flashdata('cadastrook','Cadastro realizado com sucesso.');
 			
-			redirect('cliente/endereco');
+			redirect('endereco');
 		}
 	}
 		
@@ -36,7 +36,7 @@ class ClienteModel extends CI_Model{
 
 			$this->session->set_flashdata('cadastrook','Cadastro realizado com sucesso.');
 			
-			redirect('cliente/telefone');
+			redirect('telefone');
 		}
 	}
 		
@@ -50,7 +50,7 @@ class ClienteModel extends CI_Model{
 
 			$this->session->set_flashdata('cadastrook','Cadastro realizado com sucesso.');
 			
-			redirect('cliente/cadastrar');
+			redirect('cadastrar');
 		}
 	}
 		

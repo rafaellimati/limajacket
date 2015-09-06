@@ -11,7 +11,7 @@
 						<div class="bill-to">
 							<p>2 Passo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Cidade e Estado</p>
 							<div class="form-one">
-								<form action = "<?php echo base_url("cliente/cidade"); ?>" method= "post">
+								<form action = "<?php echo base_url("Cidade/cadastrar"); ?>" method= "post">
 									<input type="text" id="cidade" name="cidade" placeholder="Cidade">
 							</div>
 							<div class="form-two">

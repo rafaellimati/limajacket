@@ -76,7 +76,7 @@ if($this->session->flashdata('edicaook')):
 						<div class="bill-to">
 							<p>Dados pessoais</p>
 							<div class="form-two">
-								<form action = "<?php echo base_url("cliente/cadastrar"); ?>" method= "post">
+								<form action = "<?php echo base_url("Cadastrar/Cliente"); ?>" method= "post">
 									<input type="text"  id="nome" name="nome" placeholder="Nome Completo*">
 									<input type="text"  id="cpf" name="cpf" placeholder="CPF*">
 									<input type="text"  id="email" name="email" placeholder="Email*">

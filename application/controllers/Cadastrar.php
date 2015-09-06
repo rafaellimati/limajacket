@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Cidade extends CI_Controller {
+class Cadastrar extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,54 +21,53 @@ class Cidade extends CI_Controller {
 	 public function __construct(){
 		parent::__construct();
 		$this->load->model('ClienteModel');
-		$this->load->model('CategoriaModel');
 	}
 	 
 	 
 	public function index()
 	{
-		
+
 		$dados = array(
 		'pasta' => 'lojaCliente',
-		'view' => 'clienteCidade',
-		'Estado' => $this->ClienteModel->getAllEstado()->result(),
-		//'cidade' => $this->ClienteModel->getAllCidade()->result(),
+		'view' => 'clienteCadastrar',
+		'sexo' => $this->ClienteModel->getAllSexo()->result(),
 		);
 	
 		$this->load->view('Principal', $dados);
 	}
 	
-	public function Cadastrar(){
+	public function Cliente(){
 
-		$cidade = elements(array('cidade','idEstado'), $this->input->post());
+		$cpf = elements(array('nome','cpf','email','dataNascimento'), $this->input->post());
 
-		$this->form_validation->set_rules('cidade', 'Cidade', 'trim|required|max_length[45]|ucwords|]');
-		//Seta uma mensagem se já existir no banco.
-		$this->form_validation->set_message('is_unique', "O marca ". $cidade['cidade'] ." já existe.");
+		$this->form_validation->set_rules('nome', 'Nome', 'trim|required|max_length[45]|ucwords');
+		$this->form_validation->set_message('is_unique', "O cpf ". $cpf['cpf'] ." já existe.");
 
 		//Verifica se o formmulário é válido
 		if($this->form_validation->run()){
 
 			//Pega os campos e recebe os valores do post
-			$dados = elements(array('cidade','idEstado'), $this->input->post());
+			$dados = elements(array('nome','cpf','email','dataNascimento','dataCadastro','flagAtivo','idEndereco','idTelefone','idSexo','idLogin'), $this->input->post());
+			$dados['idEndereco'] = $this->input->post('enderecoPost');
+			$dados['idTelefone'] = $this->input->post('telefonePost');
+			$dados['idLogin'] = $this->input->post('loginPost');
+			$dados['dataCadastro']= date('Y-m-d');
+		    $dados['flagAtivo'] = 1;
 
-			//setando flagAtivo para True
-			//$dados['flagAtivo'] = 1;
-
-			$this->ClienteModel->insertCidade($dados);
+			$this->ClienteModel->insertCadastrar($dados);
 		}else{
-			$this->session->set_flashdata('erro', 'Marca já existe!');
+			$this->session->set_flashdata('erro', 'cadastrar já existe!');
 		}
 
 		/*$dados = array(
 			'pasta' => 'lojaCliente',
-			'view' => 'clienteCidade',
+			'view' => 'clienteCadastrar',
+			 'sexo' => $this->ClienteModel->getAllSexo()->result(),
+
 			 );
 		$this->load->view('Principal', $dados);*/
 
 
 	}
-}
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+}

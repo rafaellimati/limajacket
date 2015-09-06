@@ -11,7 +11,7 @@
 						<div class="bill-to">
 							<p>Dados pessoais&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;Selecione DDD</p>
 							<div class="form-one">
-								<form action = "<?php echo base_url("cliente/telefone"); ?>" method= "post">
+								<form action = "<?php echo base_url("telefone/cadastrar"); ?>" method= "post">
 									<input type="text" id="telefone" name="telefone" placeholder="Telefone">
 									<button type="submit" class="btn btn-justified btn-primary" >Cadastrar</button>
 									<a class="btn btn-primary" href=""> Limpar</a>
