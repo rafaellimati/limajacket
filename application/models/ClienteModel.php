@@ -2,7 +2,7 @@
 
 class ClienteModel extends CI_Model{
 			
-		public function insertLogin($dados = null){
+		/*public function insertLogin($dados = null){
 
 		if($dados != null){
 
@@ -158,7 +158,61 @@ class ClienteModel extends CI_Model{
 		//$this->db->where('ativo', 1);
 
 		return $this->db->get();
+	}*/
+
+	
+		public function insertCliente($dados = null){
+
+		if($dados != null){
+			
+			//insercao da cidade
+			$this-> db-> set('cidade',$dados['cidade']);
+			$this-> db-> set('idEstado',$dados['idEstado']);
+			$this->db->insert('TbCidade');
+			$idCidade = $this-> db-> insert_id();
+			//insercao na tabela endereco
+			$this-> db-> set('logradouro',$dados['logradouro']);
+			$this-> db-> set('bairro',$dados['bairro']);
+			$this-> db-> set('numero',$dados['numero']);
+			$this-> db-> set('cep',$dados['cep']);
+			$this-> db-> set('idCidade',$idCidade);
+			$this-> db-> insert('TbEndereco');
+			$idEndereco = $this-> db-> insert_id();
+			//insercao do telefone
+			$this-> db-> set('telefone',$dados['telefone']);
+			$this-> db-> set('idDdd',$dados['idDdd']);
+			$this-> db-> set('idTipoTelefone',$dados['idTipoTelefone']);
+			$this-> db-> insert('TbTelefone');
+			$idTelefone = $this-> db-> insert_id();
+			//insercao do login
+			$dataCadastro = date('Y-m-d');
+			$this-> db-> set('login',$dados['login']);
+			$this-> db-> set('senha',$dados['senha']);
+			$this-> db-> set('nivelAcesso', 1);
+			$this-> db-> set('dataCadastro', $dataCadastro);
+			$this-> db-> set('flagAtivo',1);
+			$this-> db-> insert('TbLogin');
+			$idLogin = $this-> db-> insert_id();
+			//insercao do cliente
+			$this-> db ->set('nome',$dados['nome']);
+			$this-> db ->set('cpf',$dados['cpf']);
+			$this-> db ->set('email',$dados['email']);
+			$this-> db ->set('dataNascimento',$dados['dataNascimento']);
+			$this-> db ->set('dataCadastro', $dataCadastro);
+			$this-> db ->set('flagAtivo', 1);
+			$this-> db ->set('idEndereco', $idEndereco);
+			$this-> db ->set('idTelefone',$idTelefone);
+			$this-> db ->set('idSexo',$dados['idSexo']);
+			$this-> db ->set('idLogin',$idLogin);
+			$this-> db ->insert('TbCliente');
+			
+
+			$this->session->set_flashdata('cadastrook','Cadastro realizado com sucesso.');
+			
+			//redirect('cliente/endereco');
+		}
 	}
+	
 		
 		
 }
