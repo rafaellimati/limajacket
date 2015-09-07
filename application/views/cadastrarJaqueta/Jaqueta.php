@@ -1,14 +1,19 @@
 <div class="container posicaopainel">
-	 	<div class="panel panel-default">
+	 	<div class="panel panel-primary">
         		<div class="panel-heading">
-        			<h3></span> Cadastrar Jaquetas</h3>
+        			<h3><span class="glyphicon glyphicon-bookmark"></span></span> Cadastrar Jaquetas</h3>
         		</div>
         		<div class="panel-body">
         			<div class="container">
         				<form class="form" role="form"  method="post" enctype="multipart/form-data" action="<?php echo base_url("admin/jaqueta/cadastrar")?>">
-        				  	<label for="codigoCliente" class="sr-only">Código</label>
+        				  	<br><br>
+        				  	<label for="idJaqueta" class="sr-only">Código</label>
+        				  	<div class="input-group" style="width:200px;">
+                                <span class="input-group-addon glyphicon glyphicon-asterisk" id="basic-addon1"></span>
         				  	<input type="text" id="idJaqueta" name="idJaqueta" value="" class="form-control codigo" readonly="readonly"> 
+        					</div>
         					<br>
+        					
         				   	<label for="nome">Jaqueta:</label>
         				   	<div class="input-group textos">
 								<input type="text" id="jaqueta" style="width:260px"; name="jaqueta" value= "" class="form-control" placeholder="Nome Jaqueta" required autofocus >
@@ -35,8 +40,10 @@
         				   </div>
         				   <br>
         				    <label for="textos">Marca:</label>
-        				   <div class="input-group textos">
-        				   <select name="idMarca">
+        				   <div class="input-group texts">
+                           <span class="input-group-addon glyphicon glyphicon-tag" id="basic-addon1"></span>
+        				   <select name="idMarca" class="form-control">
+        				   	<option>Selecione</option>
         				   	<?php 
         				   	foreach ($marca as $key) {
 								   echo "<option value=\"$key->idMarca\">$key->marca</option>";
@@ -44,10 +51,13 @@
         				   	
         				   	?>
         				   </select>
-        				   <br><br>
+        				   </div>
+        				   <br>
         				   <label for="textos">Cor:</label>
         				   <div class="input-group textos">
-        				   <select name="idCor">
+        				   <span class="input-group-addon glyphicon glyphicon-tint"></span>
+        				   <select name="idCor" class="form-control">
+        				   	<option>Selecione</option>
         				   	<?php 
         				   	foreach ($cor as $key) {
 								   echo "<option value=\"$key->idCor\">$key->cor</option>";
@@ -55,11 +65,13 @@
         				   	
         				   	?>
         				   </select>
-        				   <br>
+        				   </div>
         				   <br>
         				   <label for="textos">Tamanho:</label>
         				   <div class="input-group textos">
-        				   <select name="idTamanho">
+        				   <span class="input-group-addon glyphicon glyphicon-resize-full"></span>
+        				   <select name="idTamanho" class="form-control">
+        				   	<option>Selecione</option>
         				   	<?php 
         				   	foreach ($Tamanho as $key) {
 								   echo "<option value=\"$key->idTamanho\">$key->tamanho</option>";
@@ -67,11 +79,13 @@
         				   	
         				   	?>
         				   </select>
-        				   <br>
+        				   </div>
         				   <br>
         				   <label for="textos">Categoria:</label>
         				   <div class="input-group textos">
-        				   <select name="idCategoria">
+        				   	<span class="input-group-addon glyphicon glyphicon-list-alt"></span>
+        				   <select name="idCategoria" class="form-control">
+        				   	<option>Selecione</option>
         				   	<?php 
         				   	foreach ($Categoria as $key) {
 								   echo "<option value=\"$key->idCategoria\">$key->categoria</option>";
@@ -79,11 +93,10 @@
         				   	
         				   	?>
         				   </select>
-        				   <br>
-        				   <br>
         				   </div>
         				   <br>
-        				   
+        				   <br>
+        				   <br>
         				   <button type="submit" class="btn btn-lg btn-primary" >Cadastrar</button>
         				   <!--<button onclick="document.getElementById('op').value='update';" type="submit" class="btn btn-lg btn-primary" >Alterar</button>-->
         				   <button id="btnlimpar" type="reset" class="btn btn-lg btn-warning">Limpar</button>

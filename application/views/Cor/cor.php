@@ -1,19 +1,21 @@
 	 <div class="container posicaopainel">
-	 	<div class="panel panel-default">
+	 	<div class="panel panel-primary">
         		<div class="panel-heading">
         			<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
-        			<h3><span class="glyphicon glyphicon-thumbs-up"></span> Gerenciar Cores</h3>
+        			<h3><span class="glyphicon glyphicon-tint"></span> Gerenciar Cores</h3>
         		</div>
         		<div class="panel-body">
         			<div class="container">
         				<form class="form" role="form" method="post" action="<?php echo base_url("admin/cor/cadastrar")?>">
-        				  	<label for="codigoCliente" class="sr-only">Código</label>
+        				  	<br>
+        				  	<div class="input-group" style="width:200px;">
+                                <span class="input-group-addon glyphicon glyphicon-asterisk" id="basic-addon1"></span>
         				  	<input type="text" id="idCor" name="idCor" value="" class="form-control codigo" readonly="readonly"> 
-        		
+        					</div><br>
         				   	<label for="nome">Cor:</label>
         				   	<div class="input-group textos">
 								<input type="text" id="cor" name="cor" value= "" class="form-control" placeholder="Nome Cor" required autofocus >
-							</div>
+							</div><br>
                             <br>
         				   <button  type="submit" class="btn btn-lg btn-primary" >Cadastrar</button>
         				   <button id="btnlimpar" type="submit" class="btn btn-lg btn-warning">Limpar</button>

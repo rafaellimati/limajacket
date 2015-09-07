@@ -23,16 +23,17 @@ if($this->session->flashdata('edicaook')):
 <?php endif; ?>
 
 	 <div class="container posicaopainel">
-	 	<div class="panel panel-default">
+	 	<div class="panel panel-primary">
         		<div class="panel-heading">
-        			<h3><span class="glyphicon glyphicon-thumbs-up"></span> Gerenciar Admin</h3>
+        			<h3><span class="glyphicon glyphicon-user"></span> Gerenciar Admin</h3>
         		</div>
         		<div class="panel-body">
         			<div class="container">
         				<form class="form" role="form" method="post" action="<?php echo base_url("admin/usuario/editar")?>">
-        				  	<label for="idLogin" class="sr-only">Código</label>
+        				  	<br><div class="input-group" style="width:200px;">
+                                <span class="input-group-addon glyphicon glyphicon-tag" id="basic-addon1"></span>
         				  	<input type="text" id="idLogin" name="idLogin" value="<?php echo $login-> idLogin; ?>" class="form-control codigo" readonly="readonly"> 
-        		
+        					</div><br>
         				   	<label for= "login"> Login: </label>
         				   	<div class="input-group textos">
 								<input type="text" id="login" disabled="disabled" name="login"  value="<?php echo $login-> login; ?>" class="form-control" placeholder="Login" required autofocus  style="width: 400px;">
@@ -40,14 +41,14 @@ if($this->session->flashdata('edicaook')):
         				   <label  for= "Senha" >Senha:</label>
         				   <div class="input-group textos">
 							<input type="Password" id="senha" name="senha" value= ""   class="form-control" style="width: 400px"; placeholder= "Senha"  required autofocus>
-							</div>
+							</div><br>
                             <label for="nome">Login:</label>
                             <div class="input-group textos">
                                 <?php 
 									echo form_dropdown('flagAtivo', array('0' => 'Inativo', '1' => 'Ativo'), $login->flagAtivo);
  								?>
                             </div>
-                            <br>
+                            <br><br>
         				   <button  type="submit" class="btn btn-lg btn-primary" >Alterar</button>        				  
         				   <button id="btnlimpar" type="submit" class="btn btn-lg btn-warning">Limpar</button>
         				

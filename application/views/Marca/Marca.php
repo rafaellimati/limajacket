@@ -1,22 +1,23 @@
 	 <div class="container posicaopainel">
-	 	<div class="panel panel-default">
+	 	<div class="panel panel-primary">
         		<div class="panel-heading">
-        			<h3><span class="glyphicon glyphicon-thumbs-up"></span> Gerenciar Marcas</h3>
+        			<h3><span class="glyphicon glyphicon-tag"></span> Gerenciar Marcas</h3>
         		</div>
         		<div class="panel-body">
         			<div class="container">
         				<form class="form" role="form" method="post" action="<?php echo base_url("admin/marca/cadastrar")?>">
-        				  	<label for="codigoCliente" class="sr-only">Código</label>
+        				  		<br><div class="input-group" style="width:200px;">
+                                <span class="input-group-addon glyphicon glyphicon-asterisk" id="basic-addon1"></span>
         				  	<input type="text" id="idMarca" name="idMarca" value="" class="form-control codigo" readonly="readonly"> 
-        		
+        					</div><br>
         				   	<label for="nome">Marca:</label>
         				   	<div class="input-group textos">
 								<input type="text" id="marca" name="marca" value= "" class="form-control" placeholder="Nome Marca" required autofocus >
 							</div>
-                            <br>
+                            <br><br>
         				   <button  type="submit" class="btn btn-lg btn-primary" >Cadastrar</button>
         				   <button id="btnlimpar" type="submit" class="btn btn-lg btn-warning">Limpar</button>
-        				
+        					<br>
                         <?php if($this->session->flashdata('erro')): ?>
                             <script>
                                 setTimeout(function(){

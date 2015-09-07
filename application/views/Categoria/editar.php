@@ -22,20 +22,23 @@ if($this->session->flashdata('edicaook')):
 </div>
 <?php endif; ?>
 	 <div class="container posicaopainel">
-	 	<div class="panel panel-default">
+	 	<div class="panel panel-primary">
         		<div class="panel-heading">
-        			<h3><span class="glyphicon glyphicon-thumbs-up"></span> Gerenciar Categoria</h3>
+        			<h3><span class="glyphicon glyphicon-inbox"></span>  Gerenciar Categoria</h3>
         		</div>
         		<div class="panel-body">
         			<div class="container">
         				<form class="form" role="form" method="post" action="<?php echo base_url("admin/categoria/editar")?>">
-        				  	<label for="codigoCliente" class="sr-only">Código</label>
+        				  	<br><div class="input-group" style="width:200px;">
+                            <span class="input-group-addon glyphicon glyphicon-asterisk" id="basic-addon1"></span>
         				  	<input type="text" id="idCategoria" name="idCategoria" value="<?php echo $categoria->idCategoria; ?>" class="form-control codigo" readonly="readonly"> 
-        		
+        					</div>
+        					<br>
         				   	<label for="nome">Categoria:</label>
         				   	<div class="input-group textos">
 								<input type="text" id="categoria" name="categoria" value= "<?php echo $categoria->categoria; ?>" class="form-control" placeholder="Digite a Categoria" required autofocus >
 							</div>
+							<br>
 							 <label for="nome">Categoria:</label>
                             <div class="input-group textos">
                                 <?php 

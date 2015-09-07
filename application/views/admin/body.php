@@ -22,8 +22,8 @@
 	       		</li>
 	       		</ul>
 	       		<ul class="nav navbar-nav navbar-right">
-	       			<li> <a href="#" ><?php echo $this->session->userdata('login'); ?> </a> </li>
-	       			<li> <a href="<?php echo base_url('admin/login/logout') ?>">Sair </a> </li>
+	       			<li> <a href="#" ><span class="glyphicon glyphicon-user"></span>  <?php echo $this->session->userdata('login'); ?> </a> </li>
+	       			<li> <a href="<?php echo base_url('admin/login/logout') ?>"><span class="glyphicon glyphicon-off"></span> Sair </a> </li>
 	       		</ul>
 	       		
 	       	</div>

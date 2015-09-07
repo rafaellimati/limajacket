@@ -1,14 +1,15 @@
 <div class="container posicaopainel">
-	 	<div class="panel panel-default">
+	 	<div class="panel panel-primary">
         		<div class="panel-heading">
-        			<h3><span class="glyphicon glyphicon-thumbs-up"></span> Gerenciar Admin</h3>
+        			<h3><span class="glyphicon glyphicon-user"></span> Gerenciar Admin</h3>
         		</div>
         		<div class="panel-body">
         			<div class="container">
         				<form class="form" role="form" method="post" action="<?php echo base_url('admin/usuario/cadastrar') ?>">
-        				  	<label for="codigoCliente" class="sr-only">Código</label>
+        				  		<br><div class="input-group" style="width:200px;">
+                                <span class="input-group-addon glyphicon glyphicon-tag" id="basic-addon1"></span>
         				  	<input type="text" id="idLogin" name="idLogin" value="" class="form-control codigo" readonly="readonly">
-        		
+        					</div><br>
         				   	<label for="login">Login:</label>
         				   	<div class="input-group textos">
 								<input type="text" id="login" name="login"  value="" class="form-control" placeholder="Login" required autofocus  style="width: 400px;">

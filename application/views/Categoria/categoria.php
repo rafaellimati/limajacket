@@ -1,22 +1,23 @@
 	 <div class="container posicaopainel">
-	 	<div class="panel panel-default">
+	 	<div class="panel panel-primary">
         		<div class="panel-heading">
-        			<h3><span class="glyphicon glyphicon-thumbs-up"></span> Gerenciar Categoria</h3>
+        			<h3><span class="glyphicon glyphicon-inbox"></span>  Gerenciar Categoria</h3>
         		</div>
         		<div class="panel-body">
         			<div class="container">
         				<form class="form" role="form" method="post" action="<?php echo base_url("admin/categoria/cadastrar")?>">
-        				  	<label for="codigoCliente" class="sr-only">Código</label>
+        				  	 <br><div class="input-group" style="width:200px;">
+                            <span class="input-group-addon glyphicon glyphicon-asterisk" id="basic-addon1"></span>
         				  	<input type="text" id="idCategoria" name="idCategoria" value="" class="form-control codigo" readonly="readonly"> 
-        		
+        					</div><br>
         				   	<label for="nome">Categoria:</label>
         				   	<div class="input-group textos">
 								<input type="text" id="categoria" name="categoria" value= "" class="form-control" placeholder="Digite a Categoria" required autofocus >
 							</div>
-                            <br>
+                            <br><br>
         				   <button  type="submit" class="btn btn-lg btn-primary" >Cadastrar</button>
         				   <!-- <button  type="submit" class="btn btn-lg btn-primary" >Alterar</button> -->
-        				   <button id="btnlimpar" type="submit" class="btn btn-lg btn-warning">Limpar</button>
+        				   <button id="btnlimpar" type="submit" class="btn btn-lg btn-warning">Limpar</button><br<br>
         				
                         <?php if($this->session->flashdata('erro')): ?>
                             <script>

@@ -24,27 +24,28 @@ if($this->session->flashdata('edicaook')):
 
 		<br><br><br>
 	 <div class="container posicaopainel">
-	 	<div class="panel panel-default">
+	 	<div class="panel panel-primary">
         		<div class="panel-heading">
-        			<h3><span class="glyphicon glyphicon-thumbs-up"></span> Gerenciar Tamanho</h3>
+        			<h3><span class="glyphicon glyphicon-resize-full"></span> Gerenciar Tamanho</h3>
         		</div>
         		<div class="panel-body">
         			<div class="container">
         				<form class="form" role="form" method="post" action="<?php echo base_url("admin/tamanho/editar")?>">
-        				  	<label for="codigoCliente" class="sr-only">Código</label>
+        				  	<br><div class="input-group" style="width:200px;">
+                                <span class="input-group-addon glyphicon glyphicon-asterisk" id="basic-addon1"></span>
         				  	<input type="text" id="idTamanho" name="idTamanho" value="<?php echo $tamanho->idTamanho; ?>" class="form-control codigo" readonly="readonly"> 
-        		
+        					</div><br>
         				   	<label for="nome">Tamanho:</label>
         				   	<div class="input-group textos">
 								<input type="text" id="tamanho" name="tamanho" value= "<?php echo $tamanho->tamanho; ?>" class="form-control" placeholder="Nome Cor" required autofocus >
-							</div>
+							</div><br>
                             <label for="nome">Tamanho:</label>
                             <div class="input-group textos">
                                 <?php 
 									echo form_dropdown('flagAtivo', array('0' => 'Inativo', '1' => 'Ativo'), $tamanho->flagAtivo);
  								?>
                             </div>
-                            <br>
+                            <br><br>
         				   <button  type="submit" class="btn btn-lg btn-primary" >Alterar</button>
         				   <button id="btnlimpar" type="submit" class="btn btn-lg btn-warning">Limpar</button>
         				

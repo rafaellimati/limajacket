@@ -23,8 +23,8 @@
         	<?php
             foreach ($jaquetas as $jaqueta):
           ?>
-
-            <li> <a href="compra"><img width="231" height="383" src="<?php echo base_url("produtos/$jaqueta->imagem"); ?>" alt="" /></a>
+          
+            <li classe = "last" > <a href="compra"><img width="231" height="383" src="<?php echo base_url("produtos/$jaqueta->imagem"); ?>" alt="" /></a>
             <div class="product-info">
               <h3><?php echo $jaqueta->jaqueta ?></h3>
               <div class="product-desc">
@@ -33,7 +33,7 @@
                 <strong class="price"><?php echo $jaqueta->valor ?></strong> </div>
             </div>
           </li>
-
+			
           <?php 
             endforeach;
           ?>
