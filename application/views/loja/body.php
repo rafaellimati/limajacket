@@ -3,7 +3,7 @@
 <div class="shell">
   <!-- Header -->
   <div id="header">
-    <h1 id="logo"><a href="Principal">Lima Jacket</a></h1>
+    <h1 id="logo"><a href="<?php echo base_url("Principal")?>" >Lima Jacket</a></h1>
     <!-- Cart -->
     <div id="cart"> <a href="Pedido" class="cart-link">Carrinho</a>
       <div class="cl">&nbsp;</div>
@@ -17,10 +17,10 @@
     <!-- Navigation -->
     <div id="navigation">
       <ul>
-        <li><a href="Principal" class="active">Inicio</a></li>
-        <li><a href="Categoria">Compras</a></li>
-        <li><a href="Pedido">Pedidos</a></li>
-        <li><a href="login">Login</a></li>
+        <li><a href="<?php echo base_url("Principal")?>" class="active">Inicio</a></li>
+        <li><a href="<?php echo base_url("Categoria")?>">Compras</a></li>
+        <li><a href="<?php echo base_url("Pedido")?>">Pedidos</a></li>
+        <li><a href="<?php echo base_url("login")?>">Login</a></li>
         <li><a href="#">Contato</a></li>
       </ul>
     </div>

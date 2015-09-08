@@ -16,6 +16,7 @@
 						<div class="col-sm-7">
 							<div class="product-information">
 								 <!--/product-information-->
+								 <form action="<?php echo base_url("pedido/adicionar_item"); ?>" method="post">
 								<h2><?php echo $item->jaqueta ?></h2>
 								<p>Descrição:<?php echo $item->detalhes ?></p>
 								<span>
