@@ -22,6 +22,7 @@ class Categoria extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('CategoriaModel');
+		$this->load->model('JaquetaModel');
 	}
 	
 		 public function index()
@@ -34,6 +35,22 @@ class Categoria extends CI_Controller {
 		$this->load->view('Principal', $dados);
 	}
 	
+
+	function get_categoria($idCategoria)
+	{
+		$dados = array(
+		'pasta' => 'loja',
+		'view'  => 'inicio',
+		'categorias' => $this->CategoriaModel->getAllCategoria()->result(),
+		'jaquetas'    => $this->JaquetaModel->getJaquetaByCategoria($idCategoria)->result(),
+		);
+		
+		//redirect('Principal/categoria');
+		$this->load->view('Principal', $dados);
+	}
+
+
+
 	function adicionar_item(){
 					
 								

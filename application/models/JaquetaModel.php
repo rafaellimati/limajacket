@@ -121,4 +121,22 @@ inner join tbtamanho on(tbjaqueta.idTamanho = tbtamanho.idTamanho)*/
 			return $quantJaqueta - $quantPedido;
 		}
 	}
+
+
+	public function getJaquetaByCategoria($idCategoria = null)
+	{
+
+		if($idCategoria != null){
+		
+			$this->db->where('idCategoria', $idCategoria);
+			$this->db->from('TbJaqueta');
+
+			$this->db->order_by('Jaqueta');
+
+			//$this->db->where('ativo', 1);
+
+			return $this->db->get();	
+		}
+
+	}
 }

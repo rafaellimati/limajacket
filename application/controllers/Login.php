@@ -67,8 +67,8 @@ class Login extends CI_Controller {
                 //Enviar os dados para a view
                 $this->session->set_userdata($session);
 
-	                //Redireciona para a pagina principal
-					redirect(base_url());
+	           //Redireciona para a pagina principal
+				redirect(base_url());
                                 
                                 
             }else{
@@ -87,7 +87,7 @@ class Login extends CI_Controller {
     public function logout(){
 
         //Verifica se a sessão existi 
-        if($this->session->userdata('is_logged_in')){
+        if($this->session->userdata('cliente_is_logged_in')){
             //Destroy a session do usuario
             $session = array(
                 'cliente_id'           => '',
@@ -99,7 +99,7 @@ class Login extends CI_Controller {
             $this->session->unset_userdata($session);
             $this->session->sess_destroy();
             //Redireciona para a url padrão "raiz"
-            redirect(base_url('login'));
+            redirect(base_url());
         }
     }
 	
