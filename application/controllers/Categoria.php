@@ -34,5 +34,23 @@ class Categoria extends CI_Controller {
 		$this->load->view('Principal', $dados);
 	}
 	
+	function adicionar_item(){
+					
+								
+				$item = array(
+		           'id'      => $this->input->post('idCategoria'),
+		           'qty'     => $this->input->post('quantidade'),
+		           'price'   => $this->input->post('valor'),
+		           'name'    => $this->input->post('categoria')
+		        );
+				$this->cart->insert($item);
+				redirect(base_url('pedido'));
+	}	
+			
+			function atualizar(){
+					$this->cart->update($_POST);
+					redirect(base_url('compra'));
+				}
+	
 	
 }
