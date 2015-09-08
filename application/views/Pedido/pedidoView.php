@@ -15,6 +15,7 @@
 						<!--	<td class="quantity">item</td>-->
 							<td class="total">Total</td>
 							<td></td>
+							<td></td>
 						</tr>
 					</thead>
 					<tbody>
@@ -29,6 +30,7 @@
 								  <td><?php echo $items['name']; ?></td>
 								  <td>R$ <?php echo number_format($items['price'],2,",","."); ?></td>
 								  <td>R$ <?php echo number_format($items['subtotal'],2,",","."); ?></td>
+								  <td><button type="submit" onclick="remover_item('<?php echo $i; ?>[qty]')">Remover</button></td>
 								</tr>
 								<?php 
 								$i++; 
@@ -171,3 +173,12 @@
 		<script src="<?php echo base_url("static/js/bootstrap.minn.js"); ?>"></script>
 		<script src="<?php echo base_url("static/js/jquery.prettyPhoto.js"); ?>"></script>
 		<script src="<?php echo base_url("static/js/main.js"); ?>"></script>
+
+
+		<script type="text/javascript">
+		
+		function remover_item(item_name) {
+			$("[name='"+ item_name +"']").val("0");
+		}
+			
+		</script>
