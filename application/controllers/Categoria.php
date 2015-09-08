@@ -39,8 +39,6 @@ class Categoria extends CI_Controller {
 								
 				$item = array(
 		           'id'      => $this->input->post('idCategoria'),
-		           'qty'     => $this->input->post('quantidade'),
-		           'price'   => $this->input->post('valor'),
 		           'name'    => $this->input->post('categoria')
 		        );
 				$this->cart->insert($item);
