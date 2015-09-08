@@ -24,7 +24,7 @@
             foreach ($jaquetas as $jaqueta):
           ?>
           
-            <li classe = "last" > <a href="compra"><img width="231" height="383" src="<?php echo base_url("produtos/$jaqueta->imagem"); ?>" alt="" /></a>
+            <li classe = "last" > <a href="<?php echo base_url("compra/$jaqueta->idJaqueta"); ?>"><img width="231" height="383" src="<?php echo base_url("produtos/$jaqueta->imagem"); ?>" alt="" /></a>
             <div class="product-info">
               <h3><?php echo $jaqueta->jaqueta ?></h3>
               <div class="product-desc">

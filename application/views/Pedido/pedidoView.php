@@ -19,32 +19,37 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td class="cart_product">
-								<a href=""><img src="images/cart/one.png" alt=""></a>
-							</td>
-							<td class="cart_description">
-								<h4><a href="">Jaqueta</a></h4>
-								<p>Web ID: 1089772</p>
-							</td>
-							<td class="cart_price">
-								<p>$59</p>
-							</td>
-							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-									<!--<a class="cart_quantity_up" href=""> + </a>-->
-									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-									<!--<a class="cart_quantity_down" href=""> - </a>-->
-								</div>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">$59</p>
-							</td>
-							<td class="cart_delete">
-								<!--<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>-->
-							</td>
+													<?php 
+								$i = 1;
+								foreach ($this->cart->contents() as $items): 
+								echo form_hidden($i . '[rowid]', $items['rowid']); 
+								?>
+								<tr>
+								  <td><!--<?php echo form_input(array('name' => $i . '[qty]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?>--></td>
+								  <td><?php echo $items['nome']; ?></td>
+								  <td>R$ <?php echo number_format($items['preco'],2,",","."); ?></td>
+								  <td>R$ <!--<?php echo number_format($items['subtotal'],2,",","."); ?>--></td>
+								</tr>
+								<?php 
+								$i++; 
+								endforeach;
+								?>
+								<tr>
+								  <td colspan="2">&nbsp;</td>
+								  <th>Total</th>
+								  <td>R$ <?php echo number_format($this->cart->total(),2,",","."); ?></td>
+								</tr>
+							</tbody>
+						</table>
+						<p class='btn'>
+							<?php 
+								echo form_submit('', 'Alterar Carrinho'); 
+								echo form_close();
+							?>
+						</p>
 						</tr>
 
-						<tr>
+					<!--	<tr>
 							<td class="cart_product">
 								<a href=""><img src="images/cart/two.png" alt=""></a>
 							</td>
@@ -57,16 +62,16 @@
 							</td>
 							<td class="cart_quantity">
 								<div class="cart_quantity_button">
-									<!--<a class="cart_quantity_up" href=""> + </a>-->
+						
 									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-									<!--<a class="cart_quantity_down" href=""> - </a>-->
+		
 								</div>
 							</td>
 							<td class="cart_total">
 								<p class="cart_total_price">$59</p>
 							</td>
 							<td class="cart_delete">
-								<!--<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>-->
+			
 							</td>
 						</tr>
 						<tr>
@@ -82,16 +87,16 @@
 							</td>
 							<td class="cart_quantity">
 								<div class="cart_quantity_button">
-									<!--<a class="cart_quantity_up" href=""> + </a>-->
+						
 									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-								<!--<a class="cart_quantity_down" href=""> - </a>-->
+				
 								</div>
 							</td>
 							<td class="cart_total">
 								<p class="cart_total_price">$59</p>
 							</td>
 							<td class="cart_delete">
-								<!--<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>-->
+			
 							</td>
 						</tr>
 						<tr>
@@ -116,7 +121,7 @@
 									</tr>
 								</table>
 							</td>
-						</tr>
+						</tr>-->
 					</tbody>
 				</table>
 			</div>

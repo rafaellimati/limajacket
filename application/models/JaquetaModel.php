@@ -26,6 +26,28 @@ class JaquetaModel extends CI_Model{
 			return $this->db->get('TbJaqueta');
 		}
 	}
+		
+		public function detalhesProduto($id = null){
+			if($id != null){
+
+					$this->db->select('idJaqueta ,jaqueta , quantidade, valor,tbjaqueta.descricao as detalhes ,  marca, cor, tamanho, categoria, imagem');
+			
+			
+					$this->db->from('TbJaqueta');
+			
+					$this->db->order_by('jaqueta');
+			
+					$this->db->join('tbmarca', 'tbjaqueta.idMarca = tbmarca.idMarca', 'inner');
+					$this->db->join('tbcor', 'tbjaqueta.idCor = tbcor.idCor ', 'inner');
+				    $this->db->join('tbtamanho', 'tbjaqueta.idTamanho = tbtamanho.idTamanho', 'inner');
+					$this->db->join('tbCategoria', 'tbjaqueta.idCategoria = tbCategoria.idCategoria', 'inner');
+			
+					return $this->db->get();
+							
+			}
+		}
+		
+
 	
 	public function getLojaJaqueta(){
 

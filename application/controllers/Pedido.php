@@ -35,4 +35,18 @@ class Pedido extends CI_Controller {
 				$this->load->view('Principal', $dados);
 			}
 			
+			
+			function adicionar_item(){
+					
+								
+				$item = array(
+		           'id'      => $this->input->post('idJaqueta'),
+		           'qty'     => $this->input->post('quantidade'),
+		           'price'   => $this->input->post('valor'),
+		           'name'    => $this->input->post('nome')
+		        );
+				$this->cart->insert($item);
+				redirect(base_url('pedido'));
+	}	
+			
 }

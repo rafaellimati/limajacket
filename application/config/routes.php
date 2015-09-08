@@ -40,9 +40,13 @@
 
 $route['default_controller'] = "Principal";
 
+$route['categoria/(:any)'] = "Principal/categoria/$1";
+
+$route['compra/(:any)'] = "compra/detalhes_jaqueta/$1";
+
 //$route['administrador'] = "administrador";
 
-$route['administracao/dashboard'] = 'administracao';
+//$route['administracao/dashboard'] = 'administracao';
 
 $route['404_override'] = '';
 

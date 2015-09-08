@@ -1,3 +1,4 @@
+
     <section>
 		<div class="container">
 			<div class="row">
@@ -7,7 +8,7 @@
 						<!--product-details-->
 						<div class="col-sm-5">
 							<div class="view-product">
-								<img src="<?php echo base_url("static/css/images/big3.jpg"); ?>" alt="" />
+								<img width="231" height="383" src="<?php echo base_url("produtos/$item->imagem"); ?>"  alt="" />
 							</div>
 							<div id="similar-product" class="carousel slide" data-ride="carousel">
 							</div>
@@ -15,24 +16,27 @@
 						<div class="col-sm-7">
 							<div class="product-information">
 								 <!--/product-information-->
-								<h2>Jaqueta Preta tecido fino</h2>
-								<p>Descrição:</p>
+								<h2><?php echo $item->jaqueta ?></h2>
+								<p>Descrição:<?php echo $item->detalhes ?></p>
 								<span>
-									<span>R$ 59</span>
-									<label> Quantidade:</label>
-									<input type="text" value="3" />
-									<button type="button" href= "<?php echo base_url("pedido"); ?>" class="btn btn-fefault cart">
+									<span><?php echo "R$ ". number_format($item->valor,2,",",".") ?></span>
+									<form method="post"  action = "<?php echo base_url("pedido/adicionar_item") ?>" >
+									<label> Quantidade: </label>
+									<input name="quantidade" id="quantidade" type="text" value="1" />
+									<input name="idJaqueta" type="hidden" value="<?php echo $item->idJaqueta ?>"/>
+									<input name="nome" type="hidden" value="<?php echo $item->jaqueta ?>"/>
+									<input name="valor" type="hidden" value="<?php echo $item->valor ?>"/>
+									<button type="button-submit" class="btn btn-fefault cart">
 											    
 									     Comprar 
 									     
 									</button>
 								</span>
-								<p><b> Categoria:</b> Feminino</p>
-								<p><b> Tamanho:</b> M</p>
-								<p><b> Cor:</b> Preta</p>
+								<p><b>Tamanho </b> <?php echo $item->tamanho ?></p>
+								<p><b>Cor</b> <?php echo $item->cor ?></p>
 								
 							  <!--/product-information-->
-							  
+							  	
 							</div>
 						</div>
 					</div>

@@ -21,18 +21,40 @@ class Compra extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		//$this->load->model('CompraModel');
+		$this->load->model('JaquetaModel');
 	}
 
 	
 	public function index()
 	{
-		$dados = array(
+		/*$dados = array(
 		'pasta' => 'Compra',
 		'view'  => 'CompraView',
 		//'compra' => $this->CompraModel->getAllCompra()->result()
+		
 		);
-		$this->load->view('Principal', $dados);
+		$this->load->view('Principal', $dados);*/
+		
+		redirect(base_url());
+	}
+	
+	
+	public function detalhes_jaqueta($idJaqueta){
+			$iddaJaqueta = $this->uri->segment(3);
+
+					$dados = array(
+					'pasta' => 'Compra',
+					'view'  => 'CompraView',
+					'item' => $this->JaquetaModel->detalhesProduto($idJaqueta)->row(),
+					//'compra' => $this->CompraModel->getAllCompra()->result()
+					);
+		
+		
+			
+		$this->load->view('Principal',$dados);
 	}
 	
 }
+
+	
+	

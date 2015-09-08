@@ -3,15 +3,15 @@ class Carrinho extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('lojaCategoriaModel','categorias');
-		$this->load->model('Produtosmodel','produtos');
 	}
 	
 	public function index(){
 		$dados_carrinho['carrinho'] = $this->cart->contents();		
+			
+			
 			$dados = array(
-				'pasta' => 'Compra',
-				'view'  => 'CompraView',
+				'pasta' => 'Pedido',
+				'view'  => 'pedidoView',
 				//'compra' => $this->CompraModel->getAllCompra()->result()
 		);
 		$this->load->view('Principal', $dados);		
