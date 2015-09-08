@@ -51,10 +51,10 @@ class Login extends CI_Controller {
             $dados = elements(array('login', 'senha'), $this->input->post());
 
             //Verifica se os dados estão validos enviando os valores para a model
-            if($this->UsuarioModel->doValidateloja($dados)){
+            if($this->LoginModel->doValidateloja($dados)){
 
                 //Retorna todas as informações do usuario
-                $dados = $this->UsuarioModel->getUsuarioloja($dados);
+                $dados = $this->LoginModel->getUsuarioloja($dados);
                 
                 //Dados de sessão do usuario
                 $session = array(

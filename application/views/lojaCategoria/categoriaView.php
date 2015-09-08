@@ -102,7 +102,7 @@ if($this->session->flashdata('edicaook')):
       <div class="box search">
         <h2>Search by <span></span></h2>
         <div class="box-content">
-          <form action="<?php echo base_url("Principal/categoria"); ?>" method="post">
+          <form action="<?php echo base_url("categoria/"); ?>" method="post">
             <label>Keyword</label>
             <input type="text" class="field" />
             <label>Category</label>
