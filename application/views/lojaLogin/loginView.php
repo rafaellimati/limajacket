@@ -14,6 +14,26 @@
 						</form>
 					<!--/login form-->	
 					</div>
+					<?php if($this->session->flashdata('loginInvalido')): ?>
+						<script>
+							setTimeout(function(){
+								$('#loginInvalido').fadeOut(3000);
+							}, 4000);
+						</script>
+						<div id="loginInvalido">
+							<font color="#FC5555"><?php echo $this->session->flashdata('loginInvalido'); ?></font>
+						</div>
+					<?php endif; ?>
+					<?php if($this->session->flashdata('loginVazio')): ?>
+						<script>
+							setTimeout(function(){
+								$('#loginVazio').fadeOut(3000);
+							}, 4000);
+						</script>
+						<div id="loginVazio">
+							<font color="#FC5555"><?php echo $this->session->flashdata('loginVazio'); ?></font>
+						</div>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>

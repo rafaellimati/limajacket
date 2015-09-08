@@ -78,7 +78,7 @@ class UsuarioModel extends CI_Model{
 			//Monta a consulta com a seguintes condições
 			$this->db->where('login', $dados['login']);
 			//$this->db->where('senha', sha1($dados['senha']));
-			$this->db->where('senha', $dados['senha']);
+			$this->db->where('senha', md5($dados['senha']) );
 
 			//Armazena os registro na variavel query
 			$query = $this->db->get('TbLogin');
@@ -120,7 +120,7 @@ class UsuarioModel extends CI_Model{
 			//Monta a consulta com a seguintes condições
 			$this->db->where('login', $dados['login']);
 			//$this->db->where('senha', sha1($dados['senha']));
-			$this->db->where('senha', $dados['senha']);
+			$this->db->where('senha', md5($dados['senha'] ) );
 
 			//Armazena os registro na variavel query
 			$query = $this->db->get('TbLogin');

@@ -68,18 +68,18 @@ class Login extends CI_Controller {
                 $this->session->set_userdata($session);
 
 	                //Redireciona para a pagina principal
-					redirect('Principal');
+					redirect(base_url());
                                 
                                 
             }else{
                     //Redireciona para a tela de login              
-                    $this->session->set_flashdata('loginInvalido', 'Usuário ou Senha invalidos.');
-                    redirect('login');
+                    $this->session->set_flashdata('loginInvalido', 'Usuário ou Senha inválido.');
+                    redirect(base_url('login'));
             }
         }else{
             //Redireciona para a tela de login          
             $this->session->set_flashdata('loginVazio', 'Campo(s) obrigatório(s) não preenchido(s).');
-            redirect('login');
+            redirect(base_url('login'));
         }
     }
 	
@@ -90,10 +90,10 @@ class Login extends CI_Controller {
         if($this->session->userdata('is_logged_in')){
             //Destroy a session do usuario
             $session = array(
-                'id'           => '',
-                'nivelAcesso'    => '',
-                'login'        => '',
-                'is_logged_in' => false
+                'cliente_id'           => '',
+                'cliente_nivelAcesso'    => '',
+                'cliente_login'        => '',
+                'cliente_is_logged_in' => false
             );
 
             $this->session->unset_userdata($session);
