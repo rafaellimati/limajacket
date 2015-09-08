@@ -19,13 +19,13 @@ if($this->session->userdata('is_logged_in') && $this->session->userdata('nivelAc
 	//Inclue o arquivo de rodapé
 	$this->load->view('admin/footer');
 
-}else if($this->session->userdata('is_logged_in') && $this->session->userdata('nivelAcesso') == 1){
-	//$this->session->set_flashdata('loginInvalido', 'Usuário ou Senha invalidos.');
-	redirect('Principal');
 }else{
+	//$this->session->set_flashdata('loginInvalido', 'Usuário ou Senha invalidos.');
 	redirect('admin/login');
 }
 ?>
+
+
 
 
 
