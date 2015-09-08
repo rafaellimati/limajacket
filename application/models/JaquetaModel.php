@@ -30,6 +30,10 @@ class JaquetaModel extends CI_Model{
 		public function detalhesProduto($id = null){
 			if($id != null){
 
+					$this->db->where('idJaqueta', $id);
+
+					$this->db->limit(1);
+
 					$this->db->select('idJaqueta ,jaqueta , quantidade, valor,tbjaqueta.descricao as detalhes ,  marca, cor, tamanho, categoria, imagem');
 			
 			
