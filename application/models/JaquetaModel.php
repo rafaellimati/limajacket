@@ -103,4 +103,22 @@ inner join tbtamanho on(tbjaqueta.idTamanho = tbtamanho.idTamanho)*/
 
 
 	}
+
+
+
+	public function JaquetasDisponiveis($id=null)
+	{
+		if($id != null){
+
+			$query = $this->db->query("SELECT count(*) as quant FROM tbpedido where idJaqueta = $id");
+			$row = $query->row();
+			$quantPedido = $row->quant;
+
+			$query2 = $this->db->query("SELECT quantidade  FROM tbjaqueta where idJaqueta = $id");
+			$row2 = $query2->row();
+			$quantJaqueta = $row2->quantidade;
+
+			return $quantJaqueta - $quantPedido;
+		}
+	}
 }

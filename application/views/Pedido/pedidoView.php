@@ -4,6 +4,16 @@
 			<div class="review-payment">
 				<h2>Registro de Compras</h2>
 			</div>
+		<?php if($this->session->flashdata('disponivel')): ?>
+			<script>
+				setTimeout(function(){
+					$('#disponivel').fadeOut(3000);
+				}, 4000);
+			</script>
+			<div id="disponivel">
+				<font color="#FC5555"><?php echo $this->session->flashdata('disponivel'); ?></font>
+			</div>
+		<?php endif; ?>	
 		<form action="<?php echo base_url("pedido/atualizar"); ?>" method="post">
 			<div class="table-responsive cart_info">
 				<table class="table table-condensed">

@@ -21,7 +21,7 @@ class Pagamento extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		//$this->load->model('CategoriaModel');
+		$this->load->model('JaquetaModel');
 	}
 
 
@@ -35,9 +35,20 @@ class Pagamento extends CI_Controller {
 			'view'  => 'pagamentoView',
 			//'categorias' => $this->CategoriaModel->getAllCategoria()->result()
 			);
+
+			foreach ($this->cart->contents() as $items) {
+				$disponivel = $this->JaquetaModel->JaquetasDisponiveis($items['id']);
+				if($disponivel < $items['qty']){
+					redirect(base_url('pedido'));
+					break;
+				}else{
+					$this->session->set_flashdata('disponivel', 'Quantidade indisponível em estoque');
+					$this->load->view('Principal', $dados);
+				}
+			}
 			
 			//redirect('Principal/categoria');
-			$this->load->view('Principal', $dados);
+			
 		}else{
 			redirect(base_url('login'));
 		}
