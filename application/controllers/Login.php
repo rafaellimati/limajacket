@@ -58,10 +58,10 @@ class Login extends CI_Controller {
                 
                 //Dados de sessão do usuario
                 $session = array(
-                        'id'           => $dados[0]['idLogin'],
-                        'nivelAcesso'    => $dados[0]['nivelAcesso'],
-                        'login'        => $dados[0]['login'],
-                        'is_logged_in' => true
+                        'cliente_id'           => $dados[0]['idLogin'],
+                        'cliente_nivelAcesso'    => $dados[0]['nivelAcesso'],
+                        'cliente_login'        => $dados[0]['login'],
+                        'cliente_is_logged_in' => true
                 );
 
                 //Enviar os dados para a view
