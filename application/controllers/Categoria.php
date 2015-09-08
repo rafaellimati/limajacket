@@ -42,7 +42,7 @@ class Categoria extends CI_Controller {
 		           'name'    => $this->input->post('categoria')
 		        );
 				$this->cart->insert($item);
-				redirect(base_url('pedido'));
+				redirect(base_url('categoria'));
 	}	
 			
 			function atualizar(){

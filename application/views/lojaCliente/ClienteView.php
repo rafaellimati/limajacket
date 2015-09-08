@@ -11,12 +11,9 @@
 								<input type="text" name="login" id="login" placeholder="Login">
 								<input type="password" name="senha" id="senha" placeholder="Senha">
 								<input type="password" name="confirmaSenha" id="confirmaSenha" placeholder="Confirme Senha">
-						</div>
-					</div>
-					<div class="col-sm-5 clearfix">
-						<div class="bill-to">
+				
 							<p>Dados pessoais</p>
-							<div class="form-one">
+						
 								
 									<input type="text" name="nome" id="nome" placeholder="Nome Completo">
 									<input type="text" name="email" id="email" placeholder="Email*">
@@ -29,31 +26,9 @@
 									<input type="text" name="cidade" id="cidade" placeholder="Cidade">
 									<input type="text" name="cep" id="cep" placeholder="CEP">
 									
-							</div>
-							</div>
+							
+					
 							<div class="form-two">
-									<select name="idDdd">
-										<?php  
-							 			foreach ($Ddd as $key){
-							 				echo "<option value=\"$key->idDdd\">$key->ddd</option>";
-							 			}
-							 			?>
-									</select>
-									<select name="idTipoTelefone">
-										<?php 
-							 			foreach ($TipoTelefone as $key){
-							 				echo "<option value=\"$key->idTipoTelefone\">$key->tipoTelefone</option>";
-							 			}
-							 			?>
-									</select>
-									<h1></h1>
-									<select name="idSexo">
-									   <?php 
-        				   				foreach ($Sexo as $key) {
-								   			echo "<option value=\"$key->idSexo\">$key->sexo</option>";
-							   			}
-        				   				?>
-									</select>
 									<select name="idEstado">
 										<?php 
 							 			foreach ($Estado as $key){
@@ -63,9 +38,35 @@
 									</select>
 									<br>
 									<br>
+									<select name="idTipoTelefone">
+										<?php 
+							 			foreach ($TipoTelefone as $key){
+							 				echo "<option value=\"$key->idTipoTelefone\">$key->tipoTelefone</option>";
+							 			}
+							 			?>
+									</select>
+									<br><br>
+									<select name="idSexo">
+									   <?php 
+        				   				foreach ($Sexo as $key) {
+								   			echo "<option value=\"$key->idSexo\">$key->sexo</option>";
+							   			}
+        				   				?>
+									</select>
+									<br><br>
+									<select name="idDdd">
+										<?php  
+							 			foreach ($Ddd as $key){
+							 				echo "<option value=\"$key->idDdd\">$key->ddd</option>";
+							 			}
+							 			?>
+									</select>
+									<br>
+									<br>
 									<button type="submit" class="btn btn-submit" >Cadastrar</button><h1></h1>
 									<button id="btnlimpar" type="reset" class="btn btn-reset">Limpar</button>
 								</form>
+									
 							</div>
 						</div>
 					</div>				
@@ -74,11 +75,11 @@
 		</div>
 	</section> <!--/#cart_items-->
   <!--Footer--> 
-  <!--<div id="footer">
+  <div id="footer">
     <p class="left"> <a href="#">Inicio</a> <span>|</span> <a href="#">Contato</a> <span>|</span> <a href="#">Minha Conta</a> <span>|</span> <a href="#">Galeria</a> <span>|</span> <a href="#"> Trabalhe Conosco </a> </p>
     <p class="right"> &copy; 2015 LimaJacket. Ltda </p>
   </div>
-</div>-->
+</div>
   <!-- End Footer -->
   		<link href="<?php echo base_url("static/css/bootstrap.minn.css"); ?>"  rel="stylesheet">
 		<link href="<?php echo base_url("static/css/font-awesome.min.css"); ?>" rel="stylesheet">
