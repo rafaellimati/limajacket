@@ -28,7 +28,7 @@ class Pagamento extends CI_Controller {
 	public function index()
 	{
 
-		if($this->session->userdata('client_is_logged_in')) {
+		if($this->session->userdata('cliente_is_logged_in')) {
 
 			$dados = array(
 			'pasta' => 'lojaPagamento',
