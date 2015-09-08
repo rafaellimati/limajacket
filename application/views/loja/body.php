@@ -5,7 +5,7 @@
   <div id="header">
     <h1 id="logo"><a href="<?php echo base_url("Principal")?>" >Lima Jacket</a></h1>
     <!-- Cart -->
-    <div id="cart"> <a href="Pedido" class="cart-link">Carrinho</a>
+    <div id="cart"> <a href="<?php echo base_url("Pedido")?>" class="cart-link">Carrinho</a>
       <div class="cl">&nbsp;</div>
       <?php 	if($this->cart->total_items()>0): ?>
       <span> Produto(s): <strong><?php echo $this->cart->total_items() ?></strong></span> &nbsp;&nbsp; </div>
