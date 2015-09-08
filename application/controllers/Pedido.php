@@ -49,4 +49,8 @@ class Pedido extends CI_Controller {
 				redirect(base_url('pedido'));
 	}	
 			
+			function atualizar(){
+					$this->cart->update($_POST);
+					redirect(base_url('compra'));
+				}
 }

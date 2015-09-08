@@ -28,6 +28,7 @@
 									<input type="text" name="numero" id="numero" placeholder="Numero">
 									<input type="text" name="cidade" id="cidade" placeholder="Cidade">
 									<input type="text" name="cep" id="cep" placeholder="CEP">
+									
 							</div>
 							</div>
 							<div class="form-two">
@@ -59,7 +60,9 @@
 							 			}
 							 			?>
 									</select>
-									<button type="submit" class="btn btn-lg btn-primary" >Cadastrar</button><h1></h1>
+									<br>
+									<br>
+									<button type="submit" class="btn btn-lg btn-submit" >Cadastrar</button><h1></h1>
 									<button id="btnlimpar" type="reset" class="btn btn-lg btn-warning">Limpar</button>
 								</form>
 							</div>
