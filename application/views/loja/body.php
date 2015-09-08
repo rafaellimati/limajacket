@@ -17,26 +17,17 @@
     <!-- Navigation -->
     <div id="navigation">
       <ul>
-<<<<<<< HEAD
-        <li><a href="Principal" class="active">Inicio</a></li>
-        <li><a href="Categoria">Compras</a></li>
-        <li><a href="Pedido">Pedidos</a></li>
-        <?php  if(!$this->session->userdata('is_logged_in')){ ?>
-        	<li><a href="admin">Login</a></li>
-        <?php }else{ ?>
-        	<ul class="nav navbar-nav navbar-right">
-	       		<li> <a href="#" ><span class="glyphicon glyphicon-user"></span>  <?php echo $this->session->userdata('login'); ?> </a> </li>
-	       		<li> <a href="<?php echo base_url('admin/login/logout') ?>"><span class="glyphicon glyphicon-off"></span> Sair </a> </li>
-	    	</ul>
-	    <?php } ?>
-        <!--<li><a href="#">Contato</a></li>-->
-=======
         <li><a href="<?php echo base_url("Principal")?>" class="active">Inicio</a></li>
         <li><a href="<?php echo base_url("Categoria")?>">Compras</a></li>
         <li><a href="<?php echo base_url("Pedido")?>">Pedidos</a></li>
+        <?php  if(!$this->session->userdata('is_logged_in')){ ?>
         <li><a href="<?php echo base_url("login")?>">Login</a></li>
-        <li><a href="#">Contato</a></li>
->>>>>>> 22375bb958f979c329e2e6c00dc4af31b79df2d6
+        <?php }else{ ?>
+        <ul class="nav navbar-nav navbar-right">
+            <li> <a href="#" ><span class="glyphicon glyphicon-user"></span>  <?php echo $this->session->userdata('login'); ?> </a> </li>
+            <li> <a href="<?php echo base_url('admin/login/logout') ?>"><span class="glyphicon glyphicon-off"></span> Sair </a> </li>
+         <?php } ?>
+        <!--<li><a href="#">Contato</a></li> -->
       </ul>
     </div>
     <!-- End Navigation -->
