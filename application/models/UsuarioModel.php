@@ -126,8 +126,8 @@ class UsuarioModel extends CI_Model{
 			$query = $this->db->get('TbLogin');
 
 			//Verifica se foi encontrado um registro com os dados igual a das condições
-			if($query->num_rows == 1){
-					return true;
+			if($query->num_rows == 1){				
+				return true;
 			}
 		}
 	}

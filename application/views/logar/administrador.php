@@ -16,7 +16,7 @@
 		       			<span class="icon-bar"> </span>
 		       			<span class="icon-bar"> </span> 
 		       		</button>
-		       		<a href="#" class="navbar-brand">LIMA JACKET</a>
+		       		<a href="<?php echo base_url('Principal') ?>>" class="navbar-brand">LIMA JACKET</a>
 		       	</div>
 		    </div>
 		</nav>
@@ -28,8 +28,12 @@
 				<input type="text" id="login" name="login"  value="" class="form-control" placeholder="Login" required autofocus><br>
 				<label for="Senha" >Senha:</label>
 				<input type="Password" id="senha" name="senha" class="form-control" placeholder="Senha" required><br>
-				<div class="checkbox" ><br>
+				<div class="checkbox" >
+				<span>
+					<a href="<?php echo base_url("Cliente") ?>" class="bul">Cadastre-se aqui</a>
+				</span><br>
 				</div>
+				
 				 <button type="submit" class="btn btn-lg btn-primary btn-block">ENTRAR</button>
 			</form>
 			<h1></h1>
