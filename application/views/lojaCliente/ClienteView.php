@@ -45,6 +45,7 @@
 							 			}
 							 			?>
 									</select>
+									<h1></h1>
 									<select name="idSexo">
 									   <?php 
         				   				foreach ($Sexo as $key) {
