@@ -27,7 +27,7 @@
 									<input name="idJaqueta" type="hidden" value="<?php echo $item->idJaqueta ?>"/>
 									<input name="nome" type="hidden" value="<?php echo $item->jaqueta ?>"/>
 									<input name="valor" type="hidden" value="<?php echo $item->valor ?>"/>
-									<button type="button-submit" class="btn btn-fefault cart">
+									<button type="submit" class="btn btn-fefault cart">
 											    
 									     Comprar 
 									     

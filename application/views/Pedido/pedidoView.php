@@ -4,7 +4,7 @@
 			<div class="review-payment">
 				<h2>Registro de Compras</h2>
 			</div>
-		<form action="<?php echo base_url("pedido"); ?>" method="post">
+		<form action="<?php echo base_url("pedido/atualizar"); ?>" method="post">
 			<div class="table-responsive cart_info">
 				<table class="table table-condensed">
 					<thead>

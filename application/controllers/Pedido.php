@@ -38,19 +38,23 @@ class Pedido extends CI_Controller {
 			
 			function adicionar_item(){
 					
-								
+				//Isso é feito pro carrinho aceitar qualquer nome com acento!!!
+				$this->cart->product_name_rules = '\d\D';
+
 				$item = array(
 		           'id'      => $this->input->post('idJaqueta'),
 		           'qty'     => $this->input->post('quantidade'),
 		           'price'   => $this->input->post('valor'),
-		           'name'    => $this->input->post('nome')
+		           'name'    =>  $this->input->post('nome')
 		        );
 				$this->cart->insert($item);
 				redirect(base_url('pedido'));
 	}	
 			
-			function atualizar(){
-					$this->cart->update($_POST);
-					redirect(base_url('compra'));
-				}
+	function atualizar(){
+			$this->cart->update($_POST);
+			redirect(base_url('pedido'));
+		}
+
+
 }
