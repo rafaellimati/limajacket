@@ -62,8 +62,8 @@
 									</select>
 									<br>
 									<br>
-									<button type="submit" class="btn btn-lg btn-submit" >Cadastrar</button><h1></h1>
-									<button id="btnlimpar" type="reset" class="btn btn-lg btn-warning">Limpar</button>
+									<button type="submit" class="btn btn-submit" >Cadastrar</button><h1></h1>
+									<button id="btnlimpar" type="reset" class="btn btn-reset">Limpar</button>
 								</form>
 							</div>
 						</div>
