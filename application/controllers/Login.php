@@ -40,7 +40,7 @@ class Login extends CI_Controller {
 	
 	//Responsável por fazer o login na parte do site
     public function logar(){
-        $this->form_validation->set_rules('login','Login', 'trim|required|max_length[20]|is_unique');
+        $this->form_validation->set_rules('login','Login', 'trim|required|max_length[20]|');
         $this->form_validation->set_rules('senha', 'Senha', 'trim|required|strtolower');
         
 
@@ -67,8 +67,8 @@ class Login extends CI_Controller {
                 //Enviar os dados para a view
                 $this->session->set_userdata($session);
 
-                //Redireciona para a pagina principal
-                redirect('Principal');
+	                //Redireciona para a pagina principal
+					redirect('Principal');
                                 
                                 
             }else{

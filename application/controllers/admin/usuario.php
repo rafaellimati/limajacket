@@ -40,7 +40,7 @@ class usuario extends CI_Controller {
 	public function cadastrar(){
 
 		$login = elements(array('login'), $this->input->post());
-		$email = elements(array('email'), $this->input->post());
+		$email = elements(array('senha'), $this->input->post());
 		
 		$this->form_validation->set_rules('login', 'Email', 'trim|required|max_length[45]|strtolower|is_unique[TbLogin.login]');
 		$this->form_validation->set_message('is_unique', "O login ". $login['login'] ." já existe.");

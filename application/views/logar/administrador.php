@@ -16,7 +16,7 @@
 		       			<span class="icon-bar"> </span>
 		       			<span class="icon-bar"> </span> 
 		       		</button>
-		       		<a href="#" class="navbar-brand">LIMA JACKET</a>
+		       		<a href="<?php echo base_url('Principal') ?>>" class="navbar-brand">LIMA JACKET</a>
 		       	</div>
 		    </div>
 		</nav>
