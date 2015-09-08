@@ -9,10 +9,10 @@
 				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
-							<td class="image">Item</td>
-							<td class="description"></td>
-							<td class="price">preço</td>
-							<td class="quantity">Quantidade</td>
+							<td class="image">Quantidade</td>
+							<td class="description">Descrição</td>
+							<td class="price">Preço</td>
+						<!--	<td class="quantity">item</td>-->
 							<td class="total">Total</td>
 							<td></td>
 						</tr>
@@ -25,9 +25,9 @@
 								echo form_hidden($i . '[rowid]', $items['rowid']); 
 								?>
 								<tr>
-								  <td><!--<?php echo form_input(array('name' => $i . '[qty]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?>--></td>
-								  <td><?php echo $items['nome']; ?></td>
-								  <td>R$ <?php echo number_format($items['preco'],2,",","."); ?></td>
+								  <td><?php echo form_input(array('name' => $i . '[qty]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?></td>
+								  <td><?php echo $items['name']; ?></td>
+								  <td>R$ <?php echo number_format($items['price'],2,",","."); ?></td>
 								  <td>R$ <!--<?php echo number_format($items['subtotal'],2,",","."); ?>--></td>
 								</tr>
 								<?php 
