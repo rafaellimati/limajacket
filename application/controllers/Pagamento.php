@@ -27,14 +27,20 @@ class Pagamento extends CI_Controller {
 
 	public function index()
 	{
-		$dados = array(
-		'pasta' => 'lojaPagamento',
-		'view'  => 'pagamentoView',
-		//'categorias' => $this->CategoriaModel->getAllCategoria()->result()
-		);
-		
-		//redirect('Principal/categoria');
-		$this->load->view('Principal', $dados);
+
+		if($this->session->userdata('client_is_logged_in')) {
+
+			$dados = array(
+			'pasta' => 'lojaPagamento',
+			'view'  => 'pagamentoView',
+			//'categorias' => $this->CategoriaModel->getAllCategoria()->result()
+			);
+			
+			//redirect('Principal/categoria');
+			$this->load->view('Principal', $dados);
+		}else{
+			redirect(base_url('login'));
+		}
 
 	}
 }

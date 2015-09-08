@@ -30,7 +30,7 @@
               <div class="product-desc">
                 <p><?php echo $jaqueta->descricao ?><br />
                  </p>
-                <strong class="price"><?php echo $jaqueta->valor ?></strong> </div>
+                <strong class="price"><?php echo "R$ ". number_format($jaqueta->valor,2,",","."); ?></strong> </div>
             </div>
           </li>
 			
