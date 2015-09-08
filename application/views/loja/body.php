@@ -8,7 +8,7 @@
     <div id="cart"> <a href="Pedido" class="cart-link">Carrinho</a>
       <div class="cl">&nbsp;</div>
       <?php 	if($this->cart->total_items()>0): ?>
-      <span> Produto: <strong><?php $this->cart->total_items() ?></strong></span> &nbsp;&nbsp; </div>
+      <span> Produto: <strong><?php echo $this->cart->total_items() ?></strong></span> &nbsp;&nbsp; </div>
       <?php else:  ?>
       <span> Produto: <strong>0</strong></span> &nbsp;&nbsp; </div>
 		<?php endif;  ?>
