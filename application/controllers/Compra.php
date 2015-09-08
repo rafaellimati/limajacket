@@ -55,10 +55,7 @@ class Compra extends CI_Controller {
 		$this->load->view('Principal',$dados);
 	}
 
-				function atualizar(){
-					$this->cart->update($_POST);
-					redirect(base_url('carrinho'));
-				}
+				
 	
 }
 
