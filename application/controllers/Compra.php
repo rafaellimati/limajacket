@@ -40,19 +40,22 @@ class Compra extends CI_Controller {
 	
 	
 	public function detalhes_jaqueta($idJaqueta){
-			$iddaJaqueta = $this->uri->segment(3);
+		
 
 					$dados = array(
 					'pasta' => 'Compra',
 					'view'  => 'CompraView',
 					'item' => $this->JaquetaModel->detalhesProduto($idJaqueta)->row(),
-					//'compra' => $this->CompraModel->getAllCompra()->result()
+					//'jaqueta' => $this->CompraModel->getAllCompra()->result()
+					
 					);
 		
 		
 			
 		$this->load->view('Principal',$dados);
 	}
+
+				
 	
 }
 

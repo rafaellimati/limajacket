@@ -4,7 +4,7 @@
 			<div class="review-payment">
 				<h2>Registro de Compras</h2>
 			</div>
-
+		<form action="<?php echo base_url("pedido"); ?>" method="post">
 			<div class="table-responsive cart_info">
 				<table class="table table-condensed">
 					<thead>
@@ -19,16 +19,16 @@
 					</thead>
 					<tbody>
 						<tr>
-													<?php 
-								$i = 1;
-								foreach ($this->cart->contents() as $items): 
-								echo form_hidden($i . '[rowid]', $items['rowid']); 
+								<?php 
+									$i = 1;
+									foreach ($this->cart->contents() as $items): 
+									echo form_hidden($i . '[rowid]', $items['rowid']); 
 								?>
 								<tr>
 								  <td><?php echo form_input(array('name' => $i . '[qty]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?></td>
 								  <td><?php echo $items['name']; ?></td>
 								  <td>R$ <?php echo number_format($items['price'],2,",","."); ?></td>
-								  <td>R$ <!--<?php echo number_format($items['subtotal'],2,",","."); ?>--></td>
+								  <td>R$ <?php echo number_format($items['subtotal'],2,",","."); ?></td>
 								</tr>
 								<?php 
 								$i++; 
@@ -43,7 +43,12 @@
 						</table>
 						<p class='btn'>
 							<?php 
-								echo form_submit('', 'Alterar Carrinho'); 
+								$data = array(
+									'name'=> '',
+									'value' => 'Alterar Carrinho',
+									'class' => 'btn btn-default'
+									);
+								echo form_submit($data); 
 								echo form_close();
 							?>
 						</p>
@@ -124,16 +129,17 @@
 						</tr>-->
 					</tbody>
 				</table>
+			</form>
 			</div>
 			<div class="payment-options">
 					<span>
-						<label><input type="button"> Continuar Comprando</label>
+						<label><a href="<?php echo base_url();?>"> Continuar Comprando </a></label>
 					</span>
 					<span>
-						<label><input type="button"> Menu Principal</label>
+						<label><a href="<?php echo base_url(); ?>"> Menu Principal</a></label>
 					</span>
 					<span>
-						<label><input type="button"> Confirmar Compra</label>
+						<label><a class="btn btn-primary" href="<?php echo base_url("pagamento")?>"> Confirmar Compra</a></label>
 					</span>
 				</div>
 		</div>
