@@ -110,7 +110,7 @@
           	<?php 
             foreach ($categorias as $categoria):
           ?>
-            <li><a href=""><?php echo $categoria->categoria ?></a></li>
+            <li><a href="<?php echo base_url('categoria/'.$categoria->idCategoria) ?>"><?php echo $categoria->categoria ?></a></li>
 
           <?php 
             endforeach;

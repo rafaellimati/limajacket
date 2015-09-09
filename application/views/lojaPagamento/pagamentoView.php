@@ -11,7 +11,7 @@
   								<input type="checkbox" name="vehicle" value="Car" checked> cartão <br>
   								<input type="checkbox" name="vehicle" value="Car" checked> cheque <br>
   						<br>
-							<button type="button" class="btn btn-default cart">Confirmar Pagamento</button>
+							<button type="submit" class="btn btn-submit">Confirmar Pagamento</button>
 						</form>
 				     <!--/login form-->
 					</div>

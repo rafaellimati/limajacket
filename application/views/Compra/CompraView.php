@@ -29,7 +29,7 @@
 									<input name="valor" type="hidden" value="<?php echo $item->valor ?>"/>
 									<button type="submit" class="btn btn-fefault cart">
 											    
-									     Comprar 
+									     Add Carrinho 
 									     
 									</button>
 								</span>

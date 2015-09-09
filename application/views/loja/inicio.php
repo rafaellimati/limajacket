@@ -101,7 +101,7 @@
     <div id="sidebar">
 	 <!-- Search -->
       <div class="box search">
-        <h2>Procurar by <span></span></h2>
+        <h2>Procurar <span></span></h2>
         <div class="box-content">
           <form action="#" method="post">
             <label>Palavra Chave</label>
@@ -110,15 +110,15 @@
             <select class="field">
               <option value="">-- Selecione Categoria --</option>
             </select>
-            <input type="submit" class="search-submit" value="Search" />
-            <p> <a href="#" class="bul">Advanced search</a><br />
-              <a href="#" class="bul">Contact Customer Support</a> </p>
+            <input type="submit" class="search-submit" value="Procura" />
+           <!-- <p> <a href="#" class="bul">Advanced search</a><br />
+              <a href="#" class="bul">Contact Customer Support</a> </p>-->
           </form>
         </div>
       </div>
       <!-- Categories -->
       <div class="box categories">
-        <h2>Categories <span></span></h2>
+        <h2>Categorias <span></span></h2>
         <div class="box-content">
           <ul>
           	<?php 

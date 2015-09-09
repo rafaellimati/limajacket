@@ -95,7 +95,7 @@ class login extends CI_Controller {
             $this->session->unset_userdata($session);
             $this->session->sess_destroy();
             //Redireciona para a url padrão "raiz"
-            redirect(base_url('Principal'));
+            redirect(base_url('Compra'));
         }
     }
 }
