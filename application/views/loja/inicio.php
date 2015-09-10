@@ -20,7 +20,13 @@
       <div class="products">
         <div class="cl">&nbsp;</div>
         <ul>
+        	
+        	
+        	
         	<?php
+        	//Pega o objeto jaquetas e apelida  de jaqueta no href pega o id da jaqueta e coloca na URL pra ser pega na próxima página de compra
+        	//no src imprime a imagem referente ao objeto daquela jaqueta e assim pros outros objetos o number_format é um helper do codginiter
+        	// que ajuda na formatação dos valores decimais na pagina.
             foreach ($jaquetas as $jaqueta):
           ?>
           
@@ -38,59 +44,6 @@
             endforeach;
           ?>
         	
-          
-          
-          
-       <!--   <li> <a href="compra"><img src="<?php echo base_url("static/css/images/big2.jpg"); ?>" alt="" /></a>
-            <div class="product-info">
-              <h3>LOREM IPSUM</h3>
-              <div class="product-desc">
-                <h4>WOMEN’S</h4>
-                <p>Lorem ipsum dolor sit<br />
-                  amet</p>
-                <strong class="price">$58.99</strong> </div>
-            </div>
-          </li>
-          <li class="last"> <a href="compra"><img src="<?php echo base_url("static/css/images/big3.jpg"); ?>" alt="" /></a>
-            <div class="product-info">
-              <h3>LOREM IPSUM</h3>
-              <div class="product-desc">
-                <h4>WOMEN’S</h4>
-                <p>Lorem ipsum dolor sit<br />
-                  amet</p>
-                <strong class="price">$58.99</strong> </div>
-            </div>
-          </li>
-		  <li class=""> <a href="compra"><img src="<?php echo base_url("static/css/images/big1.jpg"); ?>" alt="" /></a>
-            <div class="product-info">
-              <h3>LOREM IPSUM</h3>
-              <div class="product-desc">
-                <h4>WOMEN’S</h4>
-                <p>Lorem ipsum dolor sit<br />
-                  amet</p>
-                <strong class="price">$58.99</strong> </div>
-            </div>
-          </li>
-		  <li class=""> <a href="compra"><img src="<?php echo base_url("static/css/images/big2.jpg"); ?>" alt="" /></a>
-            <div class="product-info">
-              <h3>LOREM IPSUM</h3>
-              <div class="product-desc">
-                <h4>WOMEN’S</h4>
-                <p>Lorem ipsum dolor sit<br />
-                  amet</p>
-                <strong class="price">$58.99</strong> </div>
-            </div>
-          </li>
-		  <li class="last"> <a href="compra"><img src="<?php echo base_url("static/css/images/big3.jpg"); ?>" alt="" /></a>
-            <div class="product-info">
-              <h3>LOREM IPSUM</h3>
-              <div class="product-desc">
-                <h4>WOMEN’S</h4>
-                <p>Lorem ipsum dolor sit<br />
-                  amet</p>
-                <strong class="price">$58.99</strong> </div>
-            </div>
-          </li>-->
         </ul>
         <div class="cl">&nbsp;</div>
       </div>
@@ -106,13 +59,8 @@
           <form action="#" method="post">
             <label>Palavra Chave</label>
             <input type="text" class="field" />
-            <!--<label>Categoria</label>
-            <select class="field">
-              <option value="">-- Selecione Categoria --</option>
-            </select>-->
+            </select>
             <input type="submit" class="search-submit" value="Procura" />
-           <!-- <p> <a href="#" class="bul">Advanced search</a><br />
-              <a href="#" class="bul">Contact Customer Support</a> </p>-->
           </form>
         </div>
       </div>
@@ -121,7 +69,10 @@
         <h2>Categorias <span></span></h2>
         <div class="box-content">
           <ul>
+          	
           	<?php 
+          	// É criado uma url 'categoria/'. $categoria é o objeto e -> IdCategoria é o id daquela categoria que vai na url 
+          	// ex: categoria/1 ou categoria/3 essas rotas são ajustadas no routes da pasta config.
             foreach ($categorias as $categoria):
           ?>
             <li><a href="<?php echo base_url('categoria/'.$categoria->idCategoria) ?>"><?php echo $categoria->categoria ?></a></li>
@@ -129,24 +80,7 @@
           <?php 
             endforeach;
           ?>
-          	
-           <!-- <li><a href="#">Category 1</a></li>
-            <li><a href="#">Category 2</a></li>
-            <li><a href="#">Category 3</a></li>
-            <li><a href="#">Category 4</a></li>
-            <li><a href="#">Category 5</a></li>
-            <li><a href="#">Category 6</a></li>
-            <li><a href="#">Category 7</a></li>
-            <li><a href="#">Category 8</a></li>
-            <li><a href="#">Category 9</a></li>
-            <li><a href="#">Category 10</a></li>
-            <li><a href="#">Category 11</a></li>
-            <li><a href="#">Category 12</a></li>
-			<li><a href="#">Category 13</a></li>
-            <li><a href="#">Category 14</a></li>
-            <li><a href="#">Category 15</a></li>
-			<li><a href="#">Category 16</a></li>
-            <li class="last"><a href="#">Category 17</a></li>-->
+
           </ul>
         </div>
       </div>
