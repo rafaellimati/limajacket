@@ -7,10 +7,10 @@
       <div id="slider" class="box">
         <div id="slider-holder">
           <ul>
-            <li><a href="categoria"><img src= "<?php echo base_url("static/css/images/slide1.jpg"); ?>" alt="" /></a></li>
-            <li><a href="categoria"><img src="<?php echo base_url("static/css/images/slide1.jpg"); ?>" alt="" /></a></li>
-            <li><a href="categoria"><img src="<?php echo base_url("static/css/images/slide1.jpg"); ?>" alt="" /></a></li>
-            <li><a href="categoria"><img src="<?php echo base_url("static/css/images/slide1.jpg"); ?>" alt="" /></a></li>
+            <li><a href="Principal"><img src= "<?php echo base_url("static/css/images/slide1.jpg"); ?>" alt="" /></a></li>
+            <li><a href="Principal"><img src="<?php echo base_url("static/css/images/slide1.jpg"); ?>" alt="" /></a></li>
+            <li><a href="Principal"><img src="<?php echo base_url("static/css/images/slide1.jpg"); ?>" alt="" /></a></li>
+            <li><a href="Principal"><img src="<?php echo base_url("static/css/images/slide1.jpg"); ?>" alt="" /></a></li>
           </ul>
         </div>
         <div id="slider-nav"> <a href="compra" class="active">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> </div>
@@ -106,10 +106,10 @@
           <form action="#" method="post">
             <label>Palavra Chave</label>
             <input type="text" class="field" />
-            <label>Categoria</label>
+            <!--<label>Categoria</label>
             <select class="field">
               <option value="">-- Selecione Categoria --</option>
-            </select>
+            </select>-->
             <input type="submit" class="search-submit" value="Procura" />
            <!-- <p> <a href="#" class="bul">Advanced search</a><br />
               <a href="#" class="bul">Contact Customer Support</a> </p>-->
@@ -189,7 +189,7 @@
     </div>
     <!-- End More Products -->
    <!-- Text Cols--> 
-    <div class="cols">
+    <!--<div class="cols">
       <div class="cl">&nbsp;</div>
       <div class="col">
         <h3 class="ico ico1">Agende um envio</h3>
@@ -212,14 +212,14 @@
         <p class="more"><a href="Pedido" class="bul">Clique Aqui</a></p>
       </div>
       <div class="cl">&nbsp;</div>
-    </div>
+    </div>-->
     <!-- End Text Cols-->
   </div>
   <!-- End Side Full -->
   <!-- Footer -->
  <!--Footer--> 
   <div id="footer">
-    <p class="left"> <a href="Principal">Inicio</a> <span>|</span> <a href="#">Contato</a> <span>|</span> <a href="Pedido">Minha Conta</a> <span>|</span> <a href="categoria">Galeria</a> <span>|</span> <a href="#"> Trabalhe Conosco</a> </p></span>
+    <!--<p class="left"> <a href="Principal">Inicio</a> <span>|</span> <a href="#">Contato</a> <span>|</span> <a href="Pedido">Minha Conta</a> <span>|</span> <a href="categoria">Galeria</a> <span>|</span> <a href="#"> Trabalhe Conosco</a> </p></span>-->
     <p class="right"> &copy; 2015 LimaJacket. Ltda </p>
   </div>
   <!-- End Footer -->

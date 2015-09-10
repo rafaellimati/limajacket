@@ -1,5 +1,4 @@
-
-    <section>
+<section>
 		<div class="container">
 			<div class="row">
 			<br><br><br><br><br>
@@ -8,7 +7,7 @@
 						<!--product-details-->
 						<div class="col-sm-5">
 							<div class="view-product">
-								<img width="231" height="383" src="<?php echo base_url("produtos/$item->imagem"); ?>"  alt="" />
+								<img width="" height="" src="<?php echo base_url("produtos/$item->imagem"); ?>"  alt="" />
 							</div>
 							<div id="similar-product" class="carousel slide" data-ride="carousel">
 							</div>
@@ -44,11 +43,11 @@
 					
 					<!--/product-details-->
 					
-					<div class="recommended_items">
+					<!--<div class="recommended_items">-->
 						
 						<!--recommended_items-->
 						
-						<h2 class="title text-center">recommended items</h2>
+						<!--<h2 class="title text-center">recommended items</h2>
 						
 						<div data-ride="carousel">
 							<div class="carousel-inner">
@@ -93,7 +92,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div>-->
 					
 					<!--/recommended_items-->
 					
@@ -104,7 +103,7 @@
   <!--Footer--> 
   
   <div id="footer">
-    <p class="left"> <a href="Principal">Inicio</a> <span>|</span> <a href="#">Contato</a> <span>|</span> <a href="Pedido">Minha Conta</a> <span>|</span> <a href="Categoria">Galeria</a> <span>|</span> <a href="#"> Trabalhe Conosco </a> </p>
+    <!--<p class="left"> <a href="Principal">Inicio</a> <span>|</span> <a href="#">Contato</a> <span>|</span> <a href="Pedido">Minha Conta</a> <span>|</span> <a href="Categoria">Galeria</a> <span>|</span> <a href="#"> Trabalhe Conosco </a> </p>-->
     <p class="right"> &copy; 2015 LimaJacket. Ltda </p>
   </div>
   </div>
@@ -124,4 +123,5 @@
 		<script src="<?php echo base_url("static/js/bootstrap.min.js"); ?>"></script>
     	<script src="<?php echo base_url("static/js/jquery.prettyPhoto.js"); ?>"></script>
     	<script src="<?php echo base_url("static/js/main.js"); ?>"></script>
+  
   

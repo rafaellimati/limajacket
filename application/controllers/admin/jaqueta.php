@@ -38,6 +38,7 @@ class Jaqueta extends CI_Controller {
 				$dados['idLogin'] = $this->session->userdata('id');
 				$dados['imagem']  = $this->upload_foto();
 				$dados['flagAtivo'] = 1;
+				$dados['dataCadastro'] = date('Y-m-d');
 	
 				$this->JaquetaModel->insertJaqueta($dados);
 			}else{
