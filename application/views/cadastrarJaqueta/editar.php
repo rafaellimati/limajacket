@@ -16,7 +16,7 @@ if($this->session->flashdata('edicaook'));
         		</div>
         		<div class="panel-body">
         			<div class="container">
-        				<form class="form" role="form" method="post" action="<?php echo base_url("admin/jaqueta/editar")?>">
+        				<form class="form" role="form" method="post" enctype="multipart/form-data" action="<?php echo base_url("admin/jaqueta/editar")?>">
         				  	<label for="codigoCliente" class="sr-only">Código</label><br>
         				  	<div class="input-group" style="width:200px;">
                             <span class="input-group-addon glyphicon glyphicon-asterisk" id="basic-addon1"></span>
@@ -45,7 +45,7 @@ if($this->session->flashdata('edicaook'));
         				   <br>
         				  <label for="input-group textos">Imagem:</label>
         				   <div class="type">
-        				   	<input type="file" id="imagem" name="imagem" value= "<?php echo $Jaqueta-> imagem; ?>" class="form-file" placeholder="Imagem" required  >
+        				   	<input type="file" id="imagem" name="imagem" value= "<?php echo 'produtos/'.$Jaqueta->imagem; ?>" class="form-file" placeholder="Imagem" required  >
         				   </div>
         				   <br>
         				    <label for="textos"> Marca:</label>
