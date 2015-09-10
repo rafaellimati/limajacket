@@ -14,6 +14,9 @@
 				<font color="#FC5555"><?php echo $this->session->flashdata('disponivel'); ?></font>
 			</div>
 		<?php endif; ?>	
+		
+		<!--Jquery com a mensagem de disponivel do produto -->
+		
 		<form action="<?php echo base_url("pedido/atualizar"); ?>" method="post">
 			<div class="table-responsive cart_info">
 				<table class="table table-condensed">
@@ -22,15 +25,20 @@
 							<td class="image">Quantidade</td>
 							<td class="description">Descrição</td>
 							<td class="price">Preço</td>
-						<!--	<td class="quantity">item</td>-->
 							<td class="total">Total</td>
 							<td></td>
 							<td></td>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
+						<tr><!-- O i é um contador toda vez que um registro for feito será adicionado na tabela
+							a contents é o metodo dos carrinho atualizar e update $items é o apelido dos objetos que estão vindo
+							echo form_hidden é o formulario que vem da view compra com todos dados do item que vai pra carrinho 
+							no parentes ele diz ( toda vez que um registro i vier armazene um objeto de array item)
+							embaixo temos o resto dos objetos sendo preenchidos e no remover temos um jaquery pra deletar o registro-->
+
 								<?php 
+								
 									$i = 1;
 									foreach ($this->cart->contents() as $items): 
 									echo form_hidden($i . '[rowid]', $items['rowid']); 
@@ -45,6 +53,9 @@
 								<?php 
 								$i++; 
 								endforeach;
+								//ao efetuar this->cart->total, chamamos uma função que faz o calculo total automatico.
+								//na ultima parte temos o formulario com um botão alterar que está interligado com a controller
+								
 								?>
 								<tr>
 								  <td colspan="2">&nbsp;</td>
@@ -65,80 +76,6 @@
 							?>
 						</p>
 						</tr>
-
-					<!--	<tr>
-							<td class="cart_product">
-								<a href=""><img src="images/cart/two.png" alt=""></a>
-							</td>
-							<td class="cart_description">
-								<h4><a href="">Jaqueta</a></h4>
-								<p>Web ID: 1089772</p>
-							</td>
-							<td class="cart_price">
-								<p>$59</p>
-							</td>
-							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-						
-									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-		
-								</div>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">$59</p>
-							</td>
-							<td class="cart_delete">
-			
-							</td>
-						</tr>
-						<tr>
-							<td class="cart_product">
-								<a href=""><img src="images/cart/three.png" alt=""></a>
-							</td>
-							<td class="cart_description">
-								<h4><a href="">Jaqueta</a></h4>
-								<p>Web ID: 1089772</p>
-							</td>
-							<td class="cart_price">
-								<p>$59</p>
-							</td>
-							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-						
-									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-				
-								</div>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">$59</p>
-							</td>
-							<td class="cart_delete">
-			
-							</td>
-						</tr>
-						<tr>
-							<td colspan="4">&nbsp;</td>
-							<td colspan="2">
-								<table class="table table-condensed total-result">
-									<tr>
-										<td>Sub Total</td>
-										<td>$59</td>
-									</tr>
-									<tr>
-										<td>Total Item</td>
-										<td>2</td>
-									</tr>
-									<tr class="shipping-cost">
-										<td>Frete</td>
-										<td>Free</td>										
-									</tr>
-									<tr>
-										<td>Total</td>
-										<td><span>$61</span></td>
-									</tr>
-								</table>
-							</td>
-						</tr>-->
 					</tbody>
 				</table>
 			</form>

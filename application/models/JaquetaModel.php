@@ -27,6 +27,8 @@ class JaquetaModel extends CI_Model{
 		}
 	}
 		
+		//função do objeto $item usado na página compra onde obtem todos valores em inner join de todos produtos daquele ID.
+		
 		public function detalhesProduto($id = null){
 			if($id != null){
 
@@ -105,6 +107,7 @@ inner join tbtamanho on(tbjaqueta.idTamanho = tbtamanho.idTamanho)*/
 	}
 
 
+	//função relativa a controller pagamento onde demonstra na página pedidoview a mensagem dos produtos não disponiveis em estoque.
 
 	public function JaquetasDisponiveis($id=null)
 	{
@@ -121,6 +124,9 @@ inner join tbtamanho on(tbjaqueta.idTamanho = tbtamanho.idTamanho)*/
 			return $quantJaqueta - $quantPedido;
 		}
 	}
+	
+	
+	//pega a categoria referente ao id daquele produto clicado na barra lateral
 
 
 	public function getJaquetaByCategoria($idCategoria = null)

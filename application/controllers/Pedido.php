@@ -22,6 +22,7 @@ class Pedido extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		//$this->load->model('CategoriaModel');
+		
 	}
 	
 		public function Index()
@@ -40,7 +41,7 @@ class Pedido extends CI_Controller {
 					
 				//Isso é feito pro carrinho aceitar qualquer nome com acento!!!
 				$this->cart->product_name_rules = '\d\D';
-
+				//um array pegando todos os dados do form hidden que é um formulario invisivel na pagina da compra
 				$item = array(
 		           'id'      => $this->input->post('idJaqueta'),
 		           'qty'     => $this->input->post('quantidade'),
@@ -50,6 +51,8 @@ class Pedido extends CI_Controller {
 				$this->cart->insert($item);
 				redirect(base_url('pedido'));
 	}	
+			
+			//função de atualização do carrinho que esta interligado com imput form do botão atualizar da view pedido
 			
 	function atualizar(){
 			$this->cart->update($_POST);

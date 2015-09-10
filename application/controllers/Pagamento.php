@@ -35,7 +35,7 @@ class Pagamento extends CI_Controller {
 			'view'  => 'pagamentoView',
 			//'categorias' => $this->CategoriaModel->getAllCategoria()->result()
 			);
-
+			//verifica a disponibilidade do produto mostrando na tela mensagem caso quantidade do produto esteja indisponivel.
 			foreach ($this->cart->contents() as $items) {
 				$disponivel = $this->JaquetaModel->JaquetasDisponiveis($items['id']);
 				if($disponivel < $items['qty']){

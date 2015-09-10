@@ -21,8 +21,8 @@ class Categoria extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('CategoriaModel');
-		$this->load->model('JaquetaModel');
+		$this->load->model('CategoriaModel'); // lá na model categoria vc encontrará um metodo getAllCategoria que pega a categoria do menu lateral.
+		$this->load->model('JaquetaModel');  // getJaquetaByCategoria é o nome do metodo que lê o foreign key da categoria na jaqueta pra passar pela URL.
 	}
 	
 		 public function index()
@@ -35,7 +35,8 @@ class Categoria extends CI_Controller {
 		$this->load->view('Principal', $dados);
 	}
 	
-
+		
+    //redirecionando  a função get categoria pra pagina inicial pegando as categorias daquela jaqueta e pegando o id e dados das jaqutas
 	function get_categoria($idCategoria)
 	{
 		$dados = array(
@@ -50,7 +51,8 @@ class Categoria extends CI_Controller {
 	}
 
 
-
+		//pegando como array a categoria e o Id pra passar pela URL. 
+		
 	function adicionar_item(){
 					
 								
@@ -61,6 +63,8 @@ class Categoria extends CI_Controller {
 				$this->cart->insert($item);
 				redirect(base_url('categoria'));
 	}	
+	
+			//atualiza o carrinho referente aquela jaqueta da categoria que foi clicada
 			
 			function atualizar(){
 					$this->cart->update($_POST);

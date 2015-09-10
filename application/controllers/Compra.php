@@ -50,7 +50,7 @@ class Compra extends CI_Controller {
 					
 					);
 		
-		
+		//$item objeto utilizado na view compra pra imprimir os dados referente a jaqueta
 			
 		$this->load->view('Principal',$dados);
 	}
