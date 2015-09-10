@@ -1,87 +1,87 @@
-<!--<form action="<?php echo base_url("ClienteController/Cadastrar"); ?>" method="post">-->
-	<section id="cart_items">
 		<div class="container">
-		<br><br><br>
 			<div class="shopper-informations">
 				<div class="row">
-					<div class="col-sm-3">
+					<div class="col-sm-10" style="margin-left:70px;">
 						<div class="shopper-info">
-							<p>Cadastre seu Login</p>
-							<form action="<?php echo base_url("Cliente/Cadastrar"); ?>" method="post">
-								<input type="text" name="login" id="login" placeholder="Login">
-								<input type="password" name="senha" id="senha" placeholder="Senha">
-								<input type="password" name="confirmaSenha" id="confirmaSenha" placeholder="Confirme Senha">
-				
-							<p>Dados pessoais</p>
-						
-								
-									<input type="text" name="nome" id="nome" placeholder="Nome Completo">
-									<input type="text" name="email" id="email" placeholder="Email*">
-									<input type="text" name="cpf" id="cpf" placeholder="CPF">
-									<input type="text" name="dataNascimento" id="dataNascimento" placeholder="Data Nascimento">
-									<input type="text" name="telefone" id="telefone" placeholder="Telefone">
-									<input type="text" name="logradouro" id="logradouro" placeholder="Logradouro">
-									<input type="text" name="bairro" id="bairro" placeholder="Bairro">
-									<input type="text" name="numero" id="numero" placeholder="Numero">
-									<input type="text" name="cidade" id="cidade" placeholder="Cidade">
-									<input type="text" name="cep" id="cep" placeholder="CEP">
-									
-							
-					
-							<div class="form-two">
-									<select name="idEstado">
-										<?php 
-							 			foreach ($Estado as $key){
-							 				echo "<option value=\"$key->idEstado\">$key->estado</option>";
-							 			}
-							 			?>
-									</select>
-									<br>
-									<br>
-									<select name="idTipoTelefone">
-										<?php 
-							 			foreach ($TipoTelefone as $key){
-							 				echo "<option value=\"$key->idTipoTelefone\">$key->tipoTelefone</option>";
-							 			}
-							 			?>
-									</select>
-									<br><br>
-									<select name="idSexo">
-									   <?php 
+							<form method="post" action"<?php echo base_url("Cliente/Cadastrar"); ?>">
+							<?php echo form_open('Cliente/cadastrar'); 
+                            echo validation_errors('<p>', '</p>');
+                            if($this->session->flashdata('cadastrook')):
+                                echo '<p>'.$this->session->flashdata('Cadastrook').'</p>';
+                            endif;
+                        ?>
+                        <br><br>
+								<p>Dados Login</p>
+								<input type="text" id="login" name="login" <?php form_input(array('login', 'name'=>'login'), set_value('login'));?> placeholder="Login">
+								<input type="password" id="senha" name="senha" <?php form_input(array('senha', 'name'=>'senha'), set_value('senha'));?> placeholder="Senha">
+								<input type="password" id="senhadois" name="senhadois" <?php form_input(array('senhadois', 'name'=>'senhadois'), set_value('senhadois'));?> placeholder="Confirmar senha">
+								<br>
+								<p></p>
+								<p>Dados Pessoais</p>
+								<input type="text" id="nome" name="nome" <?php form_input(array('nome', 'name'=>'nome'), set_value('nome'));?> placeholder="Nome">
+								<input type="text" id="cpf" name="cpf" <?php form_input(array('cpf', 'name'=>'cpf'), set_value('cpf'));?> placeholder="CPF">
+								<input type="email" id="email" name="email" <?php form_input(array('email', 'name'=>'email'), set_value('email'));?> placeholder="EMAIL">
+								<input type="text" id="dataNascimento" name="dataNascimento" <?php form_input(array('dataNascimento', 'name'=>'dataNascimento'), set_value('dataNascimento'));?> placeholder="Data Nascimento">
+								<select name="idSexo">
+								<option> -- Sexo --</option>
+									<?php 
         				   				foreach ($Sexo as $key) {
 								   			echo "<option value=\"$key->idSexo\">$key->sexo</option>";
 							   			}
         				   				?>
-									</select>
-									<br><br>
-									<select name="idDdd">
-										<?php  
+								</select>
+								<br>
+								<p></p>
+								<p>Endereco</p>
+								<input type="text" name="logradouro" placeholder="Logradouro">
+								<input type="text" name="bairro" placeholder="Bairro*">
+								<input type="text" name="numero" placeholder="Numero">
+								<input type="text" name="cep" placeholder="CEP *">
+								<input type="text" id="cidade" name="cidade" placeholder="Cidade">
+								<select id="idEstado" name="idEstado">
+								<option> --Estado-- </option>
+									<?php 
+							 			foreach ($Estado as $key){
+							 				echo "<option value=\"$key->idEstado\">$key->estado</option>";
+							 			}
+							 		?>
+								</select>
+								<br>
+								<p></p>
+								<p>Telefone</p>
+								<input type="text" id="telefone" id="telefone" <?php form_input(array('telefone', 'name'=>'telefone'), set_value('telefone'));?> placeholder="Telefone">
+								<select id="idDdd" name="idDdd">
+								<option> --DDD-- </option>
+									<?php  
 							 			foreach ($Ddd as $key){
 							 				echo "<option value=\"$key->idDdd\">$key->ddd</option>";
 							 			}
 							 			?>
-									</select>
-									<br>
-									<br>
-									<button type="submit" class="btn btn-submit" >Cadastrar</button><h1></h1>
-									<button id="btnlimpar" type="reset" class="btn btn-reset">Limpar</button>
-								</form>
-									
-							</div>
+								</select>
+								<p></p>
+								<p></p>
+								<select id="idTipoTelefone" name="idTipoTelefone">
+								<option> --Tipo Telefone-- </option>
+									<?php 
+							 			foreach ($TipoTelefone as $key){
+							 				echo "<option value=\"$key->idTipoTelefone\">$key->tipoTelefone</option>";
+							 			}
+							 			?>
+								</select>
+								<br>
+								<p></p><br>
+								<div>
+								<button type="submit" class="btn btn-default cart" name="cadastrar">Cadastrar</button>
+								</div>
+							</form>
+							<?php echo form_close(); ?>
 						</div>
 					</div>				
 				</div>
 			</div>
 		</div>
-	</section> <!--/#cart_items-->
-  <!--Footer--> 
-  <div id="footer">
-    <p class="left"> <a href="#">Inicio</a> <span>|</span> <a href="#">Contato</a> <span>|</span> <a href="#">Minha Conta</a> <span>|</span> <a href="#">Galeria</a> <span>|</span> <a href="#"> Trabalhe Conosco </a> </p>
-    <p class="right"> &copy; 2015 LimaJacket. Ltda </p>
-  </div>
-</div>
-  <!-- End Footer -->
-  		<link href="<?php echo base_url("static/css/bootstrap.minn.css"); ?>"  rel="stylesheet">
+		
+		<link href="<?php echo base_url("static/css/bootstrap.minn.css"); ?>"  rel="stylesheet">
 		<link href="<?php echo base_url("static/css/font-awesome.min.css"); ?>" rel="stylesheet">
 		<link href="<?php echo base_url("static/css/prettyPhoto.css"); ?>" rel="stylesheet">
 		<link href="<?php echo base_url("static/css/price-range.css"); ?>" rel="stylesheet">
@@ -100,5 +100,3 @@
 		<script src="<?php echo base_url("static/js/bootstrap.minn.js"); ?>"></script>
 		<script src="<?php echo base_url("static/js/jquery.prettyPhoto.js"); ?>"></script>
 		<script src="<?php echo base_url("static/js/main.js"); ?>"></script>
-  	
-  </form>

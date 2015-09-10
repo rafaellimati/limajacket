@@ -45,7 +45,7 @@ if($this->session->flashdata('edicaook'));
         				   <br>
         				  <label for="input-group textos">Imagem:</label>
         				   <div class="type">
-        				   	<input type="file" id="imagem" name="imagem" value= "<?php echo 'produtos/'.$Jaqueta->imagem; ?>" class="form-file" placeholder="Imagem" required  >
+        				   	<input type="file" id="imagem" name="imagem" value= "<?php echo $Jaqueta->imagem ?>" class="form-file" placeholder="Imagem" required  >
         				   </div>
         				   <br>
         				    <label for="textos"> Marca:</label>
