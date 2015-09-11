@@ -14,6 +14,19 @@ class JaquetaModel extends CI_Model{
 		}
 	}
 	
+		public function updateJaqueta($dados = null, $condition = null){
+
+		if($dados != null && $condition != null){
+
+			$this->db->update('TbJaqueta', $dados, $condition);
+
+			$this->session->set_flashdata('edicaook', 'Alteração realizada com sucesso.');
+
+			//redirect('usuario/editar');
+			redirect('admin/jaqueta');
+		}
+	}
+	
 
 		public function getById($id = null){
 

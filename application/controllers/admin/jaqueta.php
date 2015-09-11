@@ -60,14 +60,14 @@ class Jaqueta extends CI_Controller {
 
 				public function editar(){
 
-					$this->form_validation->set_rules('Jaqueta', 'Jaqueta', 'trim|required|max_length[45]|strtolower|ucwords');
 					$this->form_validation->set_rules('idJaqueta', 'idJaqueta', 'required');
 
 						if($this->form_validation->run()){
 							
-							$dados = elements(array('marca','flagAtivo'), $this->input->post());
-
-							$this->MarcaModel->updateMarca($dados, array('idJaqueta' => $this->input->post('idJaqueta')));
+							$dados = elements(array('quantidade','flagAtivo','dataCadastro','idLogin'), $this->input->post());
+							$dados['idLogin'] = $this->session->userdata('id');
+							$dados['dataCadastro'] = date('Y-m-d');
+							$this->JaquetaModel->updateJaqueta($dados, array('idJaqueta' => $this->input->post('idJaqueta')));
 		
 					}else{
 						$this->session->set_flashdata('erro', 'Jaqueta já existe!');

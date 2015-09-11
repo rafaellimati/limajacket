@@ -25,27 +25,27 @@ if($this->session->flashdata('edicaook'));
         					<br>
         				   	<label for="nome">Jaqueta:</label>
         				   	<div class="input-group textos">
-								<input type="text" id="jaqueta" style="width:260px"; name="jaqueta" value= "<?php echo $Jaqueta->jaqueta; ?>" class="form-control" placeholder="Nome Jaqueta" required autofocus >
+								<input 	readonly="readonly"; type="text" id="jaqueta" style="width:260px"; name="jaqueta" value= "<?php echo $Jaqueta->jaqueta; ?>" class="form-control"  placeholder="Nome Jaqueta" required autofocus  >
 							</div>
 							<br>
         				   <label for="textos">Quantidade:</label>
         				   <div class="input-group textos">
-        				   	<input type="text" id="quantidade" name="quantidade" value= "<?php echo $Jaqueta-> quantidade; ?>"; class="form-control" placeholder="Quantidade" required  >
+        				   	<input  type="text" id="quantidade" name="quantidade" value= "<?php echo $Jaqueta->quantidade; ?>" class="form-control" placeholder="Quantidade" required  >
         				   </div>
         				   <br>
         				   <label for="textos">Valor:</label>
         				   <div class="input-group textos">
-        				   	<input type="text" id="Valor" name="valor" value= "<?php echo $Jaqueta-> valor; ?>"; class="form-control" placeholder="Valor" required  >
+        				   	<input readonly="readonly"; type="text" id="Valor" name="valor" value= "<?php echo $Jaqueta->valor; ?>"; class="form-control" placeholder="Valor" required  >
         				   </div>
         				   <br>
         				   <label for="textos">Descrição:</label>
         				   <div class="input-group textos ">
-        				   	<input type="text" id="descricao" name="descricao" value= "<?php echo $Jaqueta-> descricao; ?>" class="form-control" placeholder="Descrição" required  >
+        				   	<input readonly="readonly"; type="text" id="descricao" name="descricao" value= "<?php echo $Jaqueta->descricao; ?>"; class="form-control" placeholder="Descrição" required  >
         				   </div>
         				   <br>
-        				  <label for="input-group textos">Imagem:</label>
+        				 <!-- <label for="input-group textos">Imagem:</label>
         				   <div class="type">
-        				   	<input type="file" id="imagem" name="imagem" value= "<?php echo $Jaqueta->imagem ?>" class="form-file" placeholder="Imagem" required  >
+        				   	<input type="file" id="imagem" name="imagem" value= "" class="form-file" placeholder="Imagem" required  >
         				   </div>
         				   <br>
         				    <label for="textos"> Marca:</label>
@@ -76,7 +76,7 @@ if($this->session->flashdata('edicaook'));
         				   <br>
         				   <br>
         				   </div>
-        				   <br>
+        				   <br>-->
         				    <label for="nome">Jaqueta:</label>
                             <div class="input-group textos">
                                 <?php 
