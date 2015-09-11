@@ -71,7 +71,8 @@ class Cliente extends CI_Controller {
 		$dados['senha'] = md5($dados['senha']);
 		$this->ClienteModel->insertCliente($dados);
 		
-		redirect('Principal');
+		$this->load->view('Principal');
+		
 	}
 	
 	
