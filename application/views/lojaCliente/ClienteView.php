@@ -1,31 +1,22 @@
-		<script src="<?php echo base_url("static/js/jquery-1.10.1.mini.js") ?>" type="text/javascript"></script>
-		<script src="<?php echo base_url("static/js/jquery.maskedinput.min.js") ?>" type="text/javascript"></script>
-		
+		<head>
+
+
 		<script type="text/javascript">
-		jQuery(document).ready(function() {
-            Inicio Mascara Telefone
-            jQuery('input[type=tel]').mask("(99) 9999-9999?9").ready(function(event) {
-                var target, phone, element;
-                target = (event.currentTarget) ? event.currentTarget : event.srcElement;
-                phone = target.value.replace(/\D/g, '');
-                element = $(target);
-                element.unmask();
-                if(phone.length > 10) {
-                    element.mask("(99) 99999-999?9");
-                } else {
-                    element.mask("(99) 9999-9999?9");
-                }
-            });
-            Fim Mascara Telefone
-            //Inicio Mascara RG
-            //jQuery("#rg").mask("99.999.999-*");
-            //Fim Mascara CPF
-            //Inicio Mascara CPF
-            jQuery("#cpf").mask("999.999.999-99");
-            //Fim Mascara CPF
-        });
-        (jQuery);
+		
+		$(document).ready(function(){
+		
+			jQuery(function($){
+			   $("#dataNascimento").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
+			   $("#cep").mask("999999-999");
+			   $("#cpf").mask("999.999.999-99");
+			   $("#telefone").mask("(99) 9999-9999");
+			})
+			});
         </script>
+			
+		</head>
+		
+		
 		<div class="container">
 			<div class="shopper-informations">
 				<div class="row">
@@ -127,4 +118,5 @@
 		<script src="<?php echo base_url("static/js/bootstrap.minn.js"); ?>"></script>
 		<script src="<?php echo base_url("static/js/jquery.prettyPhoto.js"); ?>"></script>
 		<script src="<?php echo base_url("static/js/main.js"); ?>"></script>
+
 		
