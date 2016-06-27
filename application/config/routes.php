@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "Principal";
+$route['default_controller'] = "principal";
 
 $route['categoria/(:any)'] = "categoria/get_categoria/$1";
 
