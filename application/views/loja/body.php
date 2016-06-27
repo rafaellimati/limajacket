@@ -17,8 +17,8 @@
     <!-- Navigation -->
     <div id="navigation">
       <ul>
-        <li><a href="<?php echo base_url("Principal")?>" class="active">Inicio</a></li>
-        <li><a href="<?php echo base_url("Categoria")?>">Compras</a></li>
+        <li><a href="<?php echo base_url("principal")?>" class="active">Inicio</a></li>
+        <li><a href="<?php echo base_url("categoria")?>">Compras</a></li>
         <li><a href="<?php echo base_url("Pedido")?>">Pedidos</a></li>
         <?php  if(!$this->session->userdata('cliente_is_logged_in')){ ?>
         <li><a href="<?php echo base_url("login")?>">Login</a></li>
