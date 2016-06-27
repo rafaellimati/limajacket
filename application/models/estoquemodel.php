@@ -34,10 +34,10 @@ class EstoqueModel extends CI_Model{
 		$this->db->from('TbJaqueta');
 		$this->db->order_by('jaqueta');
 
-		$this->db->join('tbmarca', 'tbjaqueta.idMarca = tbmarca.idMarca', 'inner');
-		$this->db->join('tbcor', 'tbjaqueta.idCor = tbcor.idCor ', 'inner');
-		$this->db->join('tbCategoria', 'tbjaqueta.idCategoria = tbCategoria.idCategoria', 'inner');
-		$this->db->join('tbtamanho', 'tbjaqueta.idTamanho = tbtamanho.idTamanho', 'inner');
+		$this->db->join('TbMarca', 'TbJaqueta.idMarca = TbMarca.idMarca', 'inner');
+		$this->db->join('TbCor', 'TbJaqueta.idCor = TbCor.idCor ', 'inner');
+		$this->db->join('TbCategoria', 'TbJaqueta.idCategoria = TbCategoria.idCategoria', 'inner');
+		$this->db->join('TbTamanho', 'TbJaqueta.idTamanho = TbTamanho.idTamanho', 'inner');
 
 		$this->db->group_by('tamanho, cor, jaqueta');
 

@@ -41,9 +41,9 @@ class UsuarioModel extends CI_Model{
 
 	public function getAllUsuario(){
 
-		$this->db->from('tbLogin');
+		$this->db->from('TbLogin');
 
-		$this->db->order_by('idlogin');
+		$this->db->order_by('idLogin');
 
 
 		return $this->db->get();
